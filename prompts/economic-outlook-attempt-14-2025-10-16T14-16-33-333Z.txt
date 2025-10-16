@@ -1,0 +1,41 @@
+# Prompt Version Metadata
+# Template: Economic Outlook
+# Attempt: 14
+# Strategy: minimalist_approach
+# Category: Innovation
+# Timestamp: 2025-10-16T14:16:33.333Z
+# ================================================
+
+
+
+CRITICAL: All text phrases must be undefined words or less. Break longer sentences.
+
+
+Format all text elements as a numbered list for clarity.
+Create a professional economic outlook report.
+Include LendWise logo.
+Forest green gradient background with metallic gold accents.
+Use subtle dark shadow beneath and offset to right to create floating sections.
+Preserve emoji colors: 🟢 green circle and 🔴 red circle as shown.
+
+Header section (4 words):
+Economic Outlook October 16, 2025
+
+Current Rate Display (6 words, large):
+30-Year Fixed 6.38%
+
+Key Economic Factors (3 bullets, 10 words each):
+• 🟢 Fed Chair Powell suggests potential continued cuts through end of year
+• 🔴 Inflation expectations rising per Fed data
+• 🟢 Markets hovering near multi-week lows showing cautious optimism from investors
+
+Treasury Yields (10 words):
+10-Year 4.132 and 30-Year 4.721
+
+Forward View - Display quoted text in ALL CAPS with BOTH opening " and closing " marks:
+"FAVORABLE CONDITIONS FOR BORROWERS"
+
+Contact (7 words):
+David Young NMLS 62043 Phone 310-954-7771
+
+Modern Forbes/Bloomberg magazine style. Portrait 1080x1350.
