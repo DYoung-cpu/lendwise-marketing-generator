@@ -1,0 +1,35 @@
+# Prompt Version Metadata
+# Template: Daily Rate Update
+# Attempt: 1
+# Strategy: shorten_commentary
+# Category: Text Optimization
+# Timestamp: 2025-10-16T15:34:38.676Z
+# ================================================
+
+Create a professional daily mortgage Market update.
+Include LendWise logo.
+Forest green gradient background with metallic gold accents.
+Use subtle dark shadow beneath and offset to right to create floating sections.
+Preserve emoji colors: 🟢 green circle and 🔴 red circle as shown.
+
+Header section (4 words):
+Daily Rate Update October 16, 2025
+
+Current Rate (large, prominent display - 6 words):
+30-Year Fixed 6.38% 🟢 +0.02%
+
+Market Drivers Today (3 bullets, 8-12 words each):
+• 🟢 Fed Chair Powell suggests potential continued cuts through end of year
+• 🔴 Inflation expectations rising per Fed data
+• 🟢 Markets hovering near multi-week lows showing cautious optimism from investors
+
+Lock Strategy (12 words max):
+Near recent lows - favorable time to lock today
+
+Expert Insight - Display quoted text in ALL CAPS with BOTH opening " and closing " marks:
+"RATES STABLE NEAR RECENT LOWS"
+
+Contact (7 words):
+David Young NMLS 62043 Phone 310-954-7771
+
+Modern Forbes/Bloomberg magazine style. Portrait 1080x1350.
