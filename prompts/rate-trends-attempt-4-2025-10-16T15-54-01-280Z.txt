@@ -1,0 +1,34 @@
+# Prompt Version Metadata
+# Template: Rate Trends
+# Attempt: 4
+# Strategy: box_formatting
+# Category: Visual Formatting
+# Timestamp: 2025-10-16T15:54:01.280Z
+# ================================================
+
+Create an elegant rate trend analysis.
+Include LendWise logo.
+Forest green gradient background with metallic gold accents.
+Use subtle dark shadow beneath and offset to right to create floating sections.
+
+Header section (4 words):
+Rate Trend Analysis October 16, 2025
+
+Current Rate Display (6 words, very large):
+30-Year Fixed 6.38%
+
+Movement Data (3 bullets, 8 words each):
+• 4-Week Range 6.31 to 6.39
+• 52-Week Range 6.13 to 7.26
+• Position 0.88 below the 52-week high
+
+Trend Status (4 words):
+Current Status: Stable
+
+Forward View - Display quoted text with BOTH opening " and closing " marks:
+"RATES STABLE NEAR RECENT LOWS"
+
+Contact (7 words):
+David Young NMLS 62043 Phone 310-954-7771
+
+Modern Forbes/Bloomberg magazine style. Portrait 1080x1350.
