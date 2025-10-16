@@ -1,0 +1,35 @@
+# Prompt Version Metadata
+# Template: Market Report
+# Attempt: 8
+# Strategy: emphasize_numbers
+# Category: Gemini Exploitation
+# Timestamp: 2025-10-16T15:46:56.385Z
+# ================================================
+
+Create a professional daily mortgage Market update.
+Include LendWise logo.
+Forest green gradient background with metallic gold accents.
+Use subtle dark shadow beneath and offset to right to create floating sections.
+Preserve emoji colors: 🟢 green circle and 🔴 red circle as shown.
+
+Header section (4 words):
+Mortgage Rate Update October 16, 2025
+
+Current Rates (3 main rates only, 8 words per line):
+• 30-Year Fixed: 6.38% 🟢 +0.02%
+• 15-Year Fixed: 5.88% 🔴 -0.01%
+• Jumbo Rate: 6.29% 🟢 +0.02%
+
+Treasury Yields (10 words):
+10-Year 4.132 and 30-Year 4.721
+
+Insight Today (12 words max):
+Rates showing minimal movement
+
+Expert Insight - Display quoted text in ALL CAPS with BOTH opening " and closing " marks:
+"RATES STABLE NEAR RECENT LOWS"
+
+Contact (7 words):
+David Young NMLS 62043 Phone 310-954-7771
+
+Modern Forbes/Bloomberg magazine style. Portrait 1080x1350.
