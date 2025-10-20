@@ -1,8 +1,10 @@
 #!/bin/bash
 
 # Start Quality-Guaranteed Backend Server
-export GEMINI_API_KEY="AIzaSyD7cwQ3dv2BScr9y0GM4lk0sYaVV0Uw1Os"
-export ANTHROPIC_API_KEY="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"
+# Load environment variables from .env file
+set -a
+source .env
+set +a
 
 cd "/mnt/c/Users/dyoun/Active Projects"
 
