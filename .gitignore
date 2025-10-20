@@ -1,0 +1,38 @@
+# Environment variables and secrets
+.env
+.env.local
+.env.production
+
+# Node modules
+node_modules/
+
+# Build outputs
+dist/
+build/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Generated images
+/tmp/marketing-generations/
+
+# Cache and temp files
+*.cache
+.cache/
+backend.log
+meta-cognitive-demo.log
+
+# Test results
+test-results/
+performance-log.json
+
+# Personal/local files
+.aider*
