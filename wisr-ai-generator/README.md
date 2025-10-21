@@ -4,7 +4,24 @@ AI-powered marketing material generator for mortgage loan officers. Creates prof
 
 ## Quick Start
 
-### Option 1: Use the Startup Script (Recommended)
+### Step 1: Set Up API Keys (REQUIRED)
+
+You need a `config.js` file with your API keys:
+
+**If you received `config.js` from David:**
+- Place it in this `wisr-ai-generator/` folder
+- Skip to Step 2
+
+**If you need to create `config.js`:**
+1. Copy `config.example.js` to `config.js`
+2. Get your API keys:
+   - Gemini: https://makersuite.google.com/app/apikey
+   - OpenAI: https://platform.openai.com/api-keys
+3. Replace the placeholders in `config.js`
+
+### Step 2: Start the Server
+
+**Option 1: Use the Startup Script (Recommended)**
 From the project root, double-click:
 ```
 START-MARKETING-GENERATOR.bat
@@ -15,7 +32,7 @@ This will automatically:
 - Start the frontend server (port 8080)
 - Open your browser to the Marketing Generator
 
-### Option 2: Manual Start
+**Option 2: Manual Start**
 1. Start backend (from project root):
    ```bash
    node quality-backend.js

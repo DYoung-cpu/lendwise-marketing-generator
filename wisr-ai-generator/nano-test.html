@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nano Banana Test - Ready to Go</title>
 
+    <!-- API Configuration (create config.js with your API keys) -->
+    <script src="config.js"></script>
+
     <!-- Fabric.js 5.3.0 for advanced canvas text rendering with better gradients and effects -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
 
@@ -1055,12 +1058,10 @@
     </div>
 
     <script>
-        // ⚠️ REPLACE THESE WITH YOUR API KEYS ⚠️
-        // Get your Gemini API key from: https://makersuite.google.com/app/apikey
-        // Get your OpenAI API key from: https://platform.openai.com/api-keys
-        const API_KEY = 'YOUR_GEMINI_API_KEY_HERE';
-        const IDEOGRAM_API_KEY = 'YOUR_IDEOGRAM_API_KEY_HERE';
-        const OPENAI_API_KEY = 'YOUR_OPENAI_API_KEY_HERE';
+        // API Keys - loaded from config.js (see config.example.js for template)
+        const API_KEY = window.API_KEYS?.GEMINI || 'YOUR_GEMINI_API_KEY_HERE';
+        const IDEOGRAM_API_KEY = window.API_KEYS?.IDEOGRAM || 'YOUR_IDEOGRAM_API_KEY_HERE';
+        const OPENAI_API_KEY = window.API_KEYS?.OPENAI || 'YOUR_OPENAI_API_KEY_HERE';
         let isGenerating = false;
         let uploadedImageData = null;
         let lastGeneratedPrompt = null;
