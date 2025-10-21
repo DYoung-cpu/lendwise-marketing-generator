@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WISR AI Generator - Testing Environment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a0505 0%, #0a0a0a 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, rgba(45,15,20,0.95) 0%, rgba(20,10,10,0.95) 100%);
+            border: 1px solid rgba(255,7,58,0.3);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255,7,58,0.2);
+        }
+
+        .wisr-logo {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .title {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: rgba(255,255,255,0.6);
+            font-size: 1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(255,7,58,0.2) 0%, rgba(230,57,70,0.1) 100%);
+            border: 1px solid rgba(255,7,58,0.4);
+            padding: 6px 16px;
+            border-radius: 20px;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            color: rgba(255,255,255,0.9);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        label .required {
+            color: #ff073a;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,7,58,0.3);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: rgba(255,7,58,0.6);
+            background: rgba(0,0,0,0.5);
+            box-shadow: 0 0 20px rgba(255,7,58,0.2);
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: rgba(255,255,255,0.3);
+        }
+
+        select option {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .hint {
+            display: block;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8rem;
+            margin-top: 6px;
+            font-style: italic;
+        }
+
+        .quick-templates {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            border: 1px solid rgba(255,7,58,0.2);
+        }
+
+        .quick-template-label {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            grid-column: 1 / -1;
+        }
+
+        .template-btn {
+            padding: 12px 16px;
+            background: rgba(255,7,58,0.1);
+            border: 1px solid rgba(255,7,58,0.3);
+            border-radius: 8px;
+            color: rgba(255,255,255,0.8);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .template-btn:hover {
+            background: rgba(255,7,58,0.2);
+            border-color: rgba(255,7,58,0.5);
+            transform: translateY(-2px);
+        }
+
+        .generate-btn {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, #ff073a 0%, #e63946 100%);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(255,7,58,0.3);
+        }
+
+        .generate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255,7,58,0.5);
+        }
+
+        .generate-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .preview-section {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: none;
+        }
+
+        .preview-section.active {
+            display: block;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .spinner {
+            font-size: 4rem;
+            animation: spin 2s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-msg {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            margin-top: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .result {
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .preview-image {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            padding: 14px 28px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1rem;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(40,167,69,0.4);
+        }
+
+        .regenerate-btn {
+            background: linear-gradient(135deg, #ff073a 0%, #e63946 100%);
+            color: white;
+        }
+
+        .regenerate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255,7,58,0.4);
+        }
+
+        .edit-btn {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .edit-btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .success-msg {
+            text-align: center;
+            color: #20c997;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .title {
+                font-size: 1.8rem;
+            }
+
+            .wisr-logo {
+                font-size: 3rem;
+            }
+
+            .quick-templates {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="wisr-logo">🦉</div>
+            <h1 class="title">WISR AI Generator</h1>
+            <p class="subtitle">Testing Environment</p>
+            <span class="badge">Powered by WISR Intelligence Engine</span>
+        </div>
+
+        <!-- Quick Templates -->
+        <div class="quick-templates">
+            <div class="quick-template-label">⚡ Quick Start Templates:</div>
+            <button type="button" class="template-btn" data-template="rate">
+                📊 Rate Announcement
+            </button>
+            <button type="button" class="template-btn" data-template="first-time">
+                🏠 First-Time Buyer
+            </button>
+            <button type="button" class="template-btn" data-template="refinance">
+                💰 Refinance Special
+            </button>
+            <button type="button" class="template-btn" data-template="va">
+                🎖️ VA Loan
+            </button>
+        </div>
+
+        <!-- Form -->
+        <form id="generatorForm">
+            <div class="form-group">
+                <label>Content Type <span class="required">*</span></label>
+                <select id="contentType" required>
+                    <option value="social-square">Instagram Post (Square - 1:1)</option>
+                    <option value="social-story">Instagram Story (Vertical - 9:16)</option>
+                    <option value="social-wide">Facebook Post (Wide - 16:9)</option>
+                    <option value="email">Email Header (Wide - 3:1)</option>
+                    <option value="flyer">Flyer (Portrait - 8.5x11)</option>
+                    <option value="business-card">Business Card (3.5x2)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Topic <span class="required">*</span></label>
+                <select id="topic" required>
+                    <option value="rates">Rate Announcement</option>
+                    <option value="first-time">First-Time Homebuyers</option>
+                    <option value="refinance">Refinancing</option>
+                    <option value="va">VA Loans</option>
+                    <option value="fha">FHA Loans</option>
+                    <option value="jumbo">Jumbo Loans</option>
+                    <option value="purchase">Home Purchase</option>
+                    <option value="seasonal">Seasonal Promotion</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Style <span class="required">*</span></label>
+                <select id="style" required>
+                    <option value="professional">Professional & Corporate</option>
+                    <option value="modern">Modern & Tech-Forward</option>
+                    <option value="warm">Warm & Friendly</option>
+                    <option value="luxury">Luxury & Premium</option>
+                    <option value="minimalist">Clean & Minimalist</option>
+                    <option value="bold">Bold & Eye-Catching</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Your Name <span class="required">*</span></label>
+                <input type="text" id="loName" placeholder="David Young" required>
+            </div>
+
+            <div class="form-group">
+                <label>NMLS Number <span class="required">*</span></label>
+                <input type="text" id="nmls" placeholder="62043" required>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" placeholder="310-954-7771" required>
+            </div>
+
+            <div class="form-group">
+                <label>Rate Information (Optional)</label>
+                <textarea id="rates" rows="4" placeholder="30-Year Fixed: 6.25%
+15-Year Fixed: 5.875%
+5/1 ARM: 5.5%"></textarea>
+                <span class="hint">Add current rates if applicable to your topic</span>
+            </div>
+
+            <div class="form-group">
+                <label>Reference Photo (Optional)</label>
+                <input type="file" id="photo" accept="image/*">
+                <span class="hint">Upload a professional headshot for personalized content</span>
+            </div>
+
+            <div class="form-group">
+                <label>Additional Instructions (Optional)</label>
+                <textarea id="additional" rows="3" placeholder="Any specific requests, colors, themes, or special messaging..."></textarea>
+                <span class="hint">Be specific about what you want to see</span>
+            </div>
+
+            <button type="submit" class="generate-btn">
+                ✨ Generate with WISR AI
+            </button>
+        </form>
+
+        <!-- Preview Section -->
+        <div class="preview-section" id="previewSection">
+            <!-- Loading -->
+            <div class="loading" id="loading">
+                <div class="spinner">🦉</div>
+                <p class="loading-msg" id="loadingMsg">WISR AI is creating your content...</p>
+            </div>
+
+            <!-- Result -->
+            <div id="result" class="result" style="display: none;">
+                <p class="success-msg">✅ WISR AI successfully generated your content!</p>
+                <img id="generatedImage" class="preview-image" src="" alt="Generated Content">
+                <div class="action-buttons">
+                    <button type="button" class="action-btn download-btn" id="downloadBtn">
+                        ⬇️ Download
+                    </button>
+                    <button type="button" class="action-btn regenerate-btn" id="regenerateBtn">
+                        🔄 Regenerate
+                    </button>
+                    <button type="button" class="action-btn edit-btn" id="editBtn">
+                        ✏️ Edit Prompt
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // WISR AI Generator App
+        class WISRAIGenerator {
+            constructor() {
+                this.form = document.getElementById('generatorForm');
+                this.previewSection = document.getElementById('previewSection');
+                this.loading = document.getElementById('loading');
+                this.result = document.getElementById('result');
+                this.generatedImage = document.getElementById('generatedImage');
+
+                this.currentFormData = null;
+                this.setupEventListeners();
+            }
+
+            setupEventListeners() {
+                // Form submission
+                this.form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.generate();
+                });
+
+                // Quick template buttons
+                document.querySelectorAll('.template-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const template = e.target.dataset.template;
+                        this.applyTemplate(template);
+                    });
+                });
+
+                // Action buttons
+                document.getElementById('regenerateBtn').addEventListener('click', () => {
+                    this.generate();
+                });
+
+                document.getElementById('downloadBtn').addEventListener('click', () => {
+                    this.download();
+                });
+
+                document.getElementById('editBtn').addEventListener('click', () => {
+                    this.scrollToForm();
+                });
+            }
+
+            applyTemplate(template) {
+                const templates = {
+                    rate: {
+                        contentType: 'social-square',
+                        topic: 'rates',
+                        style: 'professional',
+                        additional: 'Modern design with bold typography. Include current market rates prominently.'
+                    },
+                    'first-time': {
+                        contentType: 'social-square',
+                        topic: 'first-time',
+                        style: 'warm',
+                        additional: 'Warm and encouraging tone. Focus on helping families achieve their dream of homeownership.'
+                    },
+                    refinance: {
+                        contentType: 'social-square',
+                        topic: 'refinance',
+                        style: 'modern',
+                        additional: 'Emphasize savings and lower monthly payments. Modern, tech-forward design.'
+                    },
+                    va: {
+                        contentType: 'social-square',
+                        topic: 'va',
+                        style: 'professional',
+                        additional: 'Respectful patriotic theme. Thank you for your service messaging.'
+                    }
+                };
+
+                const templateData = templates[template];
+                if (templateData) {
+                    document.getElementById('contentType').value = templateData.contentType;
+                    document.getElementById('topic').value = templateData.topic;
+                    document.getElementById('style').value = templateData.style;
+                    document.getElementById('additional').value = templateData.additional;
+
+                    // Scroll to form
+                    this.form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+
+            async generate() {
+                // Show preview section
+                this.previewSection.classList.add('active');
+                this.loading.style.display = 'block';
+                this.result.style.display = 'none';
+
+                // Scroll to preview
+                this.previewSection.scrollIntoView({ behavior: 'smooth' });
+
+                // Collect form data
+                this.currentFormData = {
+                    contentType: document.getElementById('contentType').value,
+                    topic: document.getElementById('topic').value,
+                    style: document.getElementById('style').value,
+                    loName: document.getElementById('loName').value,
+                    nmls: document.getElementById('nmls').value,
+                    phone: document.getElementById('phone').value,
+                    rates: document.getElementById('rates').value,
+                    additional: document.getElementById('additional').value
+                };
+
+                // Rotate loading messages
+                const messages = [
+                    '🦉 WISR AI is analyzing your request...',
+                    '⚡ Processing with WISR Intelligence Engine...',
+                    '🎨 Creating your professional content...',
+                    '✨ Applying brand optimizations...',
+                    '🔍 Ensuring compliance and accuracy...',
+                    '📱 Finalizing your marketing material...'
+                ];
+
+                let msgIndex = 0;
+                const msgInterval = setInterval(() => {
+                    document.getElementById('loadingMsg').textContent = messages[msgIndex];
+                    msgIndex = (msgIndex + 1) % messages.length;
+                }, 2000);
+
+                // Mock delay (simulates API call)
+                // TODO: Replace with real API call to Nano Banana
+                await new Promise(resolve => setTimeout(resolve, 8000));
+
+                clearInterval(msgInterval);
+
+                // Show mock result
+                // TODO: Replace with real generated image
+                const mockImageUrl = 'data:image/svg+xml;base64,' + btoa(`
+                    <svg width="800" height="800" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#1a0505;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#4a1515;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="800" height="800" fill="url(#grad1)"/>
+                        <text x="400" y="300" font-family="Arial, sans-serif" font-size="48" fill="#ff073a" text-anchor="middle" font-weight="bold">
+                            ${this.currentFormData.loName}
+                        </text>
+                        <text x="400" y="360" font-family="Arial, sans-serif" font-size="32" fill="#ffffff" text-anchor="middle">
+                            Sr. Loan Officer
+                        </text>
+                        <text x="400" y="410" font-family="Arial, sans-serif" font-size="24" fill="#cccccc" text-anchor="middle">
+                            NMLS# ${this.currentFormData.nmls}
+                        </text>
+                        <text x="400" y="450" font-family="Arial, sans-serif" font-size="24" fill="#cccccc" text-anchor="middle">
+                            ${this.currentFormData.phone}
+                        </text>
+                        <text x="400" y="550" font-family="Arial, sans-serif" font-size="64" fill="#FFD700" text-anchor="middle" font-weight="bold">
+                            🦉
+                        </text>
+                        <text x="400" y="620" font-family="Arial, sans-serif" font-size="28" fill="#FFD700" text-anchor="middle" font-weight="bold">
+                            LENDWISE MORTGAGES
+                        </text>
+                        <text x="400" y="720" font-family="Arial, sans-serif" font-size="20" fill="#999999" text-anchor="middle">
+                            Generated by WISR AI - ${new Date().toLocaleDateString()}
+                        </text>
+                    </svg>
+                `);
+
+                this.showResult(mockImageUrl);
+            }
+
+            showResult(imageUrl) {
+                this.loading.style.display = 'none';
+                this.result.style.display = 'block';
+                this.generatedImage.src = imageUrl;
+            }
+
+            download() {
+                const link = document.createElement('a');
+                link.href = this.generatedImage.src;
+                link.download = `wisr-ai-${this.currentFormData.loName.replace(/\s+/g, '-').toLowerCase()}-${Date.now()}.png`;
+                link.click();
+            }
+
+            scrollToForm() {
+                this.form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                document.getElementById('additional').focus();
+            }
+        }
+
+        // Initialize app when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            new WISRAIGenerator();
+        });
+    </script>
+</body>
+</html>

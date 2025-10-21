@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LendWise Logo AI Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            color: white;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(218, 165, 32, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #DAA520, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            text-align: center;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.1rem;
+        }
+
+        .generate-btn {
+            width: 100%;
+            padding: 20px 40px;
+            background: linear-gradient(135deg, #DAA520, #B8860B);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        .generate-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(218, 165, 32, 0.4);
+            background: linear-gradient(135deg, #FFD700, #DAA520);
+        }
+
+        .generate-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            font-size: 4rem;
+            animation: spin 2s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-msg {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        .result {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .result.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .preview-box {
+            background:
+                linear-gradient(45deg, #ccc 25%, transparent 25%),
+                linear-gradient(-45deg, #ccc 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #ccc 75%),
+                linear-gradient(-45deg, transparent 75%, #ccc 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .preview-box img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .download-btn {
+            width: 100%;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(40, 167, 69, 0.4);
+        }
+
+        .info {
+            background: rgba(0, 200, 81, 0.1);
+            border: 2px solid rgba(0, 200, 81, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .info h3 {
+            color: #00C851;
+            margin-bottom: 10px;
+        }
+
+        .info p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🦉 AI Logo Generator</h1>
+        <p class="subtitle">Generate LendWise logo with correct proportions</p>
+
+        <div class="info">
+            <h3>✨ What This Generates:</h3>
+            <p>
+                • Small gold owl with green eyes (80-100px height)<br>
+                • "LENDWISE MORTGAGE" text in metallic gold<br>
+                • L and W letters 20% larger than other letters<br>
+                • Transparent PNG background<br>
+                • Professional business logo proportions
+            </p>
+        </div>
+
+        <button class="generate-btn" id="generateBtn" onclick="generateLogo()">
+            ✨ Generate Logo with AI
+        </button>
+
+        <div class="loading" id="loading">
+            <div class="spinner">🦉</div>
+            <p class="loading-msg">AI is generating your logo...</p>
+        </div>
+
+        <div class="result" id="result">
+            <div class="preview-box">
+                <img id="generatedImage" src="" alt="Generated Logo">
+            </div>
+            <button class="download-btn" onclick="downloadLogo()">
+                ⬇️ Download Logo
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const API_KEY = 'AIzaSyD7cwQ3dv2BScr9y0GM4lk0sYaVV0Uw1Os';
+
+        async function generateLogo() {
+            const btn = document.getElementById('generateBtn');
+            const loading = document.getElementById('loading');
+            const result = document.getElementById('result');
+
+            // Show loading
+            btn.disabled = true;
+            loading.classList.add('active');
+            result.classList.remove('active');
+
+            // First, load the owl reference image
+            const owlResponse = await fetch('lendwise-logo.png');
+            const owlBlob = await owlResponse.blob();
+            const owlBase64 = await new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onloadend = () => resolve(reader.result.split(',')[1]);
+                reader.readAsDataURL(owlBlob);
+            });
+
+            const prompt = `Using the provided reference image, create a logo for "LendWise Mortgage" with these CRITICAL changes:
+
+⚠️ MOST IMPORTANT - OWL SIZE:
+- The owl in the reference image is TOO LARGE
+- REDUCE the owl to HALF (50%) of its current size
+- The owl should be MUCH SMALLER than the text
+- Final owl height should be approximately 60-80 pixels only
+- Think: tiny icon next to big text
+
+⚠️ SECOND MOST IMPORTANT - LETTER SIZES:
+- In the word "LENDWISE", make ONLY these letters bigger:
+  * Letter "L" (first letter) → Make it 25% TALLER and WIDER than other letters
+  * Letter "W" (the W in the middle) → Make it 25% TALLER and WIDER than other letters
+- The letters E, N, D, I, S, E should all be normal size
+- Example: "L END W ISE" where L and W are visibly larger
+- This is CRITICAL - the L and W MUST be noticeably bigger
+
+EXACT LAYOUT:
+- Small owl (HALF the reference size) on LEFT
+- Large text "LENDWISE MORTGAGE" on RIGHT
+- Text should be 2-3 times BIGGER than the owl
+- Owl centered vertically with text
+
+WHAT TO KEEP FROM REFERENCE:
+✓ Same gold metallic owl design
+✓ Same green glowing eyes
+✓ Same metallic gold text style
+✓ Same "LENDWISE" over "MORTGAGE" layout
+
+WHAT TO CHANGE:
+✗ Make owl MUCH SMALLER (50% of reference size)
+✗ Make L and W letters LARGER (25% bigger than other letters)
+✗ Ensure transparent background (no white/gray)
+
+FINAL SIZE:
+- Total width: ~600px
+- Total height: ~120px
+- Owl: ~60-80px tall
+- "LENDWISE" text: ~60-70px tall
+- "MORTGAGE" text: ~25px tall
+
+DO NOT create a new owl design. Use the exact owl from the reference image, just make it SMALLER.`;
+
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent?key=${API_KEY}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [
+                                {
+                                    inline_data: {
+                                        mime_type: 'image/png',
+                                        data: owlBase64
+                                    }
+                                },
+                                {
+                                    text: prompt
+                                }
+                            ]
+                        }],
+                        generationConfig: {
+                            temperature: 0.7,
+                            topK: 40,
+                            topP: 0.95,
+                            responseModalities: ["image"]
+                        }
+                    })
+                });
+
+                const data = await response.json();
+                console.log('API Response:', data);
+
+                if (data.candidates && data.candidates[0]) {
+                    const content = data.candidates[0].content;
+                    const imagePart = content.parts.find(part => part.inline_data || part.inlineData);
+
+                    if (imagePart) {
+                        const inlineData = imagePart.inline_data || imagePart.inlineData;
+                        const imageData = inlineData.data;
+                        const mimeType = inlineData.mimeType || inlineData.mime_type || 'image/png';
+                        const imageUrl = `data:${mimeType};base64,${imageData}`;
+
+                        document.getElementById('generatedImage').src = imageUrl;
+                        loading.classList.remove('active');
+                        result.classList.add('active');
+                    } else {
+                        alert('No image was generated. AI returned text instead.');
+                        console.log('Response parts:', content.parts);
+                    }
+                } else if (data.error) {
+                    alert(`API Error: ${data.error.message}`);
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to generate logo. Check console for details.');
+            } finally {
+                btn.disabled = false;
+                loading.classList.remove('active');
+            }
+        }
+
+        function downloadLogo() {
+            const img = document.getElementById('generatedImage');
+            const link = document.createElement('a');
+            link.href = img.src;
+            link.download = 'lendwise-logo.png';
+            link.click();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agent Memory Viewer</title>
+    <style>
+        body { font-family: monospace; padding: 20px; background: #1a1a1a; color: #fff; }
+        .section { margin: 20px 0; padding: 15px; background: #2a2a2a; border-radius: 5px; }
+        .error { color: #ff6b6b; }
+        .success { color: #51cf66; }
+        h2 { color: #ffd43b; }
+    </style>
+</head>
+<body>
+    <h1>🤖 Agent Learning Memory Viewer</h1>
+    <button onclick="viewMemory()">Load Agent Memory</button>
+    <div id="output"></div>
+    
+    <script>
+        function viewMemory() {
+            const memory = localStorage.getItem('agent_learning_memory');
+            if (!memory) {
+                document.getElementById('output').innerHTML = '<div class="error">No agent memory found!</div>';
+                return;
+            }
+            
+            const data = JSON.parse(memory);
+            let html = '';
+            
+            // Stats
+            html += '<div class="section"><h2>📊 Overall Stats</h2>';
+            html += `Success Rate: ${data.stats.currentSuccessRate.toFixed(1)}%<br>`;
+            html += `Total Generations: ${data.stats.totalGenerations}<br>`;
+            html += `Successful: ${data.stats.successfulGenerations}<br>`;
+            html += `Failed: ${data.stats.totalGenerations - data.stats.successfulGenerations}`;
+            html += '</div>';
+            
+            // Learned spelling patterns
+            html += '<div class="section"><h2>📚 Learned Spelling Patterns</h2>';
+            if (data.globalLessons.alwaysEmphasize.length > 0) {
+                data.globalLessons.alwaysEmphasize.forEach(item => {
+                    html += `<div class="error">❌ "${item.wrong}"</div>`;
+                    html += `<div class="success">✅ "${item.correct}"</div><br>`;
+                });
+            } else {
+                html += 'None yet';
+            }
+            html += '</div>';
+            
+            // Strategy performance
+            html += '<div class="section"><h2>🎯 Strategy Performance</h2>';
+            for (const [name, stats] of Object.entries(data.strategies)) {
+                if (stats.totalAttempts > 0) {
+                    const rate = (stats.successCount / stats.totalAttempts * 100).toFixed(1);
+                    html += `${name}: ${rate}% (${stats.successCount}/${stats.totalAttempts} successful)<br>`;
+                }
+            }
+            html += '</div>';
+            
+            // Recent failures
+            html += '<div class="section"><h2>⚠️ Recent Failures (Last 5)</h2>';
+            data.recentFailures.slice(-5).forEach((failure, i) => {
+                html += `<strong>Failure #${i+1}:</strong> ${failure.errors.join(', ')}<br>`;
+                html += `Strategy used: ${failure.strategy}<br><br>`;
+            });
+            html += '</div>';
+            
+            document.getElementById('output').innerHTML = html;
+        }
+    </script>
+</body>
+</html>

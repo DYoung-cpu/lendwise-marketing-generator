@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15-Word Formula Bulletproof Test - 20 Systematic Tests</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0a;
+            color: white;
+            padding: 40px;
+            line-height: 1.6;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(184,134,11,0.1) 0%, rgba(218,165,32,0.05) 100%);
+            border-radius: 12px;
+            border: 2px solid rgba(184,134,11,0.3);
+        }
+
+        .header h1 {
+            color: #DAA520;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.1rem;
+        }
+
+        .test-controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .test-controls button {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #DAA520, #B8860B);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .test-controls button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(218,165,32,0.4);
+        }
+
+        .test-controls button:disabled {
+            background: rgba(100,100,100,0.5);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #DAA520, #20c997);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-card .value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #DAA520;
+        }
+
+        .stat-card.success .value {
+            color: #20c997;
+        }
+
+        .stat-card.error .value {
+            color: #dc3545;
+        }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 30px;
+        }
+
+        .test-item {
+            background: rgba(255,255,255,0.03);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+
+        .test-item.running {
+            border-color: #DAA520;
+            box-shadow: 0 0 30px rgba(218,165,32,0.3);
+        }
+
+        .test-item.success {
+            border-color: #20c997;
+            background: rgba(32,201,151,0.05);
+        }
+
+        .test-item.error {
+            border-color: #dc3545;
+            background: rgba(220,53,69,0.05);
+        }
+
+        .test-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .test-number {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #DAA520;
+        }
+
+        .test-status {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .test-status.pending {
+            background: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+        }
+
+        .test-status.running {
+            background: rgba(218,165,32,0.2);
+            color: #DAA520;
+        }
+
+        .test-status.success {
+            background: rgba(32,201,151,0.2);
+            color: #20c997;
+        }
+
+        .test-status.error {
+            background: rgba(220,53,69,0.2);
+            color: #dc3545;
+        }
+
+        .test-details {
+            margin-bottom: 15px;
+        }
+
+        .test-details p {
+            margin: 8px 0;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .test-details strong {
+            color: white;
+        }
+
+        .test-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .test-image:hover {
+            transform: scale(1.02);
+        }
+
+        .error-log {
+            background: rgba(220,53,69,0.1);
+            border: 1px solid rgba(220,53,69,0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #ff6b6b;
+        }
+
+        .final-report {
+            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(32,201,151,0.1) 0%, rgba(20,150,110,0.05) 100%);
+            border-radius: 12px;
+            border: 2px solid rgba(32,201,151,0.3);
+            display: none;
+        }
+
+        .final-report.show {
+            display: block;
+        }
+
+        .final-report h2 {
+            color: #20c997;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .final-report pre {
+            background: rgba(0,0,0,0.5);
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            line-height: 1.8;
+        }
+
+        .batch-divider {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 20px;
+            color: #DAA520;
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: rgba(184,134,11,0.1);
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .api-key-input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .api-key-input input {
+            flex: 1;
+            padding: 12px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .api-key-input input::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(220,53,69,0.8);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            background: #dc3545;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>15-WORD FORMULA BULLETPROOF TEST</h1>
+        <p>20 Systematic Tests to Validate 100% Clean Text Rendering</p>
+    </div>
+
+    <div class="api-key-input">
+        <input type="password" id="apiKey" placeholder="Enter Gemini API Key">
+        <button onclick="saveApiKey()" style="padding: 12px 24px; background: #20c997; border: none; border-radius: 8px; color: white; font-weight: 600; cursor: pointer;">Save Key</button>
+    </div>
+
+    <div class="test-controls">
+        <button onclick="runAllTests()" id="runAllBtn">▶ Run All 20 Tests</button>
+        <button onclick="runBatch(1)" id="batch1Btn">Run Batch 1 (Thin Lines)</button>
+        <button onclick="runBatch(2)" id="batch2Btn">Run Batch 2 (Shadow)</button>
+        <button onclick="runBatch(3)" id="batch3Btn">Run Batch 3 (Gradient)</button>
+        <button onclick="runBatch(4)" id="batch4Btn">Run Batch 4 (Top Border)</button>
+        <button onclick="clearResults()" style="background: #dc3545;">Clear All</button>
+    </div>
+
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="stats">
+        <div class="stat-card">
+            <h3>Total Tests</h3>
+            <div class="value" id="totalTests">0/20</div>
+        </div>
+        <div class="stat-card success">
+            <h3>Perfect Text</h3>
+            <div class="value" id="perfectCount">0</div>
+        </div>
+        <div class="stat-card error">
+            <h3>Errors Found</h3>
+            <div class="value" id="errorCount">0</div>
+        </div>
+        <div class="stat-card">
+            <h3>Success Rate</h3>
+            <div class="value" id="successRate">0%</div>
+        </div>
+    </div>
+
+    <div class="test-grid" id="testGrid"></div>
+
+    <div class="final-report" id="finalReport">
+        <h2>BULLETPROOF TEST RESULTS</h2>
+        <pre id="reportContent"></pre>
+    </div>
+
+    <div class="modal" id="imageModal" onclick="closeModal()">
+        <button class="modal-close">✕</button>
+        <img id="modalImage" src="" alt="Full size image">
+    </div>
+
+    <script>
+        let API_KEY = '';
+        let testResults = [];
+        let currentTest = 0;
+        let isRunning = false;
+
+        // Load logo as base64
+        let brandLogoData = null;
+
+        async function loadBrandLogo() {
+            try {
+                const response = await fetch('lendwise-logo.png');
+                const blob = await response.blob();
+                const reader = new FileReader();
+
+                return new Promise((resolve) => {
+                    reader.onloadend = () => {
+                        const base64 = reader.result.split(',')[1];
+                        brandLogoData = {
+                            data: base64,
+                            mimeType: 'image/png'
+                        };
+                        console.log('✅ Brand logo loaded successfully');
+                        resolve();
+                    };
+                    reader.readAsDataURL(blob);
+                });
+            } catch (error) {
+                console.warn('⚠️ Could not load brand logo:', error);
+            }
+        }
+
+        // Load logo on page load
+        loadBrandLogo();
+
+        // Test definitions - 20 systematic tests
+        const TEST_DEFINITIONS = [
+            // BATCH 1: Thin Lines Method (5 tests)
+            {
+                batch: 1,
+                batchName: "BATCH 1: Thin Lines Method",
+                name: "Market Update, 3x15 words, with photo",
+                method: "thin horizontal gold lines",
+                template: "Market Update",
+                withPhoto: true,
+                prompt: `Create a professional mortgage market update showing current rates. Seamlessly integrate my photo into the design - remove the background and blend me naturally into the composition. Include LendWise logo. Forest green gradient background with metallic gold accents. Use thin horizontal gold lines to separate sections.
+
+SECTION 1 (15 words): Current thirty year rate six point three eight percent up two basis points from yesterday strong market conditions.
+SECTION 2 (15 words): Contact David Young NMLS 62043 Phone 310-954-7771 for quick response call now or visit our office today.
+SECTION 3 (15 words): We help you find the right loan program that fits your needs and budget goals available now.
+
+Portrait 1080x1350.`,
+                expectedWords: ["Current", "thirty", "year", "rate", "six", "point", "three", "eight", "percent", "up", "two", "basis", "points", "from", "yesterday", "Contact", "David", "Young", "NMLS", "62043", "Phone", "310-954-7771", "for", "quick", "response", "call", "now", "or", "visit", "our", "office", "today", "We", "help", "you", "find", "the", "right", "loan", "program", "that", "fits", "your", "needs", "and", "budget", "goals", "available"]
+            },
+            {
+                batch: 1,
+                batchName: "BATCH 1: Thin Lines Method",
+                name: "Market Update, 3x15 words, no photo",
+                method: "thin horizontal gold lines",
+                template: "Market Update",
+                withPhoto: false,
+                prompt: `Create a professional mortgage market update showing current rates. Include LendWise logo. Forest green gradient background with metallic gold accents. Use thin horizontal gold lines to separate sections.
+
+SECTION 1 (15 words): Current thirty year rate six point three eight percent up two basis points from yesterday strong market conditions.
+SECTION 2 (15 words): Fifteen year rate five point eight eight percent showing minimal change from prior session holding firm today stable.
+SECTION 3 (15 words): Contact David Young NMLS 62043 Phone 310-954-7771 for quick response call now or visit our office today.
+
+Portrait 1080x1350.`,
+                expectedWords: ["Current", "thirty", "year", "rate", "six", "point", "three", "eight", "percent", "up", "two", "basis", "points", "from", "yesterday", "Fifteen", "five", "showing", "minimal", "change", "prior", "session", "holding", "firm", "stable", "Contact", "David", "Young", "NMLS", "62043", "Phone", "310-954-7771", "for", "quick", "response", "call", "now", "or", "visit", "our", "office", "today"]
+            },
+            {
+                batch: 1,
+                batchName: "BATCH 1: Thin Lines Method",
+                name: "Rate Trends, 3x15 words, with photo",
+                method: "thin horizontal gold lines",
+                template: "Rate Trends",
+                withPhoto: true,
+                prompt: `Create a professional mortgage rate trends chart. Seamlessly integrate my photo into the design - remove the background and blend me naturally into the composition. Include LendWise logo. Forest green gradient background with metallic gold accents. Use thin horizontal gold lines to separate sections.
+
+SECTION 1 (15 words): Mortgage rates showing minimal movement over past three weeks holding within narrow range consistent stable market performance overall.
+SECTION 2 (15 words): Include simple rate trend chart with arrows showing direction for thirty year fifteen year and jumbo loan programs.
+SECTION 3 (15 words): Contact David Young NMLS 62043 Phone 310-954-7771 for quick response call now or visit our office today.
+
+Portrait 1080x1350.`,
+                expectedWords: ["Mortgage", "rates", "showing", "minimal", "movement", "over", "past", "three", "weeks", "holding", "within", "narrow", "range", "consistent", "stable", "Include", "simple", "trend", "chart", "with", "arrows", "direction", "for", "thirty", "year", "fifteen", "and", "jumbo", "loan", "programs", "Contact", "David", "Young", "NMLS", "62043", "Phone", "310-954-7771", "quick", "response", "call", "now", "or", "visit", "our", "office", "today"]
+            },
+            {
+                batch: 1,
+                batchName: "BATCH 1: Thin Lines Method",
+                name: "Economic Outlook, 3x15 words, with photo",
+                method: "thin horizontal gold lines",
+                template: "Economic Outlook",
+                withPhoto: true,
+                prompt: `Create a professional economic outlook. Seamlessly integrate my photo into the design - remove the background and blend me naturally into the composition. Include LendWise logo. Forest green gradient background with metallic gold accents. Use thin horizontal gold lines to separate sections.
+
+SECTION 1 (15 words): Current thirty year fixed rate six point three eight percent reflecting recent Federal Reserve policy decisions and inflation data.
+SECTION 2 (15 words): Key factors include employment strength housing inventory levels consumer spending patterns and ongoing economic indicators monitoring inflation trends closely.
+SECTION 3 (15 words): Contact David Young NMLS 62043 Phone 310-954-7771 for quick response call now or visit our office today.
+
+Portrait 1080x1350.`,
+                expectedWords: ["Current", "thirty", "year", "fixed", "rate", "six", "point", "three", "eight", "percent", "reflecting", "recent", "Federal", "Reserve", "policy", "Key", "factors", "include", "employment", "strength", "housing", "inventory", "levels", "consumer", "spending", "patterns", "ongoing", "economic", "indicators", "monitoring", "inflation", "trends", "closely", "Contact", "David", "Young", "NMLS", "62043", "Phone", "310-954-7771", "for", "quick", "response", "call", "now", "or", "visit", "our", "office", "today"]
+            },
+            {
+                batch: 1,
+                batchName: "BATCH 1: Thin Lines Method",
+                name: "Custom content, 3x15 words, with photo",
+                method: "thin horizontal gold lines",
+                template: "Custom",
+                withPhoto: true,
+                prompt: `Create a professional mortgage marketing image. Seamlessly integrate my photo into the design - remove the background and blend me naturally into the composition. Include LendWise logo. Forest green gradient background with metallic gold accents. Use thin horizontal gold lines to separate sections.
+
+SECTION 1 (15 words): Looking for better rates on your home loan refinance purchase programs available through our team expert guidance provided.
+SECTION 2 (15 words): We offer conventional FHA VA jumbo and ARM loan programs tailored to your specific financial situation and goals.
+SECTION 3 (15 words): Contact David Young NMLS 62043 Phone 310-954-7771 for quick response call now or visit our office today.
+
+Portrait 1080x1350.`,
+                expectedWords: ["Looking", "for", "better", "rates", "on", "your", "home", "loan", "refinance", "purchase", "programs", "available", "through", "our", "team", "We", "offer", "conventional", "FHA", "VA", "jumbo", "and", "ARM", "tailored", "to", "specific", "financial", "situation", "goals", "Contact", "David", "Young", "NMLS", "62043", "Phone", "310-954-7771", "quick", "response", "call", "now", "or", "visit", "office", "today"]
+            },
+
+            // BATCH 2: Shadow Method (5 tests)
+            {
+                batch: 2,
+                batchName: "BATCH 2: Shadow Method",
+                name: "Market Update, 3x15 words, with photo",
+                method: "floating shadow effect",
+                template: "Market Update",
+                withPhoto: true,
+                prompt: `Create a professional mortgage market update showing current rates. Seamlessly integrate my photo into the design - remove the background and blend me naturally into the composition. Include LendWise logo. Forest green gradient background with metallic gold accents. Use subtle dark shadow beneath each section and offset to right to create floating effect.
+
+SECTION 1 (15 words): Current thirty year rate six point three eight percent up two basis points from yesterday strong market conditions.
+SECTION 2 (15 words): Contact David Young NMLS 62043 Phone 310-954-7771 for quick response call now or visit our office today.
+SECTION 3 (15 words): We help you find the right loan program that fits your needs and budget goals available now.
+
+Portrait 1080x1350.`,
+                expectedWords: ["Current", "thirty", "year", "rate", "six", "point", "three", "eight", "percent", "up", "two", "basis", "points", "from", "yesterday", "Contact", "David", "Young", "NMLS", "62043", "Phone", "310-954-7771", "for", "quick", "response", "call", "now", "or", "visit", "our", "office", "today", "We", "help", "you", "find", "the", "right", "loan", "program", "that", "fits", "your", "needs", "and", "budget", "goals", "available"]
+            },
+            {
+                batch: 2,
+                batchName: "BATCH 2: Shadow Method",
+                name: "Market Update, 3x15 words, no photo",
+                method: "floating shadow effect",
+                template: "Market Update",
+                withPhoto: false,
+                prompt: `Create a professional mortgage market update showing current rates. Include LendWise logo. Forest green gradient background with metallic gold accents. Use subtle dark shadow beneath each section and offset to right to create floating effect.
+
+SECTION 1 (15 words): Current thirty year rate six point three eight percent up two basis points from yesterday strong market conditions.
+SECTION 2 (15 words): Fifteen year rate five point eight eight percent showing minimal change from prior session holding firm today stable.
+SECTION 3 (15 words): Contact David Young NMLS 62043 Phone 310-954-7771 for quick response call now or visit our office today.
+
+Portrait 1080x1350.`,
+                expectedWords: ["Current", "thirty", "year", "rate", "six", "point", "three", "eight", "percent", "up", "two", "basis", "points", "from", "yesterday", "Fifteen", "five", "showing", "minimal", "change", "prior", "session", "holding", "firm", "stable", "Contact", "David", "Young", "NMLS", "62043", "Phone", "310-954-7771", "for", "quick", "response", "call", "now", "or", "visit", "our", "office", "today"]
+            },
+            {
+                batch: 2,
+                batchName: "BATCH 2: Shadow Method",
+                name: "Rate Trends, 3x15 words, with photo",
+                method: "floating shadow effect",
+                template: "Rate Trends",
+                withPhoto: true,
+                prompt: `Create a professional mortgage rate trends chart. Seamlessly integrate my photo into the design - remove the background and blend me naturally into the composition. Include LendWise logo. Forest green gradient background with metallic gold accents. Use subtle dark shadow beneath each section and offset to right to create floating effect.
+
+SECTION 1 (15 words): Mortgage rates showing minimal movement over past three weeks holding within narrow range consistent stable market performance overall.
+SECTION 2 (15 words): Include simple rate trend chart with arrows showing direction for thirty year fifteen year and jumbo loan programs.
+SECTION 3 (15 words): Contact David Young NMLS 62043 Phone 310-954-7771 for quick response call now or visit our office today.
+
+Portrait 1080x1350.`,
+                expectedWords: ["Mortgage", "rates", "showing", "minimal", "movement", "over", "past", "three", "weeks", "holding", "within", "narrow", "range", "consistent", "stable", "Include", "simple", "trend", "chart", "with", "arrows", "direction", "for", "thirty", "year", "fifteen", "and", "jumbo", "loan", "programs", "Contact", "David", "Young", "NMLS", "62043", "Phone", "310-954-7771", "quick", "response", "call", "now", "or", "visit", "our", "office", "today"]
+            },
+            {
+                batch: 2,
+                batchName: "BATCH 2: Shadow Method",
+                name: "Economic Outlook, 3x15 words, with photo",
+                method: "floating shadow effect",
+                template: "Economic Outlook",
+                withPhoto: true,
+                prompt: `Create a professional economic outlook. Seamlessly integrate my photo into the design - remove the background and blend me naturally into the composition. Include LendWise logo. Forest green gradient background with metallic gold accents. Use subtle dark shadow beneath each section and offset to right to create floating effect.
+
+SECTION 1 (15 words): Current thirty year fixed rate six point three eight percent reflecting recent Federal Reserve policy decisions and inflation data.
+SECTION 2 (15 words): Key factors include employment strength housing inventory levels consumer spending patterns and ongoing economic indicators monitoring inflation trends closely.
+SECTION 3 (15 words): Contact David Young NMLS 62043 Phone 310-954-7771 for quick response call now or visit our office today.
+
+Portrait 1080x1350.`,
+                expectedWords: ["Current", "thirty", "year", "fixed", "rate", "six", "point", "three", "eight", "percent", "reflecting", "recent", "Federal", "Reserve", "policy", "Key", "factors", "include", "employment", "strength", "housing", "inventory", "levels", "consumer", "spending", "patterns", "ongoing", "economic", "indicators", "monitoring", "inflation", "trends", "closely", "Contact", "David", "Young", "NMLS", "62043", "Phone", "310-954-7771", "for", "quick", "response", "call", "now", "or", "visit", "our", "office", "today"]
+            },
+            {
+                batch: 2,
+                batchName: "BATCH 2: Shadow Method",
+                name: "Custom content, 3x15 words, with photo",
+                method: "floating shadow effect",
+                template: "Custom",
+                withPhoto: true,
+                prompt: `Create a professional mortgage marketing image. Seamlessly integrate my photo into the design - remove the background and blend me naturally into the composition. Include LendWise logo. Forest green gradient background with metallic gold accents. Use subtle dark shadow beneath each section and offset to right to create floating effect.
+
+SECTION 1 (15 words): Looking for better rates on your home loan refinance purchase programs available through our team expert guidance provided.
+SECTION 2 (15 words): We offer conventional FHA VA jumbo and ARM loan programs tailored to your specific financial situation and goals.
+SECTION 3 (15 words): Contact David Young NMLS 62043 Phone 310-954-7771 for quick response call now or visit our office today.
+
+Portrait 1080x1350.`,
+                expectedWords: ["Looking", "for", "better", "rates", "on", "your", "home", "loan", "refinance", "purchase", "programs", "available", "through", "our", "team", "We", "offer", "conventional", "FHA", "VA", "jumbo", "and", "ARM", "tailored", "to", "specific", "financial", "situation", "goals", "Contact", "David", "Young", "NMLS", "62043", "Phone", "310-954-7771", "quick", "response", "call", "now", "or", "visit", "office", "today"]
+            },
+
+            // BATCH 3: Gradient Glow Method (5 tests)
+            {
+                batch: 3,
+                batchName: "BATCH 3: Gradient Glow Method",
+                name: "Market Update, 3x15 words, with photo",
+                method: "gradient glow edges",
+                template: "Market Update",
+                withPhoto: true,
+                prompt: `Create a professional mortgage market update showing current rates. Seamlessly integrate my photo into the design - remove the background and blend me naturally into the composition. Include LendWise logo. Forest green gradient background with metallic gold accents. Use soft metallic gold gradient glow around edges of each section.
+
+SECTION 1 (15 words): Current thirty year rate six point three eight percent up two basis points from yesterday strong market conditions.
+SECTION 2 (15 words): Contact David Young NMLS 62043 Phone 310-954-7771 for quick response call now or visit our office today.
+SECTION 3 (15 words): We help you find the right loan program that fits your needs and budget goals available now.
+
+Portrait 1080x1350.`,
+                expectedWords: ["Current", "thirty", "year", "rate", "six", "point", "three", "eight", "percent", "up", "two", "basis", "points", "from", "yesterday", "Contact", "David", "Young", "NMLS", "62043", "Phone", "310-954-7771", "for", "quick", "response", "call", "now", "or", "visit", "our", "office", "today", "We", "help", "you", "find", "the", "right", "loan", "program", "that", "fits", "your", "needs", "and", "budget", "goals", "available"]
+            },
+            {
+                batch: 3,
+                batchName: "BATCH 3: Gradient Glow Method",
+                name: "Market Update, 3x15 words, no photo",
+                method: "gradient glow edges",
+                template: "Market Update",
+                withPhoto: false,
+                prompt: `Create a professional mortgage market update showing current rates. Include LendWise logo. Forest green gradient background with metallic gold accents. Use soft metallic gold gradient glow around edges of each section.
+
+SECTION 1 (15 words): Current thirty year rate six point three eight percent up two basis points from yesterday strong market conditions.
+SECTION 2 (15 words): Fifteen year rate five point eight eight percent showing minimal change from prior session holding firm today stable.
+SECTION 3 (15 words): Contact David Young NMLS 62043 Phone 310-954-7771 for quick response call now or visit our office today.
+
+Portrait 1080x1350.`,
+                expectedWords: ["Current", "thirty", "year", "rate", "six", "point", "three", "eight", "percent", "up", "two", "basis", "points", "from", "yesterday", "Fifteen", "five", "showing", "minimal", "change", "prior", "session", "holding", "firm", "stable", "Contact", "David", "Young", "NMLS", "62043", "Phone", "310-954-7771", "for", "quick", "response", "call", "now", "or", "visit", "our", "office", "today"]
+            },
+            {
+                batch: 3,
+                batchName: "BATCH 3: Gradient Glow Method",
+                name: "Rate Trends, 3x15 words, with photo",
+                method: "gradient glow edges",
+                template: "Rate Trends",
+                withPhoto: true,
+                prompt: `Create a professional mortgage rate trends chart. Seamlessly integrate my photo into the design - remove the background and blend me naturally into the composition. Include LendWise logo. Forest green gradient background with metallic gold accents. Use soft metallic gold gradient glow around edges of each section.
+
+SECTION 1 (15 words): Mortgage rates showing minimal movement over past three weeks holding within narrow range consistent stable market performance overall.
+SECTION 2 (15 words): Include simple rate trend chart with arrows showing direction for thirty year fifteen year and jumbo loan programs.
+SECTION 3 (15 words): Contact David Young NMLS 62043 Phone 310-954-7771 for quick response call now or visit our office today.
+
+Portrait 1080x1350.`,
+                expectedWords: ["Mortgage", "rates", "showing", "minimal", "movement", "over", "past", "three", "weeks", "holding", "within", "narrow", "range", "consistent", "stable", "Include", "simple", "trend", "chart", "with", "arrows", "direction", "for", "thirty", "year", "fifteen", "and", "jumbo", "loan", "programs", "Contact", "David", "Young", "NMLS", "62043", "Phone", "310-954-7771", "quick", "response", "call", "now", "or", "visit", "our", "office", "today"]
+            },
+            {
+                batch: 3,
+                batchName: "BATCH 3: Gradient Glow Method",
+                name: "Economic Outlook, 3x15 words, with photo",
+                method: "gradient glow edges",
+                template: "Economic Outlook",
+                withPhoto: true,
+                prompt: `Create a professional economic outlook. Seamlessly integrate my photo into the design - remove the background and blend me naturally into the composition. Include LendWise logo. Forest green gradient background with metallic gold accents. Use soft metallic gold gradient glow around edges of each section.
+
+SECTION 1 (15 words): Current thirty year fixed rate six point three eight percent reflecting recent Federal Reserve policy decisions and inflation data.
+SECTION 2 (15 words): Key factors include employment strength housing inventory levels consumer spending patterns and ongoing economic indicators monitoring inflation trends closely.
+SECTION 3 (15 words): Contact David Young NMLS 62043 Phone 310-954-7771 for quick response call now or visit our office today.
+
+Portrait 1080x1350.`,
+                expectedWords: ["Current", "thirty", "year", "fixed", "rate", "six", "point", "three", "eight", "percent", "reflecting", "recent", "Federal", "Reserve", "policy", "Key", "factors", "include", "employment", "strength", "housing", "inventory", "levels", "consumer", "spending", "patterns", "ongoing", "economic", "indicators", "monitoring", "inflation", "trends", "closely", "Contact", "David", "Young", "NMLS", "62043", "Phone", "310-954-7771", "for", "quick", "response", "call", "now", "or", "visit", "our", "office", "today"]
+            },
+            {
+                batch: 3,
+                batchName: "BATCH 3: Gradient Glow Method",
+                name: "Custom content, 3x15 words, with photo",
+                method: "gradient glow edges",
+                template: "Custom",
+                withPhoto: true,
+                prompt: `Create a professional mortgage marketing image. Seamlessly integrate my photo into the design - remove the background and blend me naturally into the composition. Include LendWise logo. Forest green gradient background with metallic gold accents. Use soft metallic gold gradient glow around edges of each section.
+
+SECTION 1 (15 words): Looking for better rates on your home loan refinance purchase programs available through our team expert guidance provided.
+SECTION 2 (15 words): We offer conventional FHA VA jumbo and ARM loan programs tailored to your specific financial situation and goals.
+SECTION 3 (15 words): Contact David Young NMLS 62043 Phone 310-954-7771 for quick response call now or visit our office today.
+
+Portrait 1080x1350.`,
+                expectedWords: ["Looking", "for", "better", "rates", "on", "your", "home", "loan", "refinance", "purchase", "programs", "available", "through", "our", "team", "We", "offer", "conventional", "FHA", "VA", "jumbo", "and", "ARM", "tailored", "to", "specific", "financial", "situation", "goals", "Contact", "David", "Young", "NMLS", "62043", "Phone", "310-954-7771", "quick", "response", "call", "now", "or", "visit", "office", "today"]
+            },
+
+            // BATCH 4: Top Border Method (5 tests)
+            {
+                batch: 4,
+                batchName: "BATCH 4: Top Border Method",
+                name: "Market Update, 3x15 words, with photo",
+                method: "top border only",
+                template: "Market Update",
+                withPhoto: true,
+                prompt: `Create a professional mortgage market update showing current rates. Seamlessly integrate my photo into the design - remove the background and blend me naturally into the composition. Include LendWise logo. Forest green gradient background with metallic gold accents. Use thick metallic gold horizontal lines ABOVE each section only.
+
+SECTION 1 (15 words): Current thirty year rate six point three eight percent up two basis points from yesterday strong market conditions.
+SECTION 2 (15 words): Contact David Young NMLS 62043 Phone 310-954-7771 for quick response call now or visit our office today.
+SECTION 3 (15 words): We help you find the right loan program that fits your needs and budget goals available now.
+
+Portrait 1080x1350.`,
+                expectedWords: ["Current", "thirty", "year", "rate", "six", "point", "three", "eight", "percent", "up", "two", "basis", "points", "from", "yesterday", "Contact", "David", "Young", "NMLS", "62043", "Phone", "310-954-7771", "for", "quick", "response", "call", "now", "or", "visit", "our", "office", "today", "We", "help", "you", "find", "the", "right", "loan", "program", "that", "fits", "your", "needs", "and", "budget", "goals", "available"]
+            },
+            {
+                batch: 4,
+                batchName: "BATCH 4: Top Border Method",
+                name: "Market Update, 3x15 words, no photo",
+                method: "top border only",
+                template: "Market Update",
+                withPhoto: false,
+                prompt: `Create a professional mortgage market update showing current rates. Include LendWise logo. Forest green gradient background with metallic gold accents. Use thick metallic gold horizontal lines ABOVE each section only.
+
+SECTION 1 (15 words): Current thirty year rate six point three eight percent up two basis points from yesterday strong market conditions.
+SECTION 2 (15 words): Fifteen year rate five point eight eight percent showing minimal change from prior session holding firm today stable.
+SECTION 3 (15 words): Contact David Young NMLS 62043 Phone 310-954-7771 for quick response call now or visit our office today.
+
+Portrait 1080x1350.`,
+                expectedWords: ["Current", "thirty", "year", "rate", "six", "point", "three", "eight", "percent", "up", "two", "basis", "points", "from", "yesterday", "Fifteen", "five", "showing", "minimal", "change", "prior", "session", "holding", "firm", "stable", "Contact", "David", "Young", "NMLS", "62043", "Phone", "310-954-7771", "for", "quick", "response", "call", "now", "or", "visit", "our", "office", "today"]
+            },
+            {
+                batch: 4,
+                batchName: "BATCH 4: Top Border Method",
+                name: "Rate Trends, 3x15 words, with photo",
+                method: "top border only",
+                template: "Rate Trends",
+                withPhoto: true,
+                prompt: `Create a professional mortgage rate trends chart. Seamlessly integrate my photo into the design - remove the background and blend me naturally into the composition. Include LendWise logo. Forest green gradient background with metallic gold accents. Use thick metallic gold horizontal lines ABOVE each section only.
+
+SECTION 1 (15 words): Mortgage rates showing minimal movement over past three weeks holding within narrow range consistent stable market performance overall.
+SECTION 2 (15 words): Include simple rate trend chart with arrows showing direction for thirty year fifteen year and jumbo loan programs.
+SECTION 3 (15 words): Contact David Young NMLS 62043 Phone 310-954-7771 for quick response call now or visit our office today.
+
+Portrait 1080x1350.`,
+                expectedWords: ["Mortgage", "rates", "showing", "minimal", "movement", "over", "past", "three", "weeks", "holding", "within", "narrow", "range", "consistent", "stable", "Include", "simple", "trend", "chart", "with", "arrows", "direction", "for", "thirty", "year", "fifteen", "and", "jumbo", "loan", "programs", "Contact", "David", "Young", "NMLS", "62043", "Phone", "310-954-7771", "quick", "response", "call", "now", "or", "visit", "our", "office", "today"]
+            },
+            {
+                batch: 4,
+                batchName: "BATCH 4: Top Border Method",
+                name: "Economic Outlook, 3x15 words, with photo",
+                method: "top border only",
+                template: "Economic Outlook",
+                withPhoto: true,
+                prompt: `Create a professional economic outlook. Seamlessly integrate my photo into the design - remove the background and blend me naturally into the composition. Include LendWise logo. Forest green gradient background with metallic gold accents. Use thick metallic gold horizontal lines ABOVE each section only.
+
+SECTION 1 (15 words): Current thirty year fixed rate six point three eight percent reflecting recent Federal Reserve policy decisions and inflation data.
+SECTION 2 (15 words): Key factors include employment strength housing inventory levels consumer spending patterns and ongoing economic indicators monitoring inflation trends closely.
+SECTION 3 (15 words): Contact David Young NMLS 62043 Phone 310-954-7771 for quick response call now or visit our office today.
+
+Portrait 1080x1350.`,
+                expectedWords: ["Current", "thirty", "year", "fixed", "rate", "six", "point", "three", "eight", "percent", "reflecting", "recent", "Federal", "Reserve", "policy", "Key", "factors", "include", "employment", "strength", "housing", "inventory", "levels", "consumer", "spending", "patterns", "ongoing", "economic", "indicators", "monitoring", "inflation", "trends", "closely", "Contact", "David", "Young", "NMLS", "62043", "Phone", "310-954-7771", "for", "quick", "response", "call", "now", "or", "visit", "our", "office", "today"]
+            },
+            {
+                batch: 4,
+                batchName: "BATCH 4: Top Border Method",
+                name: "Custom content, 3x15 words, with photo",
+                method: "top border only",
+                template: "Custom",
+                withPhoto: true,
+                prompt: `Create a professional mortgage marketing image. Seamlessly integrate my photo into the design - remove the background and blend me naturally into the composition. Include LendWise logo. Forest green gradient background with metallic gold accents. Use thick metallic gold horizontal lines ABOVE each section only.
+
+SECTION 1 (15 words): Looking for better rates on your home loan refinance purchase programs available through our team expert guidance provided.
+SECTION 2 (15 words): We offer conventional FHA VA jumbo and ARM loan programs tailored to your specific financial situation and goals.
+SECTION 3 (15 words): Contact David Young NMLS 62043 Phone 310-954-7771 for quick response call now or visit our office today.
+
+Portrait 1080x1350.`,
+                expectedWords: ["Looking", "for", "better", "rates", "on", "your", "home", "loan", "refinance", "purchase", "programs", "available", "through", "our", "team", "We", "offer", "conventional", "FHA", "VA", "jumbo", "and", "ARM", "tailored", "to", "specific", "financial", "situation", "goals", "Contact", "David", "Young", "NMLS", "62043", "Phone", "310-954-7771", "quick", "response", "call", "now", "or", "visit", "office", "today"]
+            }
+        ];
+
+        function saveApiKey() {
+            const key = document.getElementById('apiKey').value.trim();
+            if (key) {
+                API_KEY = key;
+                localStorage.setItem('gemini_api_key', key);
+                alert('✅ API Key saved! Ready to run tests.');
+            }
+        }
+
+        // Load API key from localStorage
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedKey = localStorage.getItem('gemini_api_key');
+            if (savedKey) {
+                API_KEY = savedKey;
+                document.getElementById('apiKey').value = savedKey;
+            }
+            initializeTestGrid();
+        });
+
+        function initializeTestGrid() {
+            const grid = document.getElementById('testGrid');
+            grid.innerHTML = '';
+
+            let currentBatch = null;
+            TEST_DEFINITIONS.forEach((test, index) => {
+                // Add batch divider
+                if (test.batch !== currentBatch) {
+                    const divider = document.createElement('div');
+                    divider.className = 'batch-divider';
+                    divider.textContent = test.batchName;
+                    grid.appendChild(divider);
+                    currentBatch = test.batch;
+                }
+
+                const testItem = document.createElement('div');
+                testItem.className = 'test-item';
+                testItem.id = `test-${index}`;
+                testItem.innerHTML = `
+                    <div class="test-header">
+                        <div class="test-number">Test ${index + 1}</div>
+                        <div class="test-status pending" id="status-${index}">Pending</div>
+                    </div>
+                    <div class="test-details">
+                        <p><strong>Name:</strong> ${test.name}</p>
+                        <p><strong>Method:</strong> ${test.method}</p>
+                        <p><strong>Template:</strong> ${test.template}</p>
+                        <p><strong>Photo:</strong> ${test.withPhoto ? 'Yes' : 'No'}</p>
+                    </div>
+                    <div id="result-${index}"></div>
+                `;
+                grid.appendChild(testItem);
+            });
+        }
+
+        async function runAllTests() {
+            if (!API_KEY) {
+                alert('⚠️ Please enter your Gemini API key first!');
+                return;
+            }
+
+            if (isRunning) return;
+            isRunning = true;
+
+            testResults = [];
+            currentTest = 0;
+
+            document.getElementById('runAllBtn').disabled = true;
+
+            for (let i = 0; i < TEST_DEFINITIONS.length; i++) {
+                currentTest = i;
+                await runSingleTest(i);
+                updateProgress();
+
+                // Wait 2 seconds between tests to avoid rate limiting
+                if (i < TEST_DEFINITIONS.length - 1) {
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                }
+            }
+
+            generateFinalReport();
+            isRunning = false;
+            document.getElementById('runAllBtn').disabled = false;
+        }
+
+        async function runBatch(batchNumber) {
+            if (!API_KEY) {
+                alert('⚠️ Please enter your Gemini API key first!');
+                return;
+            }
+
+            if (isRunning) return;
+            isRunning = true;
+
+            const batchTests = TEST_DEFINITIONS.map((test, index) => ({test, index}))
+                .filter(({test}) => test.batch === batchNumber);
+
+            document.getElementById(`batch${batchNumber}Btn`).disabled = true;
+
+            for (const {test, index} of batchTests) {
+                currentTest = index;
+                await runSingleTest(index);
+                updateProgress();
+
+                // Wait 2 seconds between tests
+                await new Promise(resolve => setTimeout(resolve, 2000));
+            }
+
+            isRunning = false;
+            document.getElementById(`batch${batchNumber}Btn`).disabled = false;
+
+            // Generate report if all tests are done
+            const allDone = testResults.length === TEST_DEFINITIONS.length;
+            if (allDone) {
+                generateFinalReport();
+            }
+        }
+
+        async function runSingleTest(index) {
+            const test = TEST_DEFINITIONS[index];
+            const testItem = document.getElementById(`test-${index}`);
+            const statusEl = document.getElementById(`status-${index}`);
+            const resultEl = document.getElementById(`result-${index}`);
+
+            // Update UI to running
+            testItem.classList.add('running');
+            statusEl.className = 'test-status running';
+            statusEl.textContent = 'Running...';
+
+            try {
+                console.log(`🧪 Running Test ${index + 1}:`, test.name);
+
+                // Build API request
+                const parts = [];
+
+                // Add logo
+                if (brandLogoData) {
+                    parts.push({
+                        inline_data: {
+                            mime_type: brandLogoData.mimeType,
+                            data: brandLogoData.data
+                        }
+                    });
+                }
+
+                // Add photo if test requires it
+                if (test.withPhoto) {
+                    // For testing, we'll skip photo for now unless user uploads one
+                    // In production, you'd use the actual uploaded photo
+                }
+
+                // Add prompt
+                parts.push({text: test.prompt});
+
+                // Call Gemini API
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent?key=${API_KEY}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: parts }],
+                        generationConfig: {
+                            temperature: 0.9,
+                            topK: 40,
+                            topP: 0.95,
+                            responseModalities: ["image"]
+                        }
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API Error: ${response.status}`);
+                }
+
+                const data = await response.json();
+                const imagePart = data.candidates?.[0]?.content?.parts?.find(p => p.inline_data || p.inlineData);
+
+                if (!imagePart) {
+                    throw new Error('No image in response');
+                }
+
+                const imageData = imagePart.inline_data?.data || imagePart.inlineData?.data;
+                const mimeType = imagePart.inline_data?.mimeType || imagePart.inlineData?.mimeType || 'image/png';
+                const imageUrl = `data:${mimeType};base64,${imageData}`;
+
+                // Manual verification - user needs to check spelling
+                const result = {
+                    testNumber: index + 1,
+                    testName: test.name,
+                    template: test.template,
+                    method: test.method,
+                    withPhoto: test.withPhoto,
+                    imageUrl: imageUrl,
+                    expectedWords: test.expectedWords,
+                    status: 'manual-check', // Requires manual verification
+                    errors: [] // Will be filled in manually or via OCR if implemented
+                };
+
+                testResults[index] = result;
+
+                // Update UI - show image for manual verification
+                testItem.classList.remove('running');
+                testItem.classList.add('success'); // Temporarily mark as success
+                statusEl.className = 'test-status success';
+                statusEl.textContent = 'Generated - Manual Check';
+
+                resultEl.innerHTML = `
+                    <img src="${imageUrl}" class="test-image" onclick="showFullImage('${imageUrl}')" alt="Test ${index + 1} result">
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 10px;">
+                        ⚠️ Please manually verify all text is spelled correctly
+                    </p>
+                `;
+
+                console.log(`✅ Test ${index + 1} completed`);
+
+            } catch (error) {
+                console.error(`❌ Test ${index + 1} failed:`, error);
+
+                testItem.classList.remove('running');
+                testItem.classList.add('error');
+                statusEl.className = 'test-status error';
+                statusEl.textContent = 'Error';
+
+                resultEl.innerHTML = `
+                    <div class="error-log">
+                        <strong>Error:</strong> ${error.message}
+                    </div>
+                `;
+
+                testResults[index] = {
+                    testNumber: index + 1,
+                    testName: test.name,
+                    status: 'error',
+                    error: error.message
+                };
+            }
+        }
+
+        function updateProgress() {
+            const completed = testResults.filter(r => r).length;
+            const total = TEST_DEFINITIONS.length;
+            const percentage = (completed / total) * 100;
+
+            document.getElementById('progressFill').style.width = `${percentage}%`;
+            document.getElementById('totalTests').textContent = `${completed}/${total}`;
+
+            // Note: Manual verification needed for accurate success/error counts
+            document.getElementById('perfectCount').textContent = '?';
+            document.getElementById('errorCount').textContent = '?';
+            document.getElementById('successRate').textContent = '?%';
+        }
+
+        function generateFinalReport() {
+            const report = document.getElementById('finalReport');
+            const content = document.getElementById('reportContent');
+
+            const completed = testResults.filter(r => r && r.status !== 'error').length;
+            const total = TEST_DEFINITIONS.length;
+
+            let reportText = `
+BULLETPROOF TEST RESULTS
+========================
+
+Total Tests: ${total}
+Generated Successfully: ${completed}/${total}
+
+⚠️ MANUAL VERIFICATION REQUIRED
+================================
+
+Please review each generated image and verify:
+1. All words are spelled correctly
+2. No missing letters or truncated words
+3. No word repetition (like "for for" or "the the")
+4. Numbers rendered accurately (310-954-7771, NMLS 62043, etc.)
+
+BATCH BREAKDOWN:
+================
+
+BATCH 1 (Thin Lines): 5 tests
+- Test 1: ${testResults[0]?.status || 'pending'}
+- Test 2: ${testResults[1]?.status || 'pending'}
+- Test 3: ${testResults[2]?.status || 'pending'}
+- Test 4: ${testResults[3]?.status || 'pending'}
+- Test 5: ${testResults[4]?.status || 'pending'}
+
+BATCH 2 (Shadow): 5 tests
+- Test 6: ${testResults[5]?.status || 'pending'}
+- Test 7: ${testResults[6]?.status || 'pending'}
+- Test 8: ${testResults[7]?.status || 'pending'}
+- Test 9: ${testResults[8]?.status || 'pending'}
+- Test 10: ${testResults[9]?.status || 'pending'}
+
+BATCH 3 (Gradient Glow): 5 tests
+- Test 11: ${testResults[10]?.status || 'pending'}
+- Test 12: ${testResults[11]?.status || 'pending'}
+- Test 13: ${testResults[12]?.status || 'pending'}
+- Test 14: ${testResults[13]?.status || 'pending'}
+- Test 15: ${testResults[14]?.status || 'pending'}
+
+BATCH 4 (Top Border): 5 tests
+- Test 16: ${testResults[15]?.status || 'pending'}
+- Test 17: ${testResults[16]?.status || 'pending'}
+- Test 18: ${testResults[17]?.status || 'pending'}
+- Test 19: ${testResults[18]?.status || 'pending'}
+- Test 20: ${testResults[19]?.status || 'pending'}
+
+TEMPLATE COVERAGE:
+==================
+- Market Update: ${testResults.filter(r => r?.template === 'Market Update').length} tests
+- Rate Trends: ${testResults.filter(r => r?.template === 'Rate Trends').length} tests
+- Economic Outlook: ${testResults.filter(r => r?.template === 'Economic Outlook').length} tests
+- Custom: ${testResults.filter(r => r?.template === 'Custom').length} tests
+
+PHOTO USAGE:
+============
+- With Photo: ${testResults.filter(r => r?.withPhoto).length} tests
+- Without Photo: ${testResults.filter(r => r?.withPhoto === false).length} tests
+
+NEXT STEPS:
+===========
+1. Review all generated images above
+2. Mark any spelling errors you find
+3. Calculate final success rate: (perfect images / 20) × 100%
+4. If success rate ≥ 95%, formula is BULLETPROOF ✅
+5. If success rate < 95%, investigate patterns in errors
+
+Expected Result: 19-20 perfect renders (95-100% success)
+            `;
+
+            content.textContent = reportText;
+            report.classList.add('show');
+        }
+
+        function clearResults() {
+            if (confirm('Clear all test results?')) {
+                testResults = [];
+                currentTest = 0;
+                isRunning = false;
+                initializeTestGrid();
+                document.getElementById('progressFill').style.width = '0%';
+                document.getElementById('totalTests').textContent = '0/20';
+                document.getElementById('perfectCount').textContent = '0';
+                document.getElementById('errorCount').textContent = '0';
+                document.getElementById('successRate').textContent = '0%';
+                document.getElementById('finalReport').classList.remove('show');
+            }
+        }
+
+        function showFullImage(url) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = url;
+            modal.classList.add('show');
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').classList.remove('show');
+        }
+
+        // Prevent modal close when clicking image
+        document.getElementById('modalImage').addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    </script>
+</body>
+</html>

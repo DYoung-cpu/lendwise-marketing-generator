@@ -1,0 +1,52 @@
+PROMPT FOR NANO - LendWise Mortgage Logo Generation
+=====================================================
+
+Please create a logo for "LendWise Mortgage" with these EXACT specifications:
+
+LOGO ELEMENTS:
+--------------
+1. Gold owl with green eyes (same style you created previously)
+   - Owl should be SMALL - approximately 25-30% the height of the full logo
+   - Gold metallic gradient with shading
+   - Bright green glowing eyes
+
+2. Text "LENDWISE MORTGAGE" in metallic gold:
+   - "LENDWISE" - larger text, top line
+   - "MORTGAGE" - smaller text, bottom line
+   - Letters "L" and "W" should be slightly larger (10-15% bigger) than other letters
+   - Metallic gold gradient effect (shiny, reflective appearance)
+   - Clean, crisp edges
+
+LAYOUT:
+-------
+- Owl positioned on the LEFT side
+- Text positioned on the RIGHT side
+- Owl should be vertically CENTERED relative to the text
+- Minimal spacing between owl and text (about 15-20 pixels)
+- Compact, professional layout
+
+CRITICAL REQUIREMENTS:
+----------------------
+✓ TRANSPARENT BACKGROUND - absolutely no white, gray, or colored background
+✓ High quality PNG with alpha transparency channel
+✓ Sharp, clean edges on all elements
+✓ No pixelation or artifacts
+✓ Owl must be SMALL relative to text (not the same height)
+
+DIMENSIONS:
+-----------
+- Recommended width: 500-700px
+- Recommended height: 150-200px
+- Owl height should be roughly the same as the word "LENDWISE" alone (not full logo)
+
+STYLE REFERENCE:
+----------------
+Use the same metallic gold, green-eyed owl you created before, but make it much smaller.
+The owl should complement the text, not dominate it.
+Think: professional business logo for stationery, websites, business cards.
+
+OUTPUT:
+-------
+Save as: lendwise-logo.png
+Format: PNG with alpha transparency
+Quality: High resolution, print-ready

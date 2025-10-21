@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybrid Marketing Engine - Vision-Driven Typography</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        .workflow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .step {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            color: white;
+        }
+
+        .step h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .control-panel {
+            background: #f7fafc;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .input-group textarea,
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95em;
+            transition: border-color 0.3s;
+        }
+
+        .input-group textarea:focus,
+        .input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .input-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: block;
+            width: 100%;
+        }
+
+        .btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .output-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .preview-box {
+            background: #f7fafc;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #e2e8f0;
+        }
+
+        .preview-box h3 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        #backgroundPreview,
+        #finalPreview {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .analysis-result {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .analysis-result h4 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .analysis-result pre {
+            background: #f7fafc;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.85em;
+            line-height: 1.6;
+        }
+
+        .status {
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .status.info {
+            background: #bee3f8;
+            color: #2c5282;
+        }
+
+        .status.success {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+
+        .status.error {
+            background: #fed7d7;
+            color: #742a2a;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Hybrid Marketing Engine</h1>
+        <p class="subtitle">Vision-Driven Typography System - Perfect Backgrounds + Perfect Text</p>
+
+        <div class="workflow">
+            <div class="step">
+                <h3>1️⃣ Generate Background</h3>
+                <p>Gemini AI creates stunning, text-free backgrounds based on your marketing theme</p>
+            </div>
+            <div class="step">
+                <h3>2️⃣ Analyze Design</h3>
+                <p>Vision AI analyzes colors, mood, and contrast to recommend perfect typography</p>
+            </div>
+            <div class="step">
+                <h3>3️⃣ Apply Text</h3>
+                <p>Canvas overlays your content with AI-selected fonts - 100% spelling accuracy</p>
+            </div>
+        </div>
+
+        <div class="control-panel">
+            <h2 style="margin-bottom: 25px; color: #2d3748;">Create Your Marketing Graphic</h2>
+
+            <div class="input-group">
+                <label>Marketing Theme / Background Description</label>
+                <textarea id="backgroundPrompt" placeholder="Example: Professional forest green gradient background with subtle luxury texture, financial theme, elegant and sophisticated">Professional forest green gradient background with subtle luxury texture, abstract financial theme, elegant and sophisticated, 9:16 portrait format</textarea>
+            </div>
+
+            <div class="input-group">
+                <label>Your Marketing Content (Text)</label>
+                <textarea id="marketingContent" placeholder="Enter the exact text you want to display...">ECONOMIC OUTLOOK
+
+FORECASTED RATES
+6.75% - 30-YEAR FIXED APR
+7.12% - 15-YEAR FIXED APR
+
+MARKET INDICATORS
+BORROWER DEMAND: STRONG
+COMPETITIVE CLIMATE: HIGH
+INVESTMENT OUTLOOK: FAVORABLE
+REFINANCE OPPORTUNITY: AVAILABLE
+
+HOUSING MARKET
+HOME VALUES: APPRECIATING
+INFLATION: MODERATING
+INVENTORY: UNCHANGED
+
+DAVID YOUNG - NMLS #62043
+PHONE: 310-954-7771
+LENDWISE MORTGAGES</textarea>
+            </div>
+
+            <button id="generateBtn" class="btn">Generate Marketing Graphic</button>
+
+            <div id="status"></div>
+        </div>
+
+        <div class="output-section">
+            <div class="preview-box">
+                <h3>Background (AI Generated)</h3>
+                <img id="backgroundPreview" style="display: none;">
+                <div id="backgroundAnalysis"></div>
+            </div>
+
+            <div class="preview-box">
+                <h3>Final Composite</h3>
+                <canvas id="finalCanvas" style="display: none;"></canvas>
+                <img id="finalPreview" style="display: none;">
+                <div id="typographyRecommendation"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_KEY = 'AIzaSyDalba2Z2Hu4rrJNse_gxLsYDPJnq5PkXE';
+        const GEMINI_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent';
+
+        let currentBackground = null;
+        let typographyConfig = null;
+
+        /**
+         * Step 1: Generate background with Gemini
+         */
+        async function generateBackground(prompt) {
+            showStatus('Generating background with Gemini AI...', 'info');
+
+            const response = await fetch(`${GEMINI_ENDPOINT}?key=${API_KEY}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    contents: [{
+                        parts: [{
+                            text: `Generate an image: ${prompt}. IMPORTANT: NO TEXT in the image - just the background design.`
+                        }]
+                    }],
+                    generationConfig: {
+                        temperature: 0.8,
+                        candidateCount: 1
+                    }
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.candidates && data.candidates[0]?.content?.parts) {
+                const inlineData = data.candidates[0].content.parts.find(p => p.inlineData);
+                if (inlineData) {
+                    const base64Image = inlineData.inlineData.data;
+                    currentBackground = `data:image/png;base64,${base64Image}`;
+
+                    // Display background
+                    const bgImg = document.getElementById('backgroundPreview');
+                    bgImg.src = currentBackground;
+                    bgImg.style.display = 'block';
+
+                    return currentBackground;
+                }
+            }
+
+            throw new Error('Failed to generate background');
+        }
+
+        /**
+         * Step 2: Analyze background with Vision API
+         */
+        async function analyzeBackground(imageBase64) {
+            showStatus('Analyzing background with Vision AI...', 'info');
+
+            const analysisPrompt = `Analyze this background image for typography design.
+
+Provide a detailed analysis in JSON format:
+
+{
+  "backgroundAnalysis": {
+    "primaryColors": ["hex color array"],
+    "mood": "describe the mood/emotion",
+    "complexity": "simple/moderate/complex",
+    "contrast": "where text should be placed for best readability",
+    "style": "modern/classic/luxury/casual etc"
+  },
+  "fontRecommendations": {
+    "heading": {
+      "family": "font name from: Cinzel, Playfair Display, Montserrat, Inter, Lora",
+      "weight": "300/400/600/700",
+      "color": "hex color for best contrast",
+      "size": "size in px"
+    },
+    "body": {
+      "family": "font name",
+      "weight": "300/400/600/700",
+      "color": "hex color",
+      "size": "size in px"
+    },
+    "effects": {
+      "shadow": "CSS shadow value",
+      "outline": "outline style if needed"
+    }
+  },
+  "reasoning": "explain why these choices work"
+}
+
+Consider readability, contrast, and aesthetic harmony.`;
+
+            const response = await fetch(`${GEMINI_ENDPOINT}?key=${API_KEY}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    contents: [{
+                        parts: [
+                            {
+                                text: analysisPrompt
+                            },
+                            {
+                                inlineData: {
+                                    mimeType: 'image/png',
+                                    data: imageBase64.split(',')[1]
+                                }
+                            }
+                        ]
+                    }],
+                    generationConfig: {
+                        temperature: 0.4
+                    }
+                })
+            });
+
+            const data = await response.json();
+            const responseText = data.candidates[0].content.parts[0].text;
+
+            // Extract JSON from response
+            const jsonMatch = responseText.match(/\{[\s\S]*\}/);
+            if (jsonMatch) {
+                typographyConfig = JSON.parse(jsonMatch[0]);
+
+                // Display analysis
+                document.getElementById('backgroundAnalysis').innerHTML = `
+                    <div class="analysis-result">
+                        <h4>Background Analysis</h4>
+                        <pre>${JSON.stringify(typographyConfig.backgroundAnalysis, null, 2)}</pre>
+                    </div>
+                `;
+
+                document.getElementById('typographyRecommendation').innerHTML = `
+                    <div class="analysis-result">
+                        <h4>Font Recommendations</h4>
+                        <pre>${JSON.stringify(typographyConfig.fontRecommendations, null, 2)}</pre>
+                        <h4 style="margin-top: 15px;">Reasoning</h4>
+                        <p style="color: #4a5568; line-height: 1.6;">${typographyConfig.reasoning}</p>
+                    </div>
+                `;
+
+                return typographyConfig;
+            }
+
+            throw new Error('Failed to parse typography recommendations');
+        }
+
+        /**
+         * Step 3: Compose final image with Canvas
+         */
+        async function composeImage(backgroundImage, content, typography) {
+            showStatus('Composing final image with perfect text...', 'info');
+
+            return new Promise((resolve) => {
+                const canvas = document.getElementById('finalCanvas');
+                const ctx = canvas.getContext('2d');
+
+                // Set canvas size (9:16 portrait)
+                canvas.width = 1080;
+                canvas.height = 1920;
+
+                const img = new Image();
+                img.onload = () => {
+                    // Draw background
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+                    // Apply typography
+                    const lines = content.split('\n').filter(line => line.trim());
+                    let y = 150;
+
+                    lines.forEach((line, index) => {
+                        const isHeading = index === 0 || line.toUpperCase() === line && line.length < 30;
+                        const config = isHeading ? typography.fontRecommendations.heading : typography.fontRecommendations.body;
+
+                        // Set font
+                        ctx.font = `${config.weight} ${config.size} '${config.family}', sans-serif`;
+                        ctx.fillStyle = config.color;
+                        ctx.textAlign = 'center';
+
+                        // Add shadow
+                        if (typography.fontRecommendations.effects.shadow) {
+                            const shadowParts = typography.fontRecommendations.effects.shadow.match(/(-?\d+px)\s+(-?\d+px)\s+(-?\d+px)\s+(.+)/);
+                            if (shadowParts) {
+                                ctx.shadowOffsetX = parseInt(shadowParts[1]);
+                                ctx.shadowOffsetY = parseInt(shadowParts[2]);
+                                ctx.shadowBlur = parseInt(shadowParts[3]);
+                                ctx.shadowColor = shadowParts[4];
+                            }
+                        }
+
+                        // Draw text
+                        ctx.fillText(line, canvas.width / 2, y);
+
+                        // Spacing
+                        y += parseInt(config.size) * 1.5;
+                        if (line === '') y += 20;
+                    });
+
+                    // Display final image
+                    canvas.style.display = 'block';
+                    const finalImg = document.getElementById('finalPreview');
+                    finalImg.src = canvas.toDataURL();
+                    finalImg.style.display = 'block';
+
+                    showStatus('✅ Marketing graphic generated successfully!', 'success');
+                    resolve(canvas.toDataURL());
+                };
+
+                img.src = backgroundImage;
+            });
+        }
+
+        /**
+         * Main workflow orchestrator
+         */
+        document.getElementById('generateBtn').addEventListener('click', async () => {
+            const btn = document.getElementById('generateBtn');
+            btn.disabled = true;
+
+            try {
+                const backgroundPrompt = document.getElementById('backgroundPrompt').value;
+                const marketingContent = document.getElementById('marketingContent').value;
+
+                // Step 1: Generate background
+                const background = await generateBackground(backgroundPrompt);
+
+                // Step 2: Analyze background
+                const typography = await analyzeBackground(background);
+
+                // Step 3: Compose final image
+                await composeImage(background, marketingContent, typography);
+
+            } catch (error) {
+                console.error('Error:', error);
+                showStatus(`❌ Error: ${error.message}`, 'error');
+            } finally {
+                btn.disabled = false;
+            }
+        });
+
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.className = `status ${type}`;
+            statusDiv.innerHTML = type === 'info' ? `<span class="loading"></span>${message}` : message;
+        }
+    </script>
+</body>
+</html>

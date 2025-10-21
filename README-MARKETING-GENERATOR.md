@@ -61,10 +61,12 @@ Your browser will open to the Marketing Generator.
 ├── .env                      # API keys
 ├── start-server.sh           # Linux startup
 ├── START-MARKETING-GENERATOR.bat  # Windows startup ← USE THIS
-└── wisr-ai-generator/
-    ├── nano-test.html        # Main frontend
+└── wisr-ai-generator/       # Marketing Generator Frontend (CLEANED Oct 20)
+    ├── nano-test.html        # Main application (production)
     ├── lendwise-logo.png     # Auto-loaded logo
-    └── ...
+    ├── wisr-owl.mp4          # Animated mascot
+    ├── README.md             # Frontend documentation
+    └── archive/              # Old files archived for reference
 ```
 
 ## Server URLs

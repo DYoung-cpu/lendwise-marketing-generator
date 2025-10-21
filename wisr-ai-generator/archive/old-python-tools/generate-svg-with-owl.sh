@@ -1,0 +1,132 @@
+#!/bin/bash
+
+# Generate SVG logos with embedded base64 owl image
+
+cd "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator"
+
+# Convert owl PNG to base64
+OWL_BASE64=$(base64 -w 0 "lendwise-logo.png")
+
+# Create horizontal SVG with embedded owl
+cat > "lendwise-logo-horizontal-embedded.svg" <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="120" viewBox="0 0 500 120" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Metallic Gold Gradient Definitions -->
+  <defs>
+    <linearGradient id="metallic-gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#DAA520;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#B8860B;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#DAA520;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Drop shadow filter -->
+    <filter id="drop-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/>
+      <feOffset dx="0" dy="1" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.4"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Owl Logo Image - Base64 Embedded -->
+  <image href="data:image/png;base64,${OWL_BASE64}" x="10" y="10" width="100" height="100"/>
+
+  <!-- LENDWISE Text with L and W slightly larger -->
+  <text
+    x="125"
+    y="65"
+    font-family="Trebuchet MS, Arial, sans-serif"
+    font-size="42"
+    font-weight="800"
+    letter-spacing="2"
+    fill="url(#metallic-gold)"
+    filter="url(#drop-shadow)">
+    <tspan font-size="48">L</tspan><tspan>END</tspan><tspan font-size="48">W</tspan><tspan>ISE</tspan>
+  </text>
+
+  <!-- MORTGAGE Text -->
+  <text
+    x="125"
+    y="90"
+    font-family="Trebuchet MS, Arial, sans-serif"
+    font-size="16"
+    font-weight="700"
+    letter-spacing="6"
+    fill="#DAA520"
+    filter="url(#drop-shadow)">MORTGAGE</text>
+</svg>
+EOF
+
+# Create vertical SVG with embedded owl
+cat > "lendwise-logo-vertical-embedded.svg" <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320" height="280" viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Metallic Gold Gradient Definitions -->
+  <defs>
+    <linearGradient id="metallic-gold-v" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#DAA520;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#B8860B;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#DAA520;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Drop shadow filter -->
+    <filter id="drop-shadow-v" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/>
+      <feOffset dx="0" dy="1" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.4"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Owl Logo Image - Base64 Embedded -->
+  <image href="data:image/png;base64,${OWL_BASE64}" x="60" y="10" width="200" height="200"/>
+
+  <!-- LENDWISE Text (centered) with L and W slightly larger -->
+  <text
+    x="160"
+    y="235"
+    text-anchor="middle"
+    font-family="Trebuchet MS, Arial, sans-serif"
+    font-size="48"
+    font-weight="800"
+    letter-spacing="2"
+    fill="url(#metallic-gold-v)"
+    filter="url(#drop-shadow-v)">
+    <tspan font-size="56">L</tspan><tspan>END</tspan><tspan font-size="56">W</tspan><tspan>ISE</tspan>
+  </text>
+
+  <!-- MORTGAGE Text (centered) -->
+  <text
+    x="160"
+    y="265"
+    text-anchor="middle"
+    font-family="Trebuchet MS, Arial, sans-serif"
+    font-size="18"
+    font-weight="700"
+    letter-spacing="8"
+    fill="#DAA520"
+    filter="url(#drop-shadow-v)">MORTGAGE</text>
+</svg>
+EOF
+
+echo "✅ Created lendwise-logo-horizontal-embedded.svg"
+echo "✅ Created lendwise-logo-vertical-embedded.svg"
+echo ""
+echo "These SVG files have the owl image embedded as base64."
+echo "They will work anywhere without needing the PNG file!"
