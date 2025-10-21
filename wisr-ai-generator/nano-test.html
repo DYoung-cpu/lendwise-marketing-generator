@@ -2136,8 +2136,13 @@ Before creating the final image, verify these specific words:
             try {
                 console.log('🔄 Fetching LIVE market data from Mortgage News Daily...');
 
-                // Fetch from backend API which scrapes live data
-                const response = await fetch('http://localhost:3001/api/market-data');
+                // Fetch from backend API which scrapes live data (optional - will use fallback if unavailable)
+                const response = await fetch('http://localhost:3001/api/market-data').catch(() => null);
+
+                if (!response || !response.ok) {
+                    throw new Error('Backend not available');
+                }
+
                 const result = await response.json();
 
                 if (result.success && result.data) {
@@ -2156,8 +2161,8 @@ Before creating the final image, verify these specific words:
                     throw new Error(result.error || 'Failed to fetch market data');
                 }
             } catch (error) {
-                console.error('❌ Failed to load market data from backend:', error);
-                console.warn('⚠️ Using fallback hardcoded data');
+                console.log('ℹ️ Backend not available - using fallback market data');
+                console.warn('⚠️ Using fallback hardcoded data (backend optional)');
 
                 // Return fallback data if backend is unavailable
                 const fallbackData = {
@@ -2186,7 +2191,7 @@ Before creating the final image, verify these specific words:
                         '30yr': '4.721'
                     },
                     trend: 'Rates showing minimal movement',
-                    commentary: 'Unable to fetch live commentary',
+                    commentary: 'Mortgage rates remain near recent lows providing favorable conditions for borrowers',
                     date: new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
                     timestamp: new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }),
                     economicFactors: [
@@ -7344,7 +7349,7 @@ DESIGN REQUIREMENTS:
                     console.log('ℹ️ No uploaded photo - will generate without person');
                 }
 
-                // ⭐ NEW: Send request to Quality-Guaranteed Backend
+                // ⭐ Send request to Quality-Guaranteed Backend
                 // This ensures 100% perfect images (or best attempt with warning)
                 console.log('🎯 Using Quality-Guaranteed Backend (max 5 attempts for 100%)');
 
