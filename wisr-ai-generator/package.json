@@ -1,0 +1,37 @@
+{
+  "name": "wisr-ai-generator",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "AI-powered marketing material generator for mortgage loan officers. Creates professional, on-brand marketing images with guaranteed text accuracy.",
+  "main": "config.example.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mcp": "node enhanced-playwright-mcp.js",
+    "playwright": "node playwright-test.js",
+    "agent": "node self-healing-agent.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@google/generative-ai": "^0.24.1",
+    "@mendable/firecrawl-js": "^4.4.1",
+    "@modelcontextprotocol/sdk": "^1.20.2",
+    "@playwright/test": "^1.56.1",
+    "@runwayml/sdk": "^3.5.0",
+    "@supabase/supabase-js": "^2.78.0",
+    "cheerio": "^1.1.2",
+    "dictionary-en": "^4.0.0",
+    "dotenv": "^17.2.3",
+    "fluent-ffmpeg": "^2.1.3",
+    "node-fetch": "^3.3.2",
+    "node-tesseract-ocr": "^2.2.1",
+    "nspell": "^2.1.5",
+    "playwright": "^1.56.1",
+    "replicate": "^1.3.1",
+    "sharp": "^0.34.4",
+    "tesseract.js": "^6.0.1"
+  }
+}

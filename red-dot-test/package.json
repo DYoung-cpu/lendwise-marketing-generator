@@ -1,0 +1,11 @@
+{
+  "name": "red-dot-test",
+  "displayName": "Red Dot Test",
+  "version": "1.0.0",
+  "description": "Test plugin - shows a red dot in center of screen",
+  "main": "./lib/main",
+  "license": "MIT",
+  "engines": {
+    "mailspring": "*"
+  }
+}

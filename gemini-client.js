@@ -33,7 +33,7 @@ class GeminiClient {
             const logo = options.logo || null;
             const photo = options.photo || null;
 
-            console.log(`🎨 Generating image with Gemini 2.5 Flash (Banana Nano)...`);
+            console.log('🎨 Generating image with Gemini 2.5 Flash (Banana Nano)...');
             console.log(`📝 Prompt length: ${prompt.length} characters`);
             console.log(`🌡️  Temperature: ${temperature} (lower = more consistent text)`);
             console.log(`📊 topK: ${topK}, topP: ${topP}`);
@@ -151,7 +151,7 @@ class GeminiClient {
             }
 
             if (attempt < maxRetries) {
-                console.log(`⏳ Waiting 2 seconds before retry...`);
+                console.log('⏳ Waiting 2 seconds before retry...');
                 await new Promise(resolve => setTimeout(resolve, 2000));
             }
         }

@@ -1,0 +1,48 @@
+{
+  "person": {
+    "name": "Orly Hakimi",
+    "title": "Mortgage Banker",
+    "photo": "/mnt/c/Users/dyoun/Downloads/download - 2025-10-29T100242.253.png",
+    "photoSize": 79,
+    "nmls": "1017858"
+  },
+  "contact": {
+    "direct": "310-922-2599",
+    "fax": "888-388-8191",
+    "email": "orly@lendwisemtg.com"
+  },
+  "websites": [
+    {
+      "label": "Zillow Reviews",
+      "url": "https://www.zillow.com/lender-profile/ohakimi/"
+    },
+    {
+      "label": "www.orlyhakimi.com",
+      "url": "https://www.orlyhakimi.com"
+    }
+  ],
+  "company": {
+    "name": "LendWise Mortgage",
+    "logo": "/mnt/c/Users/dyoun/Downloads/lendwise-logo-FINAL.png",
+    "logoWidth": 300,
+    "website": "lendwisemtg.com",
+    "address": "21800 Oxnard St. #220 Woodland Hills, CA 91367",
+    "companyEmail": "info@lendwisemtg.com",
+    "nmls": "2702455",
+    "dre": "02282825"
+  },
+  "applyButton": {
+    "text": "APPLY NOW",
+    "url": "https://lendwisemtg.mymortgage-online.com/borrower-app/registration/?workFlowId=223023&action=login&dest=/loan-app/&siteId=1956469515"
+  },
+  "branding": {
+    "royalBlue": "#4169E1",
+    "goldColor": "#DAA520",
+    "fontFamily": "Roboto, Arial, sans-serif",
+    "maxWidth": 473,
+    "baseFontSize": 11
+  },
+  "output": {
+    "filename": "email-signature"
+  }
+}

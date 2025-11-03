@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Server Test</title>
+</head>
+<body style="background: #2d5f3f; color: white; font-family: Arial; padding: 40px;">
+    <h1>✅ Server is Working!</h1>
+    <p>If you can see this, the server is running correctly.</p>
+    <p>Frontend: http://172.31.44.168:8080</p>
+    <p>Backend: http://localhost:3001</p>
+    <button onclick="testBackend()" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+        Test Backend API
+    </button>
+    <div id="result" style="margin-top: 20px;"></div>
+
+    <script>
+        async function testBackend() {
+            const result = document.getElementById('result');
+            result.textContent = 'Testing...';
+            try {
+                const response = await fetch('http://localhost:3001/api/health');
+                const data = await response.json();
+                result.innerHTML = `<strong style="color: #00ff00;">✅ Backend Connected!</strong><br>${JSON.stringify(data, null, 2)}`;
+            } catch (error) {
+                result.innerHTML = `<strong style="color: #ff0000;">❌ Backend Error:</strong><br>${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>

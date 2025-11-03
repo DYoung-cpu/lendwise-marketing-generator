@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail Signature - Moe Hassan (Image Version)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .preview-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2d5a3d;
+            margin-bottom: 20px;
+        }
+        .instructions {
+            background: #e8f4f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2d5a3d;
+        }
+        .signature-wrapper {
+            background: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .copy-button {
+            background: #2d5a3d;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 20px;
+            display: block;
+            width: 100%;
+        }
+        .copy-button:hover {
+            background: #1a3d2b;
+        }
+        .copy-success {
+            background: #4CAF50 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-container">
+        <h1>LendWise Mortgage - Gmail Signature (Using Gemini Image)</h1>
+
+        <div class="instructions">
+            <strong>Gmail Setup Instructions:</strong>
+            <ol>
+                <li>Click the "Copy Signature" button below</li>
+                <li>Open Gmail → Settings (gear icon) → See all settings</li>
+                <li>Scroll to "Signature" section</li>
+                <li>Click "Create new" and name it "LendWise"</li>
+                <li>Click in the signature box and press <strong>Ctrl+V</strong> (or Cmd+V on Mac)</li>
+                <li>Scroll down and click "Save Changes"</li>
+                <li>Send yourself a test email - <strong>the links are underneath the image as text links</strong></li>
+            </ol>
+        </div>
+
+        <button class="copy-button" onclick="copySignature()">📋 Copy Signature for Gmail</button>
+
+        <div class="signature-wrapper">
+            <!-- GMAIL SIGNATURE START -->
+            <div id="gmail-signature">
+                <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif;">
+                    <tr>
+                        <td>
+                            <img src="https://raw.githubusercontent.com/DYoung-cpu/lendwise-marketing-generator/main/email-signature/signature-background.png" alt="LendWise Mortgage - Moe Hassan" width="600" style="display: block; max-width: 100%; height: auto;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top: 10px; font-size: 11px; color: #2d5a3d; font-family: Arial, sans-serif;">
+                            <a href="tel:8187416969" style="color: #2d5a3d; text-decoration: none; margin-right: 15px;">📱 Cell: 818.741.6969</a> |
+                            <a href="mailto:MOE@LendWiseMTG.com" style="color: #2d5a3d; text-decoration: none; margin: 0 15px;">✉️ MOE@LendWiseMTG.com</a> |
+                            <a href="tel:8187237376" style="color: #2d5a3d; text-decoration: none; margin: 0 15px;">☎️ Office: (818) 723-7376</a> |
+                            <a href="https://lendwisemtg.com" target="_blank" style="color: #2d5a3d; text-decoration: none; margin: 0 15px;">🌐 LendWisemtg.com</a> |
+                            <a href="https://www.google.com/maps/search/?api=1&query=21800+Oxnard+Street+220+Woodland+Hills+CA+91367" target="_blank" style="color: #2d5a3d; text-decoration: none; margin-left: 15px;">📍 Get Directions</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- GMAIL SIGNATURE END -->
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: #fff8e1; border-radius: 5px; border-left: 4px solid #c9a961;">
+            <strong>📌 Note:</strong>
+            <p>Gmail doesn't support clickable image maps, so the clickable links appear as text below the signature image. This is the standard approach for Gmail signatures with images.</p>
+            <p><strong>All links work:</strong> Cell phone, Email, Office phone, Website, and Directions</p>
+        </div>
+    </div>
+
+    <script>
+        async function copySignature() {
+            const signature = document.getElementById('gmail-signature');
+            const button = document.querySelector('.copy-button');
+
+            try {
+                // Get the HTML content
+                const htmlContent = signature.innerHTML;
+
+                // Use modern clipboard API
+                await navigator.clipboard.write([
+                    new ClipboardItem({
+                        'text/html': new Blob([htmlContent], { type: 'text/html' })
+                    })
+                ]);
+
+                // Visual feedback
+                button.textContent = '✅ Copied! Now paste in Gmail settings';
+                button.classList.add('copy-success');
+
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    button.textContent = '📋 Copy Signature for Gmail';
+                    button.classList.remove('copy-success');
+                }, 3000);
+            } catch (err) {
+                console.error('Copy failed:', err);
+                button.textContent = '❌ Error - Try selecting and copying manually';
+                setTimeout(() => {
+                    button.textContent = '📋 Copy Signature for Gmail';
+                }, 3000);
+            }
+        }
+    </script>
+</body>
+</html>

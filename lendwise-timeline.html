@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LendWise Timeline Mockup</title>
+  <style>
+    body {
+      background: #0a0d14;
+      color: #f1f1f1;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: gold;
+      margin-bottom: 40px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+      position: relative;
+    }
+
+    .phase {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      position: relative;
+    }
+
+    .phase-title {
+      position: absolute;
+      top: -40px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #77ff77;
+      text-transform: uppercase;
+    }
+
+    .milestone {
+      background: #111;
+      border: 2px solid #0f0;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 20px #0f0;
+      transition: transform 0.3s;
+    }
+
+    .milestone:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px gold;
+      border-color: gold;
+    }
+
+    .milestone.complete { border-color: #0f0; box-shadow: 0 0 15px #0f0; }
+    .milestone.progress { border-color: gold; box-shadow: 0 0 15px gold; }
+    .milestone.future { border-color: #555; box-shadow: 0 0 10px #555; }
+
+    .milestone span {
+      font-size: 0.9rem;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>LendWise Journey to Excellence</h1>
+
+  <div class="timeline">
+    <!-- Phase 1 -->
+    <div class="phase">
+      <div class="phase-title">Foundation</div>
+      <div class="milestone complete">
+        <div>Inception</div>
+        <span>Mar 2025</span>
+      </div>
+      <div class="milestone complete">
+        <div>Licensing</div>
+        <span>May 2025</span>
+      </div>
+      <div class="milestone progress">
+        <div>Headquarters</div>
+        <span>Jun 2025</span>
+      </div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="phase">
+      <div class="phase-title">Platform Build</div>
+      <div class="milestone progress">
+        <div>WISR AI</div>
+        <span>Jun 10 2025</span>
+      </div>
+      <div class="milestone future">
+        <div>LOS</div>
+        <span>Jul 2025</span>
+      </div>
+      <div class="milestone future">
+        <div>Website</div>
+        <span>Sep 2025</span>
+      </div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="phase">
+      <div class="phase-title">Expansion</div>
+      <div class="milestone future">
+        <div>Integrations</div>
+        <span>Sep 28 2025</span>
+      </div>
+      <div class="milestone future">
+        <div>Optimal Blue</div>
+        <span>Oct 2025</span>
+      </div>
+      <div class="milestone future">
+        <div>Analytics</div>
+        <span>Nov 2025</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

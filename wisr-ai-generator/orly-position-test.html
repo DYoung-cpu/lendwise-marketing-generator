@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orly Hakim - Position Mapping Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background: #f0f0f0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1B4D3E;
+            margin-top: 0;
+        }
+        .signature-wrapper {
+            position: relative;
+            width: 700px;
+            margin: 20px auto;
+            border: 2px solid #ddd;
+        }
+        .signature-bg {
+            width: 700px;
+            height: 200px;
+            display: block;
+        }
+        .overlay {
+            position: absolute;
+            border: 2px solid red;
+            background: rgba(255, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .overlay:hover {
+            background: rgba(255, 0, 0, 0.3);
+            border-color: darkred;
+        }
+        .overlay-label {
+            position: absolute;
+            background: red;
+            color: white;
+            padding: 4px 8px;
+            font-size: 11px;
+            font-weight: bold;
+            top: -25px;
+            left: 0;
+            white-space: nowrap;
+            border-radius: 3px;
+        }
+        .red-box {
+            top: 120px;
+            left: 320px;
+            width: 360px;
+            height: 65px;
+        }
+        .contact-zone {
+            position: absolute;
+            top: 125px;
+            left: 325px;
+            width: 350px;
+            height: 55px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .contact-item {
+            flex: 1;
+            text-align: center;
+            padding: 8px;
+            border: 1px dashed blue;
+            background: rgba(0, 0, 255, 0.05);
+            border-radius: 4px;
+            font-size: 11px;
+            color: #333;
+        }
+        .footer-zone {
+            position: absolute;
+            top: 185px;
+            left: 0;
+            width: 700px;
+            height: 15px;
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px dashed green;
+        }
+        .info-panel {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .coordinates {
+            font-family: 'Courier New', monospace;
+            background: #2d2d2d;
+            color: #0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        .instructions {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📍 Orly Hakim - Email Signature Position Mapping</h1>
+
+        <div class="instructions">
+            <strong>🎯 Purpose:</strong> This test page visualizes where clickable contact information will be placed on the signature.<br>
+            <strong>📏 Red Box:</strong> Personal contact area (phone, email, fax, website)<br>
+            <strong>🟢 Green Line:</strong> Footer area (LendWise office info)<br>
+            <strong>🔵 Blue Boxes:</strong> Individual clickable zones
+        </div>
+
+        <div class="signature-wrapper">
+            <img src="orly-hakim-bg.png" alt="Orly Hakim Signature" class="signature-bg">
+
+            <!-- Red Box Overlay (Main Contact Area) -->
+            <div class="overlay red-box">
+                <div class="overlay-label">RED BOX AREA (Personal Contact)</div>
+            </div>
+
+            <!-- Individual Contact Zones -->
+            <div class="contact-zone">
+                <div class="contact-item" id="phone-zone">
+                    📞<br>PHONE<br>
+                    <small>310-922-2599</small>
+                </div>
+                <div class="contact-item" id="email-zone">
+                    ✉️<br>EMAIL<br>
+                    <small>orly@lendwise...</small>
+                </div>
+                <div class="contact-item" id="fax-zone">
+                    📠<br>FAX<br>
+                    <small>(if provided)</small>
+                </div>
+                <div class="contact-item" id="website-zone">
+                    🌐<br>WEBSITE<br>
+                    <small>orlyhakimi.com</small>
+                </div>
+            </div>
+
+            <!-- Footer Zone -->
+            <div class="footer-zone">
+                <div class="overlay-label" style="background: green;">FOOTER (LendWise Office)</div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <h3>📊 Calculated Coordinates</h3>
+            <div class="coordinates">
+<span style="color: #ff6b6b;">// RED BOX AREA (Personal Contact Section)</span>
+X: 320px - 680px (width: 360px)
+Y: 120px - 185px (height: 65px)
+
+<span style="color: #4ecdc4;">// INDIVIDUAL CONTACT ZONES</span>
+Phone:   X: 325-410px,  Y: 125-180px (width: 85px)
+Email:   X: 415-500px,  Y: 125-180px (width: 85px)
+Fax:     X: 505-590px,  Y: 125-180px (width: 85px)
+Website: X: 595-675px,  Y: 125-180px (width: 80px)
+
+<span style="color: #95e1d3;">// FOOTER ZONE (LendWise Office Info)</span>
+X: 0px - 700px (full width)
+Y: 185px - 200px (height: 15px)
+            </div>
+
+            <h3>🎨 Styling Information</h3>
+            <div class="coordinates">
+<span style="color: #ff6b6b;">// COLOR PALETTE (from image analysis)</span>
+Gold Text:       #DAA520 (goldenrod)
+Gold Accent:     #FFD700 (gold)
+Dark Green:      #1B4D3E (forest green)
+Light Green:     #2D5F4F (sea green)
+White Text:      #FFFFFF
+
+<span style="color: #4ecdc4;">// TYPOGRAPHY</span>
+Font Stack:      -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif
+Contact Size:    13px (bold)
+Footer Size:     11px (medium)
+Disclaimer:      9px (regular)
+            </div>
+
+            <h3>📧 Contact Information</h3>
+            <div class="coordinates">
+<span style="color: #ff6b6b;">// ORLY'S PERSONAL INFO</span>
+Phone:    310-922-2599
+Email:    orly@lendwisemtg.com
+Fax:      [TO BE PROVIDED]
+Website:  www.orlyhakimi.com
+NMLS:     1017858
+
+<span style="color: #95e1d3;">// LENDWISE OFFICE INFO</span>
+Website:  LendWiseMTG.com
+Phone:    (818) 723-7376
+Address:  21800 Oxnard St #220, Woodland Hills, CA 91367
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add click handlers to show coordinates
+        document.querySelectorAll('.contact-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const rect = this.getBoundingClientRect();
+                const parentRect = this.closest('.signature-wrapper').getBoundingClientRect();
+                const relativeX = rect.left - parentRect.left;
+                const relativeY = rect.top - parentRect.top;
+
+                alert(`${this.id}:\nX: ${Math.round(relativeX)}px - ${Math.round(relativeX + rect.width)}px\nY: ${Math.round(relativeY)}px - ${Math.round(relativeY + rect.height)}px\nWidth: ${Math.round(rect.width)}px\nHeight: ${Math.round(rect.height)}px`);
+            });
+        });
+    </script>
+</body>
+</html>

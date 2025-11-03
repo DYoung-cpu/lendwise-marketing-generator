@@ -1,0 +1,1225 @@
+{
+  "metadata": {
+    "testDate": "2025-10-31T06:27:37.544Z",
+    "fixedTemperature": 0.15,
+    "totalTests": 16,
+    "succeeded": 8,
+    "failed": 8,
+    "successRate": "50.0%"
+  },
+  "results": [
+    {
+      "testNumber": 1,
+      "timestamp": "2025-10-31T06:17:40.477Z",
+      "template": "daily-rate-update",
+      "templateName": "Daily Rate Update",
+      "config": "baseline-0.15",
+      "configName": "Baseline (temp=0.15, current topP/topK)",
+      "parameters": {
+        "temperature": 0.15,
+        "topP": 0.95,
+        "topK": 40
+      },
+      "success": true,
+      "duration": 9935,
+      "statusCode": 200,
+      "validation": {
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891459013.png",
+        "visualDebugging": {
+          "success": false,
+          "passed": true,
+          "attempt": 1,
+          "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891459013.png",
+          "analysis": {
+            "issues": [],
+            "noIssues": true
+          },
+          "message": "Claude Vision API unavailable, relying on OCR validation only"
+        },
+        "spellingCheck": {
+          "passed": true,
+          "errors": []
+        }
+      },
+      "imagePath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/generated-1761891450570.png",
+      "ocrText": null,
+      "spellingErrors": [],
+      "issues": [],
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "testNumber": 2,
+      "timestamp": "2025-10-31T06:18:35.502Z",
+      "template": "daily-rate-update",
+      "templateName": "Daily Rate Update",
+      "config": "lower-topP",
+      "configName": "Lower TopP (0.90)",
+      "parameters": {
+        "temperature": 0.15,
+        "topP": 0.9,
+        "topK": 40
+      },
+      "success": false,
+      "duration": 44520,
+      "statusCode": 422,
+      "validation": {
+        "passed": false,
+        "score": 0,
+        "issues": [
+          {
+            "word": "RSGSIPIGS",
+            "expected": "(no suggestion)",
+            "suggestions": [],
+            "severity": "high",
+            "type": "misspelling",
+            "source": "nspell"
+          },
+          {
+            "word": "YSUNG",
+            "expected": "SUNG",
+            "suggestions": [
+              "SUNG",
+              "YOUNG"
+            ],
+            "severity": "high",
+            "type": "misspelling",
+            "source": "nspell"
+          },
+          {
+            "word": "PALIO",
+            "expected": "PALEO",
+            "suggestions": [
+              "PALEO",
+              "PATIO",
+              "POLIO"
+            ],
+            "severity": "high",
+            "type": "misspelling",
+            "source": "nspell"
+          },
+          {
+            "word": "ITIES",
+            "expected": "CITIES",
+            "suggestions": [
+              "CITIES",
+              "IVIES",
+              "PITIES"
+            ],
+            "severity": "high",
+            "type": "misspelling",
+            "source": "nspell"
+          },
+          {
+            "word": "DAALEEROES",
+            "expected": "(no suggestion)",
+            "suggestions": [],
+            "severity": "high",
+            "type": "misspelling",
+            "source": "nspell"
+          },
+          {
+            "word": "ODUTS",
+            "expected": "ODETS",
+            "suggestions": [
+              "ODETS",
+              "OUTS"
+            ],
+            "severity": "high",
+            "type": "misspelling",
+            "source": "nspell"
+          },
+          {
+            "word": "NISI",
+            "expected": "NISEI",
+            "suggestions": [
+              "NISEI"
+            ],
+            "severity": "high",
+            "type": "misspelling",
+            "source": "nspell"
+          },
+          {
+            "word": "MERUNLL",
+            "expected": "MERRILL",
+            "suggestions": [
+              "MERRILL"
+            ],
+            "severity": "high",
+            "type": "misspelling",
+            "source": "nspell"
+          }
+        ],
+        "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891481482.png",
+        "visualDebugging": {
+          "success": false,
+          "passed": true,
+          "attempt": 1,
+          "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891481482.png",
+          "analysis": {
+            "issues": [],
+            "noIssues": true
+          },
+          "message": "Claude Vision API unavailable, relying on OCR validation only"
+        },
+        "spellingCheck": {
+          "passed": false,
+          "errors": [
+            {
+              "word": "RSGSIPIGS",
+              "expected": "(no suggestion)",
+              "suggestions": [],
+              "severity": "high",
+              "type": "misspelling",
+              "source": "nspell"
+            },
+            {
+              "word": "YSUNG",
+              "expected": "SUNG",
+              "suggestions": [
+                "SUNG",
+                "YOUNG"
+              ],
+              "severity": "high",
+              "type": "misspelling",
+              "source": "nspell"
+            },
+            {
+              "word": "PALIO",
+              "expected": "PALEO",
+              "suggestions": [
+                "PALEO",
+                "PATIO",
+                "POLIO"
+              ],
+              "severity": "high",
+              "type": "misspelling",
+              "source": "nspell"
+            },
+            {
+              "word": "ITIES",
+              "expected": "CITIES",
+              "suggestions": [
+                "CITIES",
+                "IVIES",
+                "PITIES"
+              ],
+              "severity": "high",
+              "type": "misspelling",
+              "source": "nspell"
+            },
+            {
+              "word": "DAALEEROES",
+              "expected": "(no suggestion)",
+              "suggestions": [],
+              "severity": "high",
+              "type": "misspelling",
+              "source": "nspell"
+            },
+            {
+              "word": "ODUTS",
+              "expected": "ODETS",
+              "suggestions": [
+                "ODETS",
+                "OUTS"
+              ],
+              "severity": "high",
+              "type": "misspelling",
+              "source": "nspell"
+            },
+            {
+              "word": "NISI",
+              "expected": "NISEI",
+              "suggestions": [
+                "NISEI"
+              ],
+              "severity": "high",
+              "type": "misspelling",
+              "source": "nspell"
+            },
+            {
+              "word": "MERUNLL",
+              "expected": "MERRILL",
+              "suggestions": [
+                "MERRILL"
+              ],
+              "severity": "high",
+              "type": "misspelling",
+              "source": "nspell"
+            }
+          ]
+        }
+      },
+      "imagePath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/generated-1761891471035.png",
+      "ocrText": null,
+      "spellingErrors": [],
+      "issues": [
+        {
+          "word": "RSGSIPIGS",
+          "expected": "(no suggestion)",
+          "suggestions": [],
+          "severity": "high",
+          "type": "misspelling",
+          "source": "nspell"
+        },
+        {
+          "word": "YSUNG",
+          "expected": "SUNG",
+          "suggestions": [
+            "SUNG",
+            "YOUNG"
+          ],
+          "severity": "high",
+          "type": "misspelling",
+          "source": "nspell"
+        },
+        {
+          "word": "PALIO",
+          "expected": "PALEO",
+          "suggestions": [
+            "PALEO",
+            "PATIO",
+            "POLIO"
+          ],
+          "severity": "high",
+          "type": "misspelling",
+          "source": "nspell"
+        },
+        {
+          "word": "ITIES",
+          "expected": "CITIES",
+          "suggestions": [
+            "CITIES",
+            "IVIES",
+            "PITIES"
+          ],
+          "severity": "high",
+          "type": "misspelling",
+          "source": "nspell"
+        },
+        {
+          "word": "DAALEEROES",
+          "expected": "(no suggestion)",
+          "suggestions": [],
+          "severity": "high",
+          "type": "misspelling",
+          "source": "nspell"
+        },
+        {
+          "word": "ODUTS",
+          "expected": "ODETS",
+          "suggestions": [
+            "ODETS",
+            "OUTS"
+          ],
+          "severity": "high",
+          "type": "misspelling",
+          "source": "nspell"
+        },
+        {
+          "word": "NISI",
+          "expected": "NISEI",
+          "suggestions": [
+            "NISEI"
+          ],
+          "severity": "high",
+          "type": "misspelling",
+          "source": "nspell"
+        },
+        {
+          "word": "MERUNLL",
+          "expected": "MERRILL",
+          "suggestions": [
+            "MERRILL"
+          ],
+          "severity": "high",
+          "type": "misspelling",
+          "source": "nspell"
+        }
+      ],
+      "attempts": 1,
+      "error": "Image quality validation failed after all retry attempts"
+    },
+    {
+      "testNumber": 3,
+      "timestamp": "2025-10-31T06:18:58.572Z",
+      "template": "daily-rate-update",
+      "templateName": "Daily Rate Update",
+      "config": "higher-topP",
+      "configName": "Higher TopP (0.97)",
+      "parameters": {
+        "temperature": 0.15,
+        "topP": 0.97,
+        "topK": 40
+      },
+      "success": true,
+      "duration": 13064,
+      "statusCode": 200,
+      "validation": {
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891536819.png",
+        "visualDebugging": {
+          "success": false,
+          "passed": true,
+          "attempt": 1,
+          "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891536819.png",
+          "analysis": {
+            "issues": [],
+            "noIssues": true
+          },
+          "message": "Claude Vision API unavailable, relying on OCR validation only"
+        },
+        "spellingCheck": {
+          "passed": true,
+          "errors": []
+        }
+      },
+      "imagePath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/generated-1761891525528.png",
+      "ocrText": null,
+      "spellingErrors": [],
+      "issues": [],
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "testNumber": 4,
+      "timestamp": "2025-10-31T06:19:18.212Z",
+      "template": "daily-rate-update",
+      "templateName": "Daily Rate Update",
+      "config": "lower-topK",
+      "configName": "Lower TopK (20)",
+      "parameters": {
+        "temperature": 0.15,
+        "topP": 0.95,
+        "topK": 20
+      },
+      "success": true,
+      "duration": 9633,
+      "statusCode": 200,
+      "validation": {
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891556805.png",
+        "visualDebugging": {
+          "success": false,
+          "passed": true,
+          "attempt": 1,
+          "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891556805.png",
+          "analysis": {
+            "issues": [],
+            "noIssues": true
+          },
+          "message": "Claude Vision API unavailable, relying on OCR validation only"
+        },
+        "spellingCheck": {
+          "passed": true,
+          "errors": []
+        }
+      },
+      "imagePath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/generated-1761891548612.png",
+      "ocrText": null,
+      "spellingErrors": [],
+      "issues": [],
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "testNumber": 5,
+      "timestamp": "2025-10-31T06:20:15.377Z",
+      "template": "daily-rate-update",
+      "templateName": "Daily Rate Update",
+      "config": "higher-topK",
+      "configName": "Higher TopK (60)",
+      "parameters": {
+        "temperature": 0.15,
+        "topP": 0.95,
+        "topK": 60
+      },
+      "success": false,
+      "duration": 46626,
+      "statusCode": 422,
+      "validation": {
+        "passed": false,
+        "score": 0,
+        "issues": [
+          {
+            "word": "PERSENALIZED",
+            "expected": "PERSONALIZED",
+            "suggestions": [
+              "PERSONALIZED"
+            ],
+            "severity": "high",
+            "type": "misspelling",
+            "source": "nspell"
+          }
+        ],
+        "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891577385.png",
+        "visualDebugging": {
+          "success": false,
+          "passed": true,
+          "attempt": 1,
+          "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891577385.png",
+          "analysis": {
+            "issues": [],
+            "noIssues": true
+          },
+          "message": "Claude Vision API unavailable, relying on OCR validation only"
+        },
+        "spellingCheck": {
+          "passed": false,
+          "errors": [
+            {
+              "word": "PERSENALIZED",
+              "expected": "PERSONALIZED",
+              "suggestions": [
+                "PERSONALIZED"
+              ],
+              "severity": "high",
+              "type": "misspelling",
+              "source": "nspell"
+            }
+          ]
+        }
+      },
+      "imagePath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/generated-1761891568798.png",
+      "ocrText": null,
+      "spellingErrors": [],
+      "issues": [
+        {
+          "word": "PERSENALIZED",
+          "expected": "PERSONALIZED",
+          "suggestions": [
+            "PERSONALIZED"
+          ],
+          "severity": "high",
+          "type": "misspelling",
+          "source": "nspell"
+        }
+      ],
+      "attempts": 1,
+      "error": "Image quality validation failed after all retry attempts"
+    },
+    {
+      "testNumber": 6,
+      "timestamp": "2025-10-31T06:21:08.983Z",
+      "template": "daily-rate-update",
+      "templateName": "Daily Rate Update",
+      "config": "optimal-combo-1",
+      "configName": "Combo 1: Low TopP + Low TopK",
+      "parameters": {
+        "temperature": 0.15,
+        "topP": 0.9,
+        "topK": 20
+      },
+      "success": false,
+      "duration": 43603,
+      "statusCode": 422,
+      "validation": {
+        "passed": false,
+        "score": 0,
+        "issues": [
+          {
+            "word": "NNMILS",
+            "expected": "MILS",
+            "suggestions": [
+              "MILS",
+              "NAILS",
+              "NMLS"
+            ],
+            "severity": "high",
+            "type": "misspelling",
+            "source": "nspell"
+          }
+        ],
+        "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891636265.png",
+        "visualDebugging": {
+          "success": false,
+          "passed": true,
+          "attempt": 1,
+          "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891636265.png",
+          "analysis": {
+            "issues": [],
+            "noIssues": true
+          },
+          "message": "Claude Vision API unavailable, relying on OCR validation only"
+        },
+        "spellingCheck": {
+          "passed": false,
+          "errors": [
+            {
+              "word": "NNMILS",
+              "expected": "MILS",
+              "suggestions": [
+                "MILS",
+                "NAILS",
+                "NMLS"
+              ],
+              "severity": "high",
+              "type": "misspelling",
+              "source": "nspell"
+            }
+          ]
+        }
+      },
+      "imagePath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/generated-1761891625397.png",
+      "ocrText": null,
+      "spellingErrors": [],
+      "issues": [
+        {
+          "word": "NNMILS",
+          "expected": "MILS",
+          "suggestions": [
+            "MILS",
+            "NAILS",
+            "NMLS"
+          ],
+          "severity": "high",
+          "type": "misspelling",
+          "source": "nspell"
+        }
+      ],
+      "attempts": 1,
+      "error": "Image quality validation failed after all retry attempts"
+    },
+    {
+      "testNumber": 7,
+      "timestamp": "2025-10-31T06:21:30.301Z",
+      "template": "daily-rate-update",
+      "templateName": "Daily Rate Update",
+      "config": "optimal-combo-2",
+      "configName": "Combo 2: High TopP + High TopK",
+      "parameters": {
+        "temperature": 0.15,
+        "topP": 0.97,
+        "topK": 60
+      },
+      "success": true,
+      "duration": 11314,
+      "statusCode": 200,
+      "validation": {
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891688851.png",
+        "visualDebugging": {
+          "success": false,
+          "passed": true,
+          "attempt": 1,
+          "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891688851.png",
+          "analysis": {
+            "issues": [],
+            "noIssues": true
+          },
+          "message": "Claude Vision API unavailable, relying on OCR validation only"
+        },
+        "spellingCheck": {
+          "passed": true,
+          "errors": []
+        }
+      },
+      "imagePath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/generated-1761891679018.png",
+      "ocrText": null,
+      "spellingErrors": [],
+      "issues": [],
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "testNumber": 8,
+      "timestamp": "2025-10-31T06:22:24.954Z",
+      "template": "daily-rate-update",
+      "templateName": "Daily Rate Update",
+      "config": "optimal-combo-3",
+      "configName": "Combo 3: Low TopP + High TopK",
+      "parameters": {
+        "temperature": 0.15,
+        "topP": 0.9,
+        "topK": 60
+      },
+      "success": false,
+      "duration": 44167,
+      "statusCode": 422,
+      "validation": {
+        "passed": false,
+        "score": 0,
+        "issues": [
+          {
+            "word": "CONSULIT",
+            "expected": "CONSULT",
+            "suggestions": [
+              "CONSULT"
+            ],
+            "severity": "high",
+            "type": "misspelling",
+            "source": "nspell"
+          }
+        ],
+        "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891712520.png",
+        "visualDebugging": {
+          "success": false,
+          "passed": true,
+          "attempt": 1,
+          "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891712520.png",
+          "analysis": {
+            "issues": [],
+            "noIssues": true
+          },
+          "message": "Claude Vision API unavailable, relying on OCR validation only"
+        },
+        "spellingCheck": {
+          "passed": false,
+          "errors": [
+            {
+              "word": "CONSULIT",
+              "expected": "CONSULT",
+              "suggestions": [
+                "CONSULT"
+              ],
+              "severity": "high",
+              "type": "misspelling",
+              "source": "nspell"
+            }
+          ]
+        }
+      },
+      "imagePath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/generated-1761891700801.png",
+      "ocrText": null,
+      "spellingErrors": [],
+      "issues": [
+        {
+          "word": "CONSULIT",
+          "expected": "CONSULT",
+          "suggestions": [
+            "CONSULT"
+          ],
+          "severity": "high",
+          "type": "misspelling",
+          "source": "nspell"
+        }
+      ],
+      "attempts": 1,
+      "error": "Image quality validation failed after all retry attempts"
+    },
+    {
+      "testNumber": 9,
+      "timestamp": "2025-10-31T06:22:46.888Z",
+      "template": "rate-trends",
+      "templateName": "Rate Trends",
+      "config": "baseline-0.15",
+      "configName": "Baseline (temp=0.15, current topP/topK)",
+      "parameters": {
+        "temperature": 0.15,
+        "topP": 0.95,
+        "topK": 40
+      },
+      "success": true,
+      "duration": 11926,
+      "statusCode": 200,
+      "validation": {
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891765162.png",
+        "visualDebugging": {
+          "success": false,
+          "passed": true,
+          "attempt": 1,
+          "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891765162.png",
+          "analysis": {
+            "issues": [],
+            "noIssues": true
+          },
+          "message": "Claude Vision API unavailable, relying on OCR validation only"
+        },
+        "spellingCheck": {
+          "passed": true,
+          "errors": []
+        }
+      },
+      "imagePath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/generated-1761891755027.png",
+      "ocrText": null,
+      "spellingErrors": [],
+      "issues": [],
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "testNumber": 10,
+      "timestamp": "2025-10-31T06:23:07.210Z",
+      "template": "rate-trends",
+      "templateName": "Rate Trends",
+      "config": "lower-topP",
+      "configName": "Lower TopP (0.90)",
+      "parameters": {
+        "temperature": 0.15,
+        "topP": 0.9,
+        "topK": 40
+      },
+      "success": true,
+      "duration": 10319,
+      "statusCode": 200,
+      "validation": {
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891785697.png",
+        "visualDebugging": {
+          "success": false,
+          "passed": true,
+          "attempt": 1,
+          "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891785697.png",
+          "analysis": {
+            "issues": [],
+            "noIssues": true
+          },
+          "message": "Claude Vision API unavailable, relying on OCR validation only"
+        },
+        "spellingCheck": {
+          "passed": true,
+          "errors": []
+        }
+      },
+      "imagePath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/generated-1761891776904.png",
+      "ocrText": null,
+      "spellingErrors": [],
+      "issues": [],
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "testNumber": 11,
+      "timestamp": "2025-10-31T06:24:02.027Z",
+      "template": "rate-trends",
+      "templateName": "Rate Trends",
+      "config": "higher-topP",
+      "configName": "Higher TopP (0.97)",
+      "parameters": {
+        "temperature": 0.15,
+        "topP": 0.97,
+        "topK": 40
+      },
+      "success": false,
+      "duration": 44316,
+      "statusCode": 422,
+      "validation": {
+        "passed": false,
+        "score": 0,
+        "issues": [
+          {
+            "word": "OPPORTUNITIE",
+            "expected": "OPPORTUNITIES",
+            "suggestions": [
+              "OPPORTUNITIES"
+            ],
+            "severity": "high",
+            "type": "misspelling",
+            "source": "nspell"
+          }
+        ],
+        "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891807262.png",
+        "visualDebugging": {
+          "success": false,
+          "passed": true,
+          "attempt": 1,
+          "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891807262.png",
+          "analysis": {
+            "issues": [],
+            "noIssues": true
+          },
+          "message": "Claude Vision API unavailable, relying on OCR validation only"
+        },
+        "spellingCheck": {
+          "passed": false,
+          "errors": [
+            {
+              "word": "OPPORTUNITIE",
+              "expected": "OPPORTUNITIES",
+              "suggestions": [
+                "OPPORTUNITIES"
+              ],
+              "severity": "high",
+              "type": "misspelling",
+              "source": "nspell"
+            }
+          ]
+        }
+      },
+      "imagePath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/generated-1761891797791.png",
+      "ocrText": null,
+      "spellingErrors": [],
+      "issues": [
+        {
+          "word": "OPPORTUNITIE",
+          "expected": "OPPORTUNITIES",
+          "suggestions": [
+            "OPPORTUNITIES"
+          ],
+          "severity": "high",
+          "type": "misspelling",
+          "source": "nspell"
+        }
+      ],
+      "attempts": 1,
+      "error": "Image quality validation failed after all retry attempts"
+    },
+    {
+      "testNumber": 12,
+      "timestamp": "2025-10-31T06:24:59.457Z",
+      "template": "rate-trends",
+      "templateName": "Rate Trends",
+      "config": "lower-topK",
+      "configName": "Lower TopK (20)",
+      "parameters": {
+        "temperature": 0.15,
+        "topP": 0.95,
+        "topK": 20
+      },
+      "success": false,
+      "duration": 47426,
+      "statusCode": 422,
+      "validation": {
+        "passed": false,
+        "score": 0,
+        "issues": [
+          {
+            "word": "EMERGNEG",
+            "expected": "EMERGENT",
+            "suggestions": [
+              "EMERGENT"
+            ],
+            "severity": "high",
+            "type": "misspelling",
+            "source": "nspell"
+          }
+        ],
+        "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891862181.png",
+        "visualDebugging": {
+          "success": false,
+          "passed": true,
+          "attempt": 1,
+          "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891862181.png",
+          "analysis": {
+            "issues": [],
+            "noIssues": true
+          },
+          "message": "Claude Vision API unavailable, relying on OCR validation only"
+        },
+        "spellingCheck": {
+          "passed": false,
+          "errors": [
+            {
+              "word": "EMERGNEG",
+              "expected": "EMERGENT",
+              "suggestions": [
+                "EMERGENT"
+              ],
+              "severity": "high",
+              "type": "misspelling",
+              "source": "nspell"
+            }
+          ]
+        }
+      },
+      "imagePath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/generated-1761891852062.png",
+      "ocrText": null,
+      "spellingErrors": [],
+      "issues": [
+        {
+          "word": "EMERGNEG",
+          "expected": "EMERGENT",
+          "suggestions": [
+            "EMERGENT"
+          ],
+          "severity": "high",
+          "type": "misspelling",
+          "source": "nspell"
+        }
+      ],
+      "attempts": 1,
+      "error": "Image quality validation failed after all retry attempts"
+    },
+    {
+      "testNumber": 13,
+      "timestamp": "2025-10-31T06:25:19.830Z",
+      "template": "rate-trends",
+      "templateName": "Rate Trends",
+      "config": "higher-topK",
+      "configName": "Higher TopK (60)",
+      "parameters": {
+        "temperature": 0.15,
+        "topP": 0.95,
+        "topK": 60
+      },
+      "success": true,
+      "duration": 10369,
+      "statusCode": 200,
+      "validation": {
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891918247.png",
+        "visualDebugging": {
+          "success": false,
+          "passed": true,
+          "attempt": 1,
+          "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891918247.png",
+          "analysis": {
+            "issues": [],
+            "noIssues": true
+          },
+          "message": "Claude Vision API unavailable, relying on OCR validation only"
+        },
+        "spellingCheck": {
+          "passed": true,
+          "errors": []
+        }
+      },
+      "imagePath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/generated-1761891909481.png",
+      "ocrText": null,
+      "spellingErrors": [],
+      "issues": [],
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "testNumber": 14,
+      "timestamp": "2025-10-31T06:26:17.920Z",
+      "template": "rate-trends",
+      "templateName": "Rate Trends",
+      "config": "optimal-combo-1",
+      "configName": "Combo 1: Low TopP + Low TopK",
+      "parameters": {
+        "temperature": 0.15,
+        "topP": 0.9,
+        "topK": 20
+      },
+      "success": false,
+      "duration": 47603,
+      "statusCode": 422,
+      "validation": {
+        "passed": false,
+        "score": 0,
+        "issues": [
+          {
+            "word": "DAHLE",
+            "expected": "DALE",
+            "suggestions": [
+              "DALE"
+            ],
+            "severity": "high",
+            "type": "misspelling",
+            "source": "nspell"
+          },
+          {
+            "word": "SRST",
+            "expected": "ERST",
+            "suggestions": [
+              "ERST",
+              "SST"
+            ],
+            "severity": "high",
+            "type": "misspelling",
+            "source": "nspell"
+          }
+        ],
+        "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891940562.png",
+        "visualDebugging": {
+          "success": false,
+          "passed": true,
+          "attempt": 1,
+          "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891940562.png",
+          "analysis": {
+            "issues": [],
+            "noIssues": true
+          },
+          "message": "Claude Vision API unavailable, relying on OCR validation only"
+        },
+        "spellingCheck": {
+          "passed": false,
+          "errors": [
+            {
+              "word": "DAHLE",
+              "expected": "DALE",
+              "suggestions": [
+                "DALE"
+              ],
+              "severity": "high",
+              "type": "misspelling",
+              "source": "nspell"
+            },
+            {
+              "word": "SRST",
+              "expected": "ERST",
+              "suggestions": [
+                "ERST",
+                "SST"
+              ],
+              "severity": "high",
+              "type": "misspelling",
+              "source": "nspell"
+            }
+          ]
+        }
+      },
+      "imagePath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/generated-1761891930332.png",
+      "ocrText": null,
+      "spellingErrors": [],
+      "issues": [
+        {
+          "word": "DAHLE",
+          "expected": "DALE",
+          "suggestions": [
+            "DALE"
+          ],
+          "severity": "high",
+          "type": "misspelling",
+          "source": "nspell"
+        },
+        {
+          "word": "SRST",
+          "expected": "ERST",
+          "suggestions": [
+            "ERST",
+            "SST"
+          ],
+          "severity": "high",
+          "type": "misspelling",
+          "source": "nspell"
+        }
+      ],
+      "attempts": 1,
+      "error": "Image quality validation failed after all retry attempts"
+    },
+    {
+      "testNumber": 15,
+      "timestamp": "2025-10-31T06:27:14.497Z",
+      "template": "rate-trends",
+      "templateName": "Rate Trends",
+      "config": "optimal-combo-2",
+      "configName": "Combo 2: High TopP + High TopK",
+      "parameters": {
+        "temperature": 0.15,
+        "topP": 0.97,
+        "topK": 60
+      },
+      "success": false,
+      "duration": 46574,
+      "statusCode": 422,
+      "validation": {
+        "passed": false,
+        "score": 0,
+        "issues": [
+          {
+            "word": "WAVSIS",
+            "expected": "AVIS",
+            "suggestions": [
+              "AVIS",
+              "OASIS",
+              "WADIS"
+            ],
+            "severity": "high",
+            "type": "misspelling",
+            "source": "nspell"
+          }
+        ],
+        "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891997911.png",
+        "visualDebugging": {
+          "success": false,
+          "passed": true,
+          "attempt": 1,
+          "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761891997911.png",
+          "analysis": {
+            "issues": [],
+            "noIssues": true
+          },
+          "message": "Claude Vision API unavailable, relying on OCR validation only"
+        },
+        "spellingCheck": {
+          "passed": false,
+          "errors": [
+            {
+              "word": "WAVSIS",
+              "expected": "AVIS",
+              "suggestions": [
+                "AVIS",
+                "OASIS",
+                "WADIS"
+              ],
+              "severity": "high",
+              "type": "misspelling",
+              "source": "nspell"
+            }
+          ]
+        }
+      },
+      "imagePath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/generated-1761891987941.png",
+      "ocrText": null,
+      "spellingErrors": [],
+      "issues": [
+        {
+          "word": "WAVSIS",
+          "expected": "AVIS",
+          "suggestions": [
+            "AVIS",
+            "OASIS",
+            "WADIS"
+          ],
+          "severity": "high",
+          "type": "misspelling",
+          "source": "nspell"
+        }
+      ],
+      "attempts": 1,
+      "error": "Image quality validation failed after all retry attempts"
+    },
+    {
+      "testNumber": 16,
+      "timestamp": "2025-10-31T06:27:37.543Z",
+      "template": "rate-trends",
+      "templateName": "Rate Trends",
+      "config": "optimal-combo-3",
+      "configName": "Combo 3: Low TopP + High TopK",
+      "parameters": {
+        "temperature": 0.15,
+        "topP": 0.9,
+        "topK": 60
+      },
+      "success": true,
+      "duration": 13041,
+      "statusCode": 200,
+      "validation": {
+        "passed": true,
+        "score": 100,
+        "issues": [],
+        "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761892055383.png",
+        "visualDebugging": {
+          "success": false,
+          "passed": true,
+          "attempt": 1,
+          "screenshotPath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/signature_1761892055383.png",
+          "analysis": {
+            "issues": [],
+            "noIssues": true
+          },
+          "message": "Claude Vision API unavailable, relying on OCR validation only"
+        },
+        "spellingCheck": {
+          "passed": true,
+          "errors": []
+        }
+      },
+      "imagePath": "/mnt/c/Users/dyoun/Active Projects/wisr-ai-generator/artifacts/generated-1761892044520.png",
+      "ocrText": null,
+      "spellingErrors": [],
+      "issues": [],
+      "attempts": 1,
+      "error": null
+    }
+  ]
+}

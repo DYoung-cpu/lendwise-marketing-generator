@@ -1,0 +1,24 @@
+{
+  "name": "simple-email-signature-template",
+  "version": "1.0.0",
+  "description": "A reusable, Gmail-safe email signature generator",
+  "main": "build-signature.cjs",
+  "scripts": {
+    "build": "node build-signature.cjs",
+    "serve": "node server.cjs",
+    "screenshot": "node screenshot.cjs",
+    "preview": "npm run build && npm run serve",
+    "all": "npm run build && node screenshot.cjs"
+  },
+  "keywords": [
+    "email",
+    "signature",
+    "gmail",
+    "template"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}

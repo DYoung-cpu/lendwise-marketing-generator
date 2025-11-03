@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Generator - Fresh System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            border-radius: 12px;
+            padding: 20px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .panel {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .input-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .prompt-textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+
+        .prompt-textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .template-buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .template-btn {
+            padding: 8px 16px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.3s;
+        }
+
+        .template-btn:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .options-section {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .option-group {
+            margin-bottom: 20px;
+        }
+
+        .option-label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .radio-option input {
+            margin-right: 8px;
+        }
+
+        .generate-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .generate-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .generate-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .result-section {
+            min-height: 500px;
+        }
+
+        .placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 400px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            color: #999;
+            font-size: 16px;
+        }
+
+        .result-container {
+            display: none;
+        }
+
+        .result-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .result-video {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .result-info {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .info-label {
+            color: #666;
+            font-weight: 500;
+        }
+
+        .info-value {
+            color: #333;
+        }
+
+        .quality-score {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #4caf50;
+            color: white;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        .quality-score.medium {
+            background: #ff9800;
+        }
+
+        .quality-score.low {
+            background: #f44336;
+        }
+
+        .validation-details {
+            margin-top: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+        }
+
+        .validation-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .loading-status {
+            color: #999;
+            font-size: 13px;
+            font-style: italic;
+        }
+
+        .error-message {
+            display: none;
+            padding: 15px;
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+            border-radius: 6px;
+            color: #c62828;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .performance-stats {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .stat-card {
+            padding: 12px;
+            background: #f9f9f9;
+            border-radius: 6px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .stat-value {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 Marketing Generator</h1>
+            <div class="subtitle">Intelligent content generation with automatic model selection</div>
+        </header>
+
+        <div class="main-grid">
+            <!-- Input Panel -->
+            <div class="panel">
+                <div class="input-section">
+                    <h2>Create Your Content</h2>
+                    
+                    <textarea 
+                        id="promptInput" 
+                        class="prompt-textarea" 
+                        placeholder="Describe what you want to create...
+
+Examples:
+• Daily rate update with NMLS #123456 and today's rates
+• Professional property tour video of modern suburban home
+• Marketing flyer for FHA loans with contact information
+• Social media post about refinancing opportunities"
+                    ></textarea>
+
+                    <div class="template-buttons">
+                        <button class="template-btn" onclick="useTemplate('rate-update')">
+                            📊 Rate Update
+                        </button>
+                        <button class="template-btn" onclick="useTemplate('property')">
+                            🏠 Property Marketing
+                        </button>
+                        <button class="template-btn" onclick="useTemplate('social')">
+                            📱 Social Media
+                        </button>
+                        <button class="template-btn" onclick="useTemplate('video-tour')">
+                            🎬 Video Tour
+                        </button>
+                        <button class="template-btn" onclick="useTemplate('nmls')">
+                            📋 NMLS Compliance
+                        </button>
+                    </div>
+
+                    <div class="options-section">
+                        <div class="option-group">
+                            <label class="option-label">Content Type (auto-detected)</label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="contentType" value="auto" checked>
+                                    <span>Auto Detect</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="contentType" value="image">
+                                    <span>Static Image</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="contentType" value="video">
+                                    <span>Video</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="generateBtn" class="generate-btn" onclick="generateContent()">
+                        Generate Content
+                    </button>
+                </div>
+
+                <div class="error-message" id="errorMessage"></div>
+
+                <div class="performance-stats">
+                    <h3 style="font-size: 16px; color: #333; margin-bottom: 10px;">System Performance</h3>
+                    <div class="stats-grid" id="statsGrid">
+                        <div class="stat-card">
+                            <div class="stat-label">Total Generations</div>
+                            <div class="stat-value" id="totalGenerations">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Success Rate</div>
+                            <div class="stat-value" id="successRate">-</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Avg Quality</div>
+                            <div class="stat-value" id="avgQuality">-</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Best Model</div>
+                            <div class="stat-value" id="bestModel" style="font-size: 12px;">-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result Panel -->
+            <div class="panel result-section">
+                <h2>Result</h2>
+                
+                <div class="placeholder" id="placeholder">
+                    Your generated content will appear here
+                </div>
+
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <div class="loading-text">Generating your content...</div>
+                    <div class="loading-status" id="loadingStatus">Analyzing prompt...</div>
+                </div>
+
+                <div class="result-container" id="resultContainer">
+                    <img id="resultImage" class="result-image" style="display: none;">
+                    <video id="resultVideo" class="result-video" controls style="display: none;"></video>
+                    
+                    <div class="result-info">
+                        <div class="info-row">
+                            <span class="info-label">Model Used:</span>
+                            <span class="info-value" id="modelUsed">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Generation Time:</span>
+                            <span class="info-value" id="generationTime">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Quality Score:</span>
+                            <span id="qualityScoreContainer">-</span>
+                        </div>
+                        
+                        <div class="validation-details" id="validationDetails" style="display: none;">
+                            <h4 style="font-size: 14px; margin-bottom: 10px;">Validation Details</h4>
+                            <div class="validation-item">
+                                <span>Text Clarity (OCR):</span>
+                                <span id="ocrScore">-</span>
+                            </div>
+                            <div class="validation-item">
+                                <span>Spelling Accuracy:</span>
+                                <span id="spellingScore">-</span>
+                            </div>
+                            <div class="validation-item">
+                                <span>Compliance Check:</span>
+                                <span id="complianceScore">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:3001';
+        let stats = {
+            total: 0,
+            successes: 0,
+            totalQuality: 0,
+            modelCounts: {}
+        };
+
+        // Template prompts
+        const templates = {
+            'rate-update': `Daily Mortgage Rate Update
+30-Year Fixed: 6.38%
+15-Year Fixed: 5.88%
+FHA: 6.25%
+NMLS #123456
+Contact: 555-0100
+Professional marketing design with clear text`,
+
+            'property': `Beautiful modern suburban home exterior
+Professional real estate photography
+Bright sunny day, manicured lawn
+For sale sign visible`,
+
+            'social': `Eye-catching social media post
+"Now is the time to refinance!"
+Current rates available
+NMLS #999999
+Call today for free consultation`,
+
+            'video-tour': `Create a video tour of a luxury property
+Smooth walkthrough of modern home interior
+5 second duration
+Professional real estate marketing video`,
+
+            'nmls': `Professional mortgage advertisement
+"Your Dream Home Awaits"
+Licensed Mortgage Broker
+NMLS #123456
+Equal Housing Lender
+Contact: John Smith - 555-0100`
+        };
+
+        function useTemplate(templateId) {
+            const prompt = templates[templateId];
+            if (prompt) {
+                document.getElementById('promptInput').value = prompt;
+            }
+        }
+
+        async function generateContent() {
+            const promptInput = document.getElementById('promptInput');
+            const prompt = promptInput.value.trim();
+            
+            if (!prompt) {
+                showError('Please enter a prompt');
+                return;
+            }
+
+            // Get selected content type
+            const contentType = document.querySelector('input[name="contentType"]:checked').value;
+            
+            // Prepare UI
+            hideError();
+            showLoading();
+            hideResult();
+            
+            // Update loading status
+            updateLoadingStatus('Analyzing your prompt...');
+            
+            try {
+                // Call API
+                const response = await fetch(`${API_URL}/api/generate`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        prompt: prompt,
+                        options: {
+                            contentType: contentType === 'auto' ? undefined : contentType
+                        }
+                    })
+                });
+
+                const data = await response.json();
+                
+                if (!data.success) {
+                    throw new Error(data.error || 'Generation failed');
+                }
+
+                // Update stats
+                updateStats(data);
+                
+                // Show result
+                showResult(data);
+                
+            } catch (error) {
+                console.error('Generation error:', error);
+                showError(error.message);
+            } finally {
+                hideLoading();
+            }
+        }
+
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('placeholder').style.display = 'none';
+            document.getElementById('generateBtn').disabled = true;
+        }
+
+        function hideLoading() {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('generateBtn').disabled = false;
+        }
+
+        function updateLoadingStatus(status) {
+            document.getElementById('loadingStatus').textContent = status;
+        }
+
+        function showResult(data) {
+            const container = document.getElementById('resultContainer');
+            const placeholder = document.getElementById('placeholder');
+            const image = document.getElementById('resultImage');
+            const video = document.getElementById('resultVideo');
+            
+            // Hide placeholder
+            placeholder.style.display = 'none';
+            container.style.display = 'block';
+            
+            // Show media
+            if (data.type === 'video') {
+                image.style.display = 'none';
+                video.style.display = 'block';
+                video.src = data.url;
+            } else {
+                video.style.display = 'none';
+                image.style.display = 'block';
+                if (data.mediaBase64) {
+                    image.src = `data:image/png;base64,${data.mediaBase64}`;
+                } else {
+                    image.src = data.url;
+                }
+            }
+            
+            // Update info
+            document.getElementById('modelUsed').textContent = data.model || 'Unknown';
+            document.getElementById('generationTime').textContent = data.duration ? `${data.duration}s` : '-';
+            
+            // Quality score
+            if (data.qualityScore) {
+                const score = (data.qualityScore * 100).toFixed(1);
+                let scoreClass = 'quality-score';
+                if (data.qualityScore < 0.7) scoreClass += ' low';
+                else if (data.qualityScore < 0.85) scoreClass += ' medium';
+                
+                document.getElementById('qualityScoreContainer').innerHTML = 
+                    `<span class="${scoreClass}">${score}%</span>`;
+                
+                // Show validation details
+                if (data.validation) {
+                    document.getElementById('validationDetails').style.display = 'block';
+                    document.getElementById('ocrScore').textContent = 
+                        `${(data.validation.ocr * 100).toFixed(0)}%`;
+                    document.getElementById('spellingScore').textContent = 
+                        `${(data.validation.spelling * 100).toFixed(0)}%`;
+                    document.getElementById('complianceScore').textContent = 
+                        `${(data.validation.compliance * 100).toFixed(0)}%`;
+                } else {
+                    document.getElementById('validationDetails').style.display = 'none';
+                }
+            } else {
+                document.getElementById('qualityScoreContainer').textContent = 'N/A';
+                document.getElementById('validationDetails').style.display = 'none';
+            }
+        }
+
+        function hideResult() {
+            document.getElementById('resultContainer').style.display = 'none';
+            document.getElementById('placeholder').style.display = 'flex';
+        }
+
+        function showError(message) {
+            const errorEl = document.getElementById('errorMessage');
+            errorEl.textContent = `Error: ${message}`;
+            errorEl.style.display = 'block';
+        }
+
+        function hideError() {
+            document.getElementById('errorMessage').style.display = 'none';
+        }
+
+        function updateStats(data) {
+            stats.total++;
+            if (data.success) {
+                stats.successes++;
+                if (data.qualityScore) {
+                    stats.totalQuality += data.qualityScore;
+                }
+                
+                // Track model usage
+                const model = data.model || 'unknown';
+                stats.modelCounts[model] = (stats.modelCounts[model] || 0) + 1;
+            }
+            
+            // Update display
+            document.getElementById('totalGenerations').textContent = stats.total;
+            document.getElementById('successRate').textContent = 
+                stats.total > 0 ? `${((stats.successes / stats.total) * 100).toFixed(0)}%` : '-';
+            
+            const avgQuality = stats.successes > 0 ? stats.totalQuality / stats.successes : 0;
+            document.getElementById('avgQuality').textContent = 
+                avgQuality > 0 ? `${(avgQuality * 100).toFixed(0)}%` : '-';
+            
+            // Find best model
+            let bestModel = '-';
+            let maxCount = 0;
+            for (const [model, count] of Object.entries(stats.modelCounts)) {
+                if (count > maxCount) {
+                    maxCount = count;
+                    bestModel = model.split('/').pop();
+                }
+            }
+            document.getElementById('bestModel').textContent = bestModel;
+        }
+
+        // Load performance stats on startup
+        async function loadPerformanceStats() {
+            try {
+                const response = await fetch(`${API_URL}/api/model-performance`);
+                const data = await response.json();
+                
+                if (data.success && data.performance.length > 0) {
+                    // Find best performing model
+                    const best = data.performance[0];
+                    if (best) {
+                        document.getElementById('bestModel').textContent = 
+                            best.model.split('/').pop();
+                    }
+                }
+            } catch (error) {
+                console.error('Failed to load performance stats:', error);
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadPerformanceStats();
+            
+            // Enable Enter key to generate
+            document.getElementById('promptInput').addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && e.ctrlKey) {
+                    generateContent();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

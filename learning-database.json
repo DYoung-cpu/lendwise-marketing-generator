@@ -1,0 +1,518 @@
+{
+  "patterns": {
+    "______other_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T13:20:28.267Z",
+      "occurrences": 21,
+      "successful_fixes": []
+    },
+    "spelling______typo_other_missing_long_text_other_missing": {
+      "identified": "2025-10-16T13:20:52.891Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "text______other_other_missing_long_text_other_missing": {
+      "identified": "2025-10-16T13:21:48.840Z",
+      "occurrences": 2,
+      "successful_fixes": []
+    },
+    "_____other_missing_long_text_other_missing": {
+      "identified": "2025-10-16T13:22:43.655Z",
+      "occurrences": 15,
+      "successful_fixes": []
+    },
+    "typo_formatting_______typo_other_other_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T13:24:35.164Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "numbering_logo______other_missing_other_missing_long_text_other_missing": {
+      "identified": "2025-10-16T13:25:00.136Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "cutoff_______other_other_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T13:25:32.070Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "________other_missing_missing_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T13:26:27.692Z",
+      "occurrences": 15,
+      "successful_fixes": []
+    },
+    "data_completeness_data_structure_date_validation_________missing_other_other_other_missing_missing_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T13:27:49.705Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "_______other_missing_missing_missing_long_text_other_missing": {
+      "identified": "2025-10-16T13:28:15.543Z",
+      "occurrences": 3,
+      "successful_fixes": []
+    },
+    "data_mismatch_visual_data_structure________other_missing_missing_other_missing_missing_missing_long_text_other_missing": {
+      "identified": "2025-10-16T13:29:04.375Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "content_missing_data_format_date_________other_other_other_other_missing_missing_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T13:29:31.850Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "data_mismatch_visual_data_format_________other_other_other_other_missing_missing_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T13:30:26.065Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "typo_data_________other_missing_other_missing_missing_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T13:31:44.263Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "data_missing_formatting_________missing_other_other_missing_missing_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T13:32:12.863Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "analysis_error_________other_other_missing_missing_missing_other_long_text_missing_other": {
+      "identified": "2025-10-16T13:33:02.999Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "________other_missing_missing_missing_other_long_text_missing_other": {
+      "identified": "2025-10-16T13:33:31.677Z",
+      "occurrences": 18,
+      "successful_fixes": []
+    },
+    "parse_error_________other_other_missing_missing_missing_other_long_text_missing_other": {
+      "identified": "2025-10-16T13:35:15.609Z",
+      "occurrences": 2,
+      "successful_fixes": []
+    },
+    "_______other_missing_missing_missing_other_long_text_missing": {
+      "identified": "2025-10-16T13:35:42.836Z",
+      "occurrences": 6,
+      "successful_fixes": []
+    },
+    "spelling_data_______other_missing_other_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T13:48:29.521Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "parse_error_______other_other_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T13:49:56.234Z",
+      "occurrences": 2,
+      "successful_fixes": []
+    },
+    "quotation_marks_content_format_______quote_other_other_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T13:50:45.603Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "typo_typo_______other_typo_other_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T13:51:16.858Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "visual_data______other_other_other_missing_long_text_other_missing": {
+      "identified": "2025-10-16T13:51:45.588Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "spelling_______typo_other_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T13:52:12.903Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "data_incomplete_data_incomplete_formatting_________missing_missing_other_other_missing_missing_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T13:54:58.478Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "data_mismatch_data_mismatch_format_________missing_other_other_other_missing_missing_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T13:56:17.409Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "data_mismatch_missing_element_data_mismatch________other_other_other_other_missing_missing_missing_long_text_other_missing": {
+      "identified": "2025-10-16T13:57:37.172Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "typo_data________other_other_other_missing_missing_missing_long_text_other_missing": {
+      "identified": "2025-10-16T13:59:06.685Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "_______other_other_missing_missing_long_text_missing_other": {
+      "identified": "2025-10-16T14:10:31.574Z",
+      "occurrences": 5,
+      "successful_fixes": []
+    },
+    "quotation_marks_template_deviation________quote_missing_other_other_missing_missing_long_text_missing_other": {
+      "identified": "2025-10-16T14:11:10.882Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "spelling_data_______other_other_other_other_missing_missing_long_text_missing": {
+      "identified": "2025-10-16T14:12:09.008Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "______other_other_missing_missing_long_text_missing": {
+      "identified": "2025-10-16T14:12:35.906Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "spelling_spelling_______typo_typo_other_other_missing_missing_long_text_missing": {
+      "identified": "2025-10-16T14:13:58.803Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "consistency_layout________other_missing_other_other_missing_missing_long_text_missing_other": {
+      "identified": "2025-10-16T14:14:25.937Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "text_format_______other_missing_other_other_missing_missing_long_text_missing": {
+      "identified": "2025-10-16T14:15:02.663Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "spelling_spelling_format________other_other_missing_other_other_missing_missing_long_text_missing_other": {
+      "identified": "2025-10-16T14:16:18.755Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "parse_error________other_other_other_missing_missing_long_text_missing_other": {
+      "identified": "2025-10-16T14:16:51.469Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "grammar_visual______other_other_other_missing_long_text_other_missing": {
+      "identified": "2025-10-16T14:21:01.130Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "typo_data_______other_other_other_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T14:23:25.798Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "text_formatting_______other_other_other_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T14:23:53.892Z",
+      "occurrences": 2,
+      "successful_fixes": []
+    },
+    "spelling_grammatical______other_other_other_missing_long_text_other_missing": {
+      "identified": "2025-10-16T14:25:37.208Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "typo______typo_other_missing_long_text_other_missing": {
+      "identified": "2025-10-16T14:26:28.824Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "typo_logo_formatting_______missing_other_other_other_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T14:27:56.712Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "branding_visual_______other_other_other_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T14:28:27.050Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "text_______other_other_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T14:31:38.508Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "typo_typo______typo_typo_other_missing_long_text_other_missing": {
+      "identified": "2025-10-16T14:32:36.735Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "typo_typo_design_______typo_typo_other_other_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T14:33:02.827Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "layout_consistency_______other_other_other_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T14:34:00.906Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "typo_______typo_other_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T14:35:47.665Z",
+      "occurrences": 2,
+      "successful_fixes": []
+    },
+    "typo_quotation_______typo_quote_other_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T14:36:46.500Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "typo______other_other_missing_long_text_other_missing": {
+      "identified": "2025-10-16T14:37:42.222Z",
+      "occurrences": 2,
+      "successful_fixes": []
+    },
+    "quotation_marks_______quote_other_missing_long_text_other_missing_other": {
+      "identified": "2025-10-16T14:38:09.759Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "typo_typo_other_other": {
+      "identified": "2025-10-16T14:39:57.198Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "typo_consistency______other_other_other_missing_long_text_other_missing": {
+      "identified": "2025-10-16T14:58:27.370Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "no_errors": {
+      "identified": "2025-10-16T14:59:46.110Z",
+      "occurrences": 3,
+      "successful_fixes": [
+        {
+          "fix": "minimal_text_visual_heavy",
+          "category": "Gemini Exploitation",
+          "success_count": 1,
+          "fail_count": 0,
+          "success_rate": 1,
+          "first_success": "2025-10-16T14:59:46.110Z"
+        },
+        {
+          "fix": "shorten_commentary",
+          "category": "Text Optimization",
+          "success_count": 1,
+          "fail_count": 0,
+          "success_rate": 1,
+          "first_success": "2025-10-16T15:00:52.920Z"
+        },
+        {
+          "fix": "complete_redesign",
+          "category": "Innovation",
+          "success_count": 1,
+          "fail_count": 0,
+          "success_rate": 1,
+          "first_success": "2025-10-16T16:07:35.789Z"
+        }
+      ]
+    },
+    "data_missing_data_missing_spelling_other_other_other": {
+      "identified": "2025-10-16T15:00:30.909Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "quotation_marks_visual___quote_other_missing_other": {
+      "identified": "2025-10-16T15:06:10.636Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "___missing_missing_other": {
+      "identified": "2025-10-16T15:06:46.056Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "spelling_formatting__typo_other_missing": {
+      "identified": "2025-10-16T15:07:22.520Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "_missing": {
+      "identified": "2025-10-16T15:07:55.588Z",
+      "occurrences": 3,
+      "successful_fixes": []
+    },
+    "__missing_other": {
+      "identified": "2025-10-16T15:08:27.211Z",
+      "occurrences": 14,
+      "successful_fixes": []
+    },
+    "typo_layout___other_missing_missing_missing": {
+      "identified": "2025-10-16T15:10:13.739Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "quotation_marks_formatting__quote_quote_missing": {
+      "identified": "2025-10-16T15:10:51.532Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "quotes___quote_missing_missing": {
+      "identified": "2025-10-16T15:35:36.669Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "parse_error__other_missing": {
+      "identified": "2025-10-16T15:37:52.238Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "formatting_visual__other_other_missing": {
+      "identified": "2025-10-16T15:38:56.711Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "data_error_quotation_marks__other_other_missing": {
+      "identified": "2025-10-16T15:40:06.815Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "spelling_branding__other_missing_missing": {
+      "identified": "2025-10-16T15:41:14.307Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "spelling_data____other_other_missing_missing_other": {
+      "identified": "2025-10-16T15:43:09.873Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "data_completeness_visual_elements__missing_other_other": {
+      "identified": "2025-10-16T15:43:54.592Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "parse_error___other_missing_other": {
+      "identified": "2025-10-16T15:44:31.338Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "_other": {
+      "identified": "2025-10-16T15:45:06.181Z",
+      "occurrences": 16,
+      "successful_fixes": []
+    },
+    "missing_element_data_mismatch_data_mismatch____other_missing_other_missing_missing_other": {
+      "identified": "2025-10-16T15:46:14.612Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "data_completeness_template_variation_quotation_marks___missing_other_quote_missing_other": {
+      "identified": "2025-10-16T15:48:00.656Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "quotation_marks_visual_branding__quote_other_other": {
+      "identified": "2025-10-16T15:49:20.959Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "spelling_visual__other_other_other": {
+      "identified": "2025-10-16T15:50:01.116Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "format_numbering__other_other_other": {
+      "identified": "2025-10-16T15:51:24.081Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "analysis_error______other_other_missing_long_text_other_missing": {
+      "identified": "2025-10-16T16:03:33.099Z",
+      "occurrences": 5,
+      "successful_fixes": []
+    },
+    "content_economic_factors_other_other": {
+      "identified": "2025-10-16T16:04:51.121Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "typo_logo__typo_other_other": {
+      "identified": "2025-10-16T16:05:26.780Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "spelling_design__other_missing_other": {
+      "identified": "2025-10-16T16:06:08.404Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    },
+    "spelling_formatting__typo_other_other": {
+      "identified": "2025-10-16T16:07:01.354Z",
+      "occurrences": 1,
+      "successful_fixes": []
+    }
+  },
+  "template_specific": {
+    "Daily Rate Update": {
+      "common_issues": [],
+      "best_solutions": [
+        "minimal_text_visual_heavy",
+        "complete_redesign"
+      ]
+    },
+    "Market Report": {
+      "common_issues": [],
+      "best_solutions": [
+        "shorten_commentary"
+      ]
+    },
+    "Rate Trends": {
+      "common_issues": [],
+      "best_solutions": []
+    },
+    "Economic Outlook": {
+      "common_issues": [],
+      "best_solutions": []
+    }
+  },
+  "global_learnings": [
+    "Gemini handles short text (<12 words) with 99% accuracy",
+    "Box formatting reduces typo rate significantly",
+    "Metallic gold text renders perfectly",
+    "Numbers and dates render flawlessly"
+  ],
+  "strategy_success_rates": {
+    "shorten_commentary": 0.018434292518537305,
+    "box_formatting": 0.01680727731549999,
+    "simplify_vocabulary": 0.018360891184999988,
+    "all_caps_format": 0.011863960457999994,
+    "use_structured_list": 0.007266675780524993,
+    "split_long_sentences": 0.002373780754971498,
+    "minimal_text_visual_heavy": 0.04013915052034998,
+    "minimalist_approach": 0.003391115364244997,
+    "complete_redesign": 0.30339111536424496,
+    "ai_suggested_solution": 0.014123762449999992,
+    "avoid_problem_words": 0.02017680349999999,
+    "increase_spacing": 0.014123762449999992,
+    "table_format": 0.028824004999999986,
+    "short_phrases_only": 0.006920643600499995,
+    "hybrid_format": 0.014123762449999992,
+    "bold_headers": 0.04117714999999998,
+    "emphasize_numbers": 0.028824004999999986,
+    "shadow_box": 0.028824004999999986
+  },
+  "gemini_insights": {
+    "perfect": [
+      "single_words_under_8_chars",
+      "numbers_with_decimals",
+      "dates",
+      "short_phrases_under_6_words"
+    ],
+    "excellent": [
+      "structured_lists",
+      "table_data",
+      "boxed_content",
+      "bold_headers"
+    ],
+    "good": [
+      "sentences_under_12_words",
+      "simple_vocabulary",
+      "quoted_text_in_boxes"
+    ],
+    "problematic": [
+      "complex_words_over_10_chars",
+      "sentences_over_15_words",
+      "words_like_weave_leave_breathe"
+    ]
+  },
+  "last_updated": "2025-10-16T16:07:35.790Z"
+}

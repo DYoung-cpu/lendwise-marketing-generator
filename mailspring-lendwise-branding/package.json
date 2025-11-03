@@ -1,0 +1,15 @@
+{
+  "name": "mailspring-lendwise-branding",
+  "displayName": "LendWise Branding",
+  "version": "1.0.0",
+  "description": "Custom branding for LendWise email accounts with company logos",
+  "main": "./lib/main",
+  "license": "MIT",
+  "engines": {
+    "mailspring": "*"
+  },
+  "author": {
+    "name": "David Young",
+    "email": "david@lendwisemtg.com"
+  }
+}

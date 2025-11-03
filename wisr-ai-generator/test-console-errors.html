@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Test Console Error Detection</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .signature {
+      width: 600px;
+      background: white;
+      padding: 20px;
+    }
+    .name {
+      font-size: 24px;
+      font-weight: bold;
+      color: #2c5f2d;
+      /* Intentional CSS issue: text too high */
+      position: relative;
+      top: -10px;
+    }
+    .email {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="signature">
+    <div class="name">Test User</div>
+    <div class="email">test@example.com</div>
+    <div class="nmls">NMLS 123456</div>
+  </div>
+
+  <script>
+    // Intentional console error for testing
+    console.error('Intentional test error: Missing API key');
+
+    // Intentional undefined variable error
+    try {
+      undefinedVariable.doSomething();
+    } catch (e) {
+      console.error('Caught error:', e.message);
+    }
+
+    // Warning for testing
+    console.warn('Test warning: Deprecated function used');
+
+    console.log('Page loaded successfully');
+  </script>
+</body>
+</html>

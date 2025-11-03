@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LendWise Email Signature Generator</title>
+    <script src="config.js"></script>
+    <script src="signature-templates.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: white;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 500px 1fr;
+            gap: 30px;
+            min-height: calc(100vh - 40px);
+        }
+
+        /* Left Panel - Form */
+        .form-panel {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 30px;
+            overflow-y: auto;
+        }
+        .header {
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #DAA520;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Form Steps */
+        .step {
+            margin-bottom: 30px;
+        }
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #2d5f3f, #1a3d2e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #DAA520;
+        }
+        .step-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        /* Form Inputs */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        input:focus,
+        select:focus {
+            outline: none;
+            background: rgba(255,255,255,0.12);
+            border-color: #DAA520;
+            box-shadow: 0 0 0 3px rgba(218,165,32,0.1);
+        }
+        input::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* Photo Upload */
+        .photo-upload {
+            border: 2px dashed rgba(218,165,32,0.3);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: rgba(218,165,32,0.05);
+        }
+        .photo-upload:hover {
+            border-color: #DAA520;
+            background: rgba(218,165,32,0.1);
+        }
+        .photo-upload input[type="file"] {
+            display: none;
+        }
+        .photo-upload-text {
+            color: #DAA520;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .photo-upload-hint {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.75rem;
+        }
+        .photo-preview {
+            display: none;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(218,165,32,0.1);
+            border: 1px solid rgba(218,165,32,0.3);
+            border-radius: 8px;
+        }
+        .photo-preview.active {
+            display: flex;
+        }
+        .photo-preview img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 2px solid #DAA520;
+        }
+        .photo-info {
+            flex: 1;
+        }
+        .photo-filename {
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .photo-size {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.75rem;
+        }
+        .photo-remove {
+            background: rgba(220,38,38,0.2);
+            border: 1px solid rgba(220,38,38,0.3);
+            color: #ff6b6b;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+        .photo-remove:hover {
+            background: rgba(220,38,38,0.3);
+        }
+
+        /* Logo Layout Selector */
+        .logo-layout-selector {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .logo-option {
+            border: 2px solid rgba(255,255,255,0.15);
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: rgba(255,255,255,0.05);
+            text-align: center;
+        }
+        .logo-option:hover {
+            border-color: rgba(218,165,32,0.5);
+            background: rgba(218,165,32,0.08);
+        }
+        .logo-option.selected {
+            border-color: #DAA520;
+            background: rgba(218,165,32,0.15);
+        }
+        .logo-option img {
+            max-height: 120px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+        .logo-option-name {
+            font-weight: 600;
+            color: white;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        .logo-option-desc {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.75rem;
+        }
+
+        /* Template Selector */
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .template-card {
+            border: 2px solid rgba(255,255,255,0.15);
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: rgba(255,255,255,0.05);
+        }
+        .template-card:hover {
+            border-color: rgba(218,165,32,0.5);
+            background: rgba(218,165,32,0.08);
+        }
+        .template-card.selected {
+            border-color: #DAA520;
+            background: rgba(218,165,32,0.15);
+        }
+        .template-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        .template-name {
+            font-weight: 600;
+            color: white;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        .template-description {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.75rem;
+            line-height: 1.4;
+        }
+
+        /* Generate Button */
+        .generate-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #2d5f3f, #1a3d2e);
+            border: 2px solid #DAA520;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .generate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(218,165,32,0.3);
+        }
+        .generate-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Right Panel - Preview */
+        .preview-panel {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        .preview-header {
+            margin-bottom: 20px;
+        }
+        .preview-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #DAA520;
+            margin-bottom: 10px;
+        }
+        .preview-subtitle {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Status Messages */
+        .status {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            align-items: center;
+            gap: 12px;
+        }
+        .status.active {
+            display: flex;
+        }
+        .status.info {
+            background: rgba(59,130,246,0.1);
+            border: 1px solid rgba(59,130,246,0.3);
+            color: #60a5fa;
+        }
+        .status.success {
+            background: rgba(34,197,94,0.1);
+            border: 1px solid rgba(34,197,94,0.3);
+            color: #4ade80;
+        }
+        .status.error {
+            background: rgba(239,68,68,0.1);
+            border: 1px solid rgba(239,68,68,0.3);
+            color: #f87171;
+        }
+        .status.loading {
+            background: rgba(218,165,32,0.1);
+            border: 1px solid rgba(218,165,32,0.3);
+            color: #DAA520;
+        }
+
+        /* Spinner */
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.2);
+            border-top-color: currentColor;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Preview Area */
+        .preview-content {
+            flex: 1;
+            background: #f5f5f5;
+            border-radius: 8px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+        }
+        .empty-state {
+            text-align: center;
+            color: #999;
+        }
+        .empty-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.3;
+        }
+        .empty-text {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* Signature Preview */
+        .signature-preview {
+            display: none;
+        }
+        .signature-preview.active {
+            display: block;
+            width: 100%;
+        }
+
+        /* Actions */
+        .actions {
+            display: none;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .actions.active {
+            display: flex;
+        }
+        .btn {
+            flex: 1;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn-primary {
+            background: #DAA520;
+            color: #0a0a0a;
+        }
+        .btn-primary:hover {
+            background: #FFD700;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.15);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Panel - Form -->
+        <div class="form-panel">
+            <div class="header">
+                <h1>📧 Email Signature Generator</h1>
+                <p class="subtitle">Create professional, AI-designed email signatures in minutes</p>
+            </div>
+
+            <!-- Step 1: Contact Information -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Your Information</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" id="loName" placeholder="John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="loTitle" placeholder="Loan Officer" value="Loan Officer">
+                </div>
+
+                <div class="form-group">
+                    <label>NMLS Number *</label>
+                    <input type="text" id="loNMLS" placeholder="123456" required>
+                </div>
+
+                <div class="form-group">
+                    <label>CA DRE Number (Optional)</label>
+                    <input type="text" id="loDRE" placeholder="01234567">
+                </div>
+
+                <div class="form-group">
+                    <label>Cell Phone *</label>
+                    <input type="tel" id="loPhone" placeholder="(555) 123-4567" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" id="loEmail" placeholder="john@lendwisemtg.com" required>
+                </div>
+            </div>
+
+            <!-- Step 2: Logo Layout -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Choose Logo Layout</div>
+                </div>
+
+                <div class="logo-layout-selector">
+                    <div class="logo-option selected" data-layout="horizontal" id="logoHorizontal">
+                        <img src="./lendwise-logo-horizontal.png" alt="Horizontal Logo" style="width: 100%; height: auto;">
+                        <div class="logo-option-name">Horizontal Layout</div>
+                        <div class="logo-option-desc">Text beside owl</div>
+                    </div>
+                    <div class="logo-option" data-layout="vertical" id="logoVertical">
+                        <img src="./lendwise-logo-vertical.png" alt="Vertical Logo" style="width: 100%; height: auto;">
+                        <div class="logo-option-name">Vertical Layout</div>
+                        <div class="logo-option-desc">Text below owl</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Photo Upload -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Professional Photo (Optional)</div>
+                </div>
+
+                <div class="photo-upload" id="photoUploadArea">
+                    <input type="file" id="photoInput" accept="image/*">
+                    <div class="photo-upload-text">📷 Click to upload your headshot</div>
+                    <div class="photo-upload-hint">Recommended: 500x500px, JPG or PNG</div>
+                </div>
+
+                <div class="photo-preview" id="photoPreview">
+                    <img id="photoPreviewImg" src="" alt="Preview">
+                    <div class="photo-info">
+                        <div class="photo-filename" id="photoFilename"></div>
+                        <div class="photo-size" id="photoSize"></div>
+                    </div>
+                    <button class="photo-remove" id="photoRemove">✕ Remove</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Choose Design -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Choose Your Design</div>
+                </div>
+
+                <div class="template-grid" id="templateGrid">
+                    <!-- Templates will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Generate Button -->
+            <button class="generate-btn" id="generateBtn">
+                <span>⚡</span>
+                <span>Generate My Signature</span>
+            </button>
+        </div>
+
+        <!-- Right Panel - Preview -->
+        <div class="preview-panel">
+            <div class="preview-header">
+                <div class="preview-title">Preview</div>
+                <div class="preview-subtitle">Your signature will appear here</div>
+            </div>
+
+            <!-- Status Messages -->
+            <div class="status" id="statusMessage">
+                <div class="spinner"></div>
+                <span id="statusText"></span>
+            </div>
+
+            <!-- Preview Content -->
+            <div class="preview-content">
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">📭</div>
+                    <div class="empty-text">Fill out the form and click Generate to see your signature</div>
+                </div>
+
+                <div class="signature-preview" id="signaturePreview">
+                    <!-- Generated signature will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="actions" id="actions">
+                <button class="btn btn-primary" id="copyBtn">
+                    <span>📋</span>
+                    <span>Copy HTML Code</span>
+                </button>
+                <button class="btn btn-secondary" id="regenerateBtn">
+                    <span>🔄</span>
+                    <span>Try Different Design</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global state
+        const state = {
+            selectedTemplate: 'classic',
+            selectedLogoLayout: 'horizontal', // 'horizontal' or 'vertical'
+            photoFile: null,
+            photoBase64: null,
+            generatedHTML: null,
+            backgroundImageURL: null
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeLogoSelection();
+            initializeTemplates();
+            initializePhotoUpload();
+            initializeGenerateButton();
+            initializeActions();
+        });
+
+        // Initialize logo selection
+        function initializeLogoSelection() {
+            const logoHorizontal = document.getElementById('logoHorizontal');
+            const logoVertical = document.getElementById('logoVertical');
+
+            logoHorizontal.addEventListener('click', () => selectLogoLayout('horizontal'));
+            logoVertical.addEventListener('click', () => selectLogoLayout('vertical'));
+        }
+
+        function selectLogoLayout(layout) {
+            state.selectedLogoLayout = layout;
+            document.querySelectorAll('.logo-option').forEach(option => {
+                option.classList.toggle('selected', option.dataset.layout === layout);
+            });
+            console.log(`📐 Logo layout selected: ${layout}`);
+        }
+
+        // Populate template grid
+        function initializeTemplates() {
+            const grid = document.getElementById('templateGrid');
+            SIGNATURE_TEMPLATES.forEach(template => {
+                const card = document.createElement('div');
+                card.className = `template-card ${template.id === state.selectedTemplate ? 'selected' : ''}`;
+                card.dataset.template = template.id;
+                card.innerHTML = `
+                    <div class="template-icon">${template.icon}</div>
+                    <div class="template-name">${template.name}</div>
+                    <div class="template-description">${template.description}</div>
+                `;
+                card.addEventListener('click', () => selectTemplate(template.id));
+                grid.appendChild(card);
+            });
+        }
+
+        function selectTemplate(templateId) {
+            state.selectedTemplate = templateId;
+            document.querySelectorAll('.template-card').forEach(card => {
+                card.classList.toggle('selected', card.dataset.template === templateId);
+            });
+        }
+
+        // Photo upload handling
+        function initializePhotoUpload() {
+            const uploadArea = document.getElementById('photoUploadArea');
+            const photoInput = document.getElementById('photoInput');
+            const preview = document.getElementById('photoPreview');
+            const previewImg = document.getElementById('photoPreviewImg');
+            const filename = document.getElementById('photoFilename');
+            const size = document.getElementById('photoSize');
+            const removeBtn = document.getElementById('photoRemove');
+
+            uploadArea.addEventListener('click', () => photoInput.click());
+
+            photoInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    state.photoFile = file;
+
+                    // Show preview
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        state.photoBase64 = e.target.result;
+                        previewImg.src = e.target.result;
+                        filename.textContent = file.name;
+                        size.textContent = formatFileSize(file.size);
+                        uploadArea.style.display = 'none';
+                        preview.classList.add('active');
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            removeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                state.photoFile = null;
+                state.photoBase64 = null;
+                photoInput.value = '';
+                uploadArea.style.display = 'block';
+                preview.classList.remove('active');
+            });
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+            return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+        }
+
+        // Generate button
+        function initializeGenerateButton() {
+            const btn = document.getElementById('generateBtn');
+            btn.addEventListener('click', generateSignature);
+        }
+
+        // Main generation function
+        async function generateSignature() {
+            // Validate required fields
+            const name = document.getElementById('loName').value.trim();
+            const nmls = document.getElementById('loNMLS').value.trim();
+            const phone = document.getElementById('loPhone').value.trim();
+            const email = document.getElementById('loEmail').value.trim();
+
+            if (!name || !nmls || !phone || !email) {
+                showStatus('error', 'Please fill in all required fields (marked with *)');
+                return;
+            }
+
+            // Collect all form data
+            const formData = {
+                name: name,
+                title: document.getElementById('loTitle').value.trim() || 'Loan Officer',
+                nmls: nmls,
+                dre: document.getElementById('loDRE').value.trim(),
+                phone: phone,
+                email: email,
+                template: state.selectedTemplate,
+                hasPhoto: !!state.photoBase64
+            };
+
+            try {
+                // Disable button
+                const btn = document.getElementById('generateBtn');
+                btn.disabled = true;
+                btn.innerHTML = '<div class="spinner"></div><span>Generating...</span>';
+
+                // Step 1: Generate background image
+                showStatus('loading', 'Step 1/5: Generating signature design with AI (21:9)...');
+                const backgroundImage = await generateBackgroundImage(formData);
+
+                // Step 2: Crop to 700x200
+                showStatus('loading', 'Step 2/5: Cropping to email signature dimensions (700×200)...');
+                const croppedImage = await cropToEmailSignature(backgroundImage);
+
+                // Step 3: Validate with OCR
+                showStatus('loading', 'Step 3/5: Validating signature elements with OCR...');
+                const validation = await validateSignatureWithOCR(croppedImage, formData);
+
+                // Step 4: Check if regeneration needed
+                if (validation.recommendRegeneration && validation.score < 50) {
+                    showStatus('loading', 'Step 4/5: Quality too low, regenerating signature...');
+
+                    // Retry once
+                    const retryBackground = await generateBackgroundImage(formData, 2);
+                    const retryCropped = await cropToEmailSignature(retryBackground);
+                    const retryValidation = await validateSignatureWithOCR(retryCropped, formData);
+
+                    if (retryValidation.score >= validation.score) {
+                        // Use retry version
+                        console.log('✅ Retry improved quality:', retryValidation.score + '% vs', validation.score + '%');
+                        Object.assign(validation, retryValidation);
+                        const signatureHTML = buildSignatureHTML(formData, retryCropped);
+                        state.generatedHTML = signatureHTML;
+                        state.backgroundImageURL = retryBackground;
+                        state.validation = retryValidation;
+                    } else {
+                        // Use original (it was better)
+                        console.log('ℹ️  Original was better:', validation.score + '% vs', retryValidation.score + '%');
+                        const signatureHTML = buildSignatureHTML(formData, croppedImage);
+                        state.generatedHTML = signatureHTML;
+                        state.backgroundImageURL = backgroundImage;
+                        state.validation = validation;
+                    }
+                } else {
+                    // Quality is acceptable
+                    const signatureHTML = buildSignatureHTML(formData, croppedImage);
+                    state.generatedHTML = signatureHTML;
+                    state.backgroundImageURL = backgroundImage;
+                    state.validation = validation;
+                }
+
+                // Step 5: Display results
+                showStatus('loading', 'Step 5/5: Finalizing signature...');
+
+                // Display quality score
+                const qualityMsg = `✅ Signature generated! Quality: ${state.validation.score}% | Elements: ${
+                    Object.values(state.validation.elementChecks).filter(c => c.found).length
+                }/${Object.keys(state.validation.elementChecks).length} ` +
+                (state.validation.score >= 70 ? '(Excellent)' : state.validation.score >= 50 ? '(Good)' : '(Needs improvement)');
+
+                showStatus('success', qualityMsg);
+                displaySignature(state.generatedHTML);
+
+                // Log validation details
+                console.log('📊 Signature Quality Report:');
+                console.log('   Score:', state.validation.score + '%');
+                console.log('   OCR Confidence:', Math.round(state.validation.ocrConfidence) + '%');
+                console.log('   Branding:', state.validation.elementChecks.lendwiseBrandingFound.found ? '✅' : '❌');
+                console.log('   Name:', state.validation.elementChecks.officerNameFound.found ? '✅' : '❌');
+                console.log('   NMLS:', state.validation.elementChecks.nmlsFound.found ? '✅' : '❌');
+                console.log('   Title:', state.validation.elementChecks.titleFound.found ? '✅' : '❌');
+
+                if (state.validation.issues.length > 0) {
+                    console.warn('⚠️  Issues detected:', state.validation.issues);
+                }
+
+                // Re-enable button
+                btn.disabled = false;
+                btn.innerHTML = '<span>⚡</span><span>Generate My Signature</span>';
+
+            } catch (error) {
+                console.error('Generation error:', error);
+                showStatus('error', `Generation failed: ${error.message}`);
+
+                // Re-enable button
+                const btn = document.getElementById('generateBtn');
+                btn.disabled = false;
+                btn.innerHTML = '<span>⚡</span><span>Generate My Signature</span>';
+            }
+        }
+
+        // Load LendWise logo as base64 (cached per layout)
+        let lendwiseLogoCache = {
+            horizontal: null,
+            vertical: null
+        };
+
+        async function loadLendWiseLogo() {
+            const layout = state.selectedLogoLayout; // Use selected layout from state
+
+            // Return cached version if available
+            if (lendwiseLogoCache[layout]) {
+                console.log(`✅ Using cached ${layout} logo`);
+                return lendwiseLogoCache[layout];
+            }
+
+            try {
+                const logoFilename = `./lendwise-logo-${layout}.png`;
+                console.log(`📥 Loading ${layout} logo from: ${logoFilename}`);
+
+                const response = await fetch(logoFilename);
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch logo: ${response.statusText}`);
+                }
+
+                const blob = await response.blob();
+                return new Promise((resolve) => {
+                    const reader = new FileReader();
+                    reader.onloadend = () => {
+                        // Remove data:image/png;base64, prefix to get just the base64 data
+                        const base64Data = reader.result.split(',')[1];
+                        lendwiseLogoCache[layout] = base64Data;
+                        console.log(`✅ ${layout} logo loaded and cached (${(base64Data.length / 1024).toFixed(1)} KB)`);
+                        resolve(base64Data);
+                    };
+                    reader.readAsDataURL(blob);
+                });
+            } catch (error) {
+                console.error(`Failed to load LendWise logo (${layout}):`, error);
+                return null;
+            }
+        }
+
+        // Generate background image with Gemini (with auto-retry)
+        async function generateBackgroundImage(formData, attempt = 1, maxAttempts = 3) {
+            const template = SIGNATURE_TEMPLATES.find(t => t.id === formData.template);
+            const prompt = template.prompt;
+
+            const API_KEY = window.API_KEYS?.GEMINI || 'YOUR_GEMINI_API_KEY_HERE';
+
+            try {
+                console.log(`🎨 Generation attempt ${attempt}/${maxAttempts} for template: ${template.name}`);
+
+                // Load LendWise logo
+                const logoData = await loadLendWiseLogo();
+
+                // Build multimodal parts array
+                const parts = [];
+
+                // Add logo image
+                if (logoData) {
+                    parts.push({
+                        inline_data: {
+                            mime_type: "image/png",
+                            data: logoData
+                        }
+                    });
+                    console.log(`📸 Including LendWise ${state.selectedLogoLayout} logo in generation`);
+                }
+
+                // Add uploaded photo if available
+                if (formData.hasPhoto && state.photoBase64) {
+                    // Extract just the base64 data (remove data:image/...;base64, prefix)
+                    const photoData = state.photoBase64.split(',')[1];
+                    const photoMimeType = state.photoBase64.match(/data:(image\/[^;]+)/)?.[1] || 'image/jpeg';
+
+                    parts.push({
+                        inline_data: {
+                            mime_type: photoMimeType,
+                            data: photoData
+                        }
+                    });
+                    console.log('📸 Including officer photo in generation');
+                }
+
+                // Add text prompt with multimodal instructions
+                const multimodalPrompt = prompt + `\n\n` +
+                    `IMPORTANT MULTIMODAL INSTRUCTIONS:\n` +
+                    `• I have provided the LendWise owl logo as an image input - USE THIS EXACT LOGO in your design\n` +
+                    (formData.hasPhoto ? `• I have provided the officer's headshot photo as an image input - USE THIS EXACT PHOTO\n` : '') +
+                    `• Composite these provided images into the signature design\n` +
+                    `• DO NOT generate your own logo or photo - use the exact images provided\n` +
+                    `• Integrate them naturally into the ${template.name} design\n` +
+                    `• Officer name to include: ${formData.name}\n` +
+                    `• Officer title to include: ${formData.title}\n` +
+                    `• NMLS number to include: ${formData.nmls}`;
+
+                parts.push({ text: multimodalPrompt });
+
+                console.log(`📝 Sending ${parts.length} parts to Gemini (${parts.filter(p => p.inline_data).length} images + 1 text prompt)`);
+
+                const response = await fetch(
+                    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent?key=${API_KEY}`,
+                    {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents: [{
+                                parts: parts
+                            }],
+                            generationConfig: {
+                                temperature: 0.7,
+                                topK: 40,
+                                topP: 0.95,
+                                responseModalities: ["IMAGE"],
+                                imageConfig: {
+                                    aspectRatio: "21:9"  // Ultra-wide landscape for email signatures
+                                }
+                            }
+                        })
+                    }
+                );
+
+                if (!response.ok) {
+                    throw new Error(`API request failed: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+
+                // Extract image data - handle both inline_data and inlineData formats
+                if (data.candidates && data.candidates[0]?.content?.parts) {
+                    for (const part of data.candidates[0].content.parts) {
+                        // Check for both inline_data (underscore) and inlineData (camelCase)
+                        const inlineData = part.inline_data || part.inlineData;
+                        if (inlineData && inlineData.data) {
+                            const imageData = inlineData.data;
+                            const mimeType = inlineData.mimeType || inlineData.mime_type || 'image/png';
+                            console.log(`✅ Generation successful on attempt ${attempt}!`);
+                            return `data:${mimeType};base64,${imageData}`;
+                        }
+                    }
+                }
+
+                // Check for API errors
+                if (data.error) {
+                    throw new Error(`Gemini API Error: ${data.error.message}`);
+                }
+
+                // Log full response for debugging
+                console.error('Unexpected API response:', data);
+                throw new Error('No image data in response');
+
+            } catch (error) {
+                console.error(`❌ Attempt ${attempt} failed:`, error.message);
+
+                // Retry if we haven't reached max attempts
+                if (attempt < maxAttempts) {
+                    showStatus('loading', `Generation failed, retrying... (${attempt + 1}/${maxAttempts})`);
+                    await new Promise(resolve => setTimeout(resolve, 2000)); // Wait 2 seconds before retry
+                    return generateBackgroundImage(formData, attempt + 1, maxAttempts);
+                }
+
+                // All attempts failed
+                throw error;
+            }
+        }
+
+        // Crop 21:9 image to 700x200 email signature dimensions
+        async function cropToEmailSignature(base64Image) {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = 700;
+                    canvas.height = 200;
+                    const ctx = canvas.getContext('2d');
+
+                    // Calculate crop dimensions for 7:2 aspect ratio (3.5:1)
+                    const targetRatio = 3.5; // 700/200
+                    const sourceWidth = img.width;
+                    const sourceHeight = Math.round(img.width / targetRatio);
+
+                    // Center crop vertically (take middle strip from 21:9 image)
+                    const sourceY = Math.max(0, (img.height - sourceHeight) / 2);
+
+                    console.log(`📐 Cropping ${img.width}×${img.height} (21:9) → ${sourceWidth}×${sourceHeight} (7:2) → 700×200 final`);
+
+                    // Draw cropped and resized image
+                    ctx.drawImage(
+                        img,
+                        0, sourceY,              // Source: full width, centered height
+                        sourceWidth, sourceHeight,  // Source: crop to 7:2 ratio
+                        0, 0,                    // Dest: top-left
+                        700, 200                 // Dest: final email signature dimensions
+                    );
+
+                    resolve(canvas.toDataURL('image/png'));
+                };
+                img.onerror = () => {
+                    console.error('Failed to load image for cropping');
+                    resolve(base64Image); // Return original if crop fails
+                };
+                img.src = base64Image;
+            });
+        }
+
+        // Validate signature with OCR via backend API
+        async function validateSignatureWithOCR(imageBase64, formData) {
+            console.log('[OCR Validation] Sending signature to quality backend...');
+
+            try {
+                const response = await fetch('http://localhost:3001/api/validate-signature', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        imageBase64,
+                        expectedData: {
+                            name: formData.name,
+                            nmls: formData.nmls,
+                            title: formData.title,
+                            template: formData.template
+                        }
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Validation API returned ${response.status}: ${response.statusText}`);
+                }
+
+                const result = await response.json();
+
+                if (!result.success) {
+                    throw new Error(result.error || 'Validation failed');
+                }
+
+                console.log('[OCR Validation] ✅ Validation complete');
+                console.log('[OCR Validation] Quality score:', result.validation.score + '%');
+                console.log('[OCR Validation] OCR confidence:', Math.round(result.validation.ocrConfidence) + '%');
+
+                return result.validation;
+
+            } catch (error) {
+                console.error('[OCR Validation] ❌ Error:', error.message);
+
+                // Return fallback validation if backend is unavailable
+                console.warn('[OCR Validation] ⚠️  Backend unavailable, using fallback validation');
+                return {
+                    timestamp: new Date().toISOString(),
+                    ocrConfidence: 0,
+                    extractedText: '',
+                    elementChecks: {
+                        lendwiseBrandingFound: { found: false, issue: 'Backend unavailable' },
+                        officerNameFound: { found: false, issue: 'Backend unavailable' },
+                        nmlsFound: { found: false, issue: 'Backend unavailable' },
+                        titleFound: { found: false, issue: 'Backend unavailable' }
+                    },
+                    issues: ['OCR validation service unavailable - signature not validated'],
+                    score: 50, // Neutral score when validation unavailable
+                    recommendRegeneration: false,
+                    fallback: true
+                };
+            }
+        }
+
+        // Build HTML signature - MINIMAL version (image already has logo/name/title/NMLS)
+        function buildSignatureHTML(formData, backgroundImage) {
+            // Phone number formatting for tel: link
+            const phoneTel = formData.phone.replace(/\D/g, '');
+            const phoneDisplay = formData.phone;
+
+            return `<!-- LendWise Email Signature - ${formData.name} -->
+<table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif; max-width: 700px; border-collapse: collapse;">
+    <!-- Main Signature Image (includes logo, photo, name, title, NMLS) -->
+    <tr>
+        <td style="padding: 0;">
+            <img src="${backgroundImage}" alt="${formData.name} - ${formData.title}" style="width: 700px; height: 200px; display: block; border: 0;" />
+        </td>
+    </tr>
+
+    <!-- Contact Links Bar (minimal, email-safe) -->
+    <tr>
+        <td style="padding: 8px 15px; background-color: #f9f9f9; text-align: center;">
+            <a href="tel:${phoneTel}" style="color: #2d5f3f; font-size: 12px; text-decoration: none; margin: 0 10px; font-weight: 600;">📞 ${phoneDisplay}</a>
+            <span style="color: #ccc;">|</span>
+            <a href="mailto:${formData.email}" style="color: #2d5f3f; font-size: 12px; text-decoration: none; margin: 0 10px; font-weight: 600;">✉️ ${formData.email}</a>
+            <span style="color: #ccc;">|</span>
+            <a href="https://lendwisemtg.com" target="_blank" style="color: #2d5f3f; font-size: 12px; text-decoration: none; margin: 0 10px;">🌐 LendWiseMTG.com</a>
+        </td>
+    </tr>
+</table>
+<!-- End LendWise Signature -->`;
+        }
+
+        // Display signature in preview
+        function displaySignature(html) {
+            const preview = document.getElementById('signaturePreview');
+            const empty = document.getElementById('emptyState');
+            const actions = document.getElementById('actions');
+
+            preview.innerHTML = html;
+            preview.classList.add('active');
+            empty.style.display = 'none';
+            actions.classList.add('active');
+        }
+
+        // Status message helper
+        function showStatus(type, message) {
+            const status = document.getElementById('statusMessage');
+            const text = document.getElementById('statusText');
+
+            status.className = `status ${type} active`;
+            text.textContent = message;
+
+            // Auto-hide success/error after 5 seconds
+            if (type === 'success' || type === 'error') {
+                setTimeout(() => {
+                    status.classList.remove('active');
+                }, 5000);
+            }
+        }
+
+        // Action buttons
+        function initializeActions() {
+            // Copy HTML button
+            document.getElementById('copyBtn').addEventListener('click', async () => {
+                if (!state.generatedHTML) return;
+
+                try {
+                    await navigator.clipboard.writeText(state.generatedHTML);
+                    showStatus('success', '✅ HTML code copied to clipboard!');
+
+                    // Show installation instructions
+                    setTimeout(() => {
+                        alert('INSTALLATION INSTRUCTIONS:\n\n' +
+                              '1. Open Gmail Settings (⚙️ gear icon) → See all settings\n' +
+                              '2. Scroll to "Signature" section\n' +
+                              '3. Click "Create new" and name it "LendWise"\n' +
+                              '4. Click in the signature box\n' +
+                              '5. Press Ctrl+V (Cmd+V on Mac) to paste\n' +
+                              '6. Scroll down and click "Save Changes"\n' +
+                              '7. Send a test email to verify!\n\n' +
+                              'Your signature is now ready to use! 🎉');
+                    }, 500);
+                } catch (err) {
+                    console.error('Copy failed:', err);
+                    showStatus('error', 'Failed to copy. Please try again.');
+                }
+            });
+
+            // Regenerate button
+            document.getElementById('regenerateBtn').addEventListener('click', () => {
+                const preview = document.getElementById('signaturePreview');
+                const empty = document.getElementById('emptyState');
+                const actions = document.getElementById('actions');
+
+                preview.classList.remove('active');
+                empty.style.display = 'block';
+                actions.classList.remove('active');
+
+                state.generatedHTML = null;
+                state.backgroundImageURL = null;
+
+                showStatus('info', 'Choose a different design and click Generate again');
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "lendwise-account-switcher",
+  "displayName": "LendWise Account Switcher",
+  "version": "1.0.0",
+  "description": "Account switcher with company logos for LendWise",
+  "main": "./lib/main",
+  "license": "MIT",
+  "engines": {
+    "mailspring": "*"
+  }
+}

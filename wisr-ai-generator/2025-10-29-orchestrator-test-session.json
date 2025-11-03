@@ -1,0 +1,135 @@
+{
+  "sessionDate": "2025-10-29",
+  "sessionType": "orchestrator_test",
+  "template": "rate-drop-alert",
+  "totalAttempts": 3,
+  "successfulAttempt": 3,
+
+  "criticalFindings": [
+    {
+      "issue": "Backend Claude authentication failure",
+      "severity": "critical",
+      "description": "Backend was started with wrong ANTHROPIC_API_KEY via command-line env vars, overriding .env file",
+      "impact": "NO prompt enhancement, NO autonomous quality monitoring, NO spelling validation",
+      "solution": "Start backend cleanly without env var overrides - let dotenv load from .env file",
+      "status": "fixed"
+    },
+    {
+      "issue": "Autonomous quality monitor never activated",
+      "severity": "critical",
+      "description": "Quality monitor exists (autonomous-quality-monitor.js) but runs as orphaned process, never integrated with backend",
+      "impact": "Spelling errors pass through undetected (vol'ability instead of volatility)",
+      "solution": "Backend needs /api/validate endpoint to call monitor, or monitor needs to watch /tmp/marketing-generations/",
+      "status": "identified_not_fixed"
+    },
+    {
+      "issue": "Template-aware enhancement disabled",
+      "severity": "high",
+      "description": "Auto-enhance was disabled (line 1139 in nano-test.html) because it forced same branding on all templates",
+      "impact": "All templates look similar (forest green + gold), no visual variety",
+      "solution": "Make gemini-prompt-enhancer.js template-aware with color overrides per category",
+      "status": "identified_not_fixed"
+    }
+  ],
+
+  "testResults": {
+    "attempt1": {
+      "timestamp": "2025-10-29T12:44:47Z",
+      "imagePath": "/tmp/marketing-generations/1761715887837.png",
+      "spellingErrors": [
+        {"word": "vol'ability", "shouldBe": "volatility", "location": "bottom text"}
+      ],
+      "visualQuality": "good",
+      "brandCompliance": "yes",
+      "claudeEnhancement": false,
+      "result": "failed_spelling"
+    },
+    "attempt2": {
+      "timestamp": "2025-10-29T12:46:23Z",
+      "imagePath": "/tmp/marketing-generations/1761715983297.png",
+      "spellingErrors": [
+        {"word": "unknown", "issue": "text too small to verify in gold box", "location": "bottom"}
+      ],
+      "visualQuality": "layout_changed_unexpectedly",
+      "brandCompliance": "yes",
+      "claudeEnhancement": false,
+      "result": "unclear_cant_verify"
+    },
+    "attempt3": {
+      "timestamp": "2025-10-29T12:51:28Z",
+      "imagePath": "/tmp/marketing-generations/1761742288544.png",
+      "spellingErrors": [],
+      "spellingCorrect": ["VOLATILITY"],
+      "visualQuality": "excellent",
+      "brandCompliance": "yes",
+      "claudeEnhancement": false,
+      "explicitSpellingInstruction": true,
+      "result": "success"
+    }
+  },
+
+  "orchestratorTest": {
+    "marketingAgentInvoked": true,
+    "playwrightMCP": {
+      "navigation": "success",
+      "templateSelection": "success",
+      "imageGeneration": "success",
+      "screenshotCapture": "success"
+    },
+    "memoryMCP": {
+      "agentMemoryLoaded": true,
+      "generationCount": 115,
+      "successRate": "1.7% (2/115)",
+      "rulesLoaded": true
+    },
+    "firecrawlMCP": {
+      "tested": false,
+      "reason": "not_needed_for_rate_alert_template"
+    }
+  },
+
+  "keyLearnings": [
+    {
+      "learning": "Environment variable precedence",
+      "detail": "Command-line ANTHROPIC_API_KEY overrides .env file. Start processes cleanly without env var prefixes.",
+      "category": "infrastructure"
+    },
+    {
+      "learning": "Explicit spelling instructions work",
+      "detail": "Adding 'CRITICAL: Spell VOLATILITY correctly as V-O-L-A-T-I-L-I-T-Y' prevents misspelling",
+      "category": "prompt_engineering"
+    },
+    {
+      "learning": "Backend Claude enhancement still not active",
+      "detail": "Even with correct API key in .env, backend shows no enhancement logs. Need to investigate enhanceForGemini() call",
+      "category": "backend_integration"
+    },
+    {
+      "learning": "/marketing agent IS the orchestrator",
+      "detail": "Successfully navigated, selected template, generated image, captured screenshots using Playwright MCP",
+      "category": "architecture"
+    },
+    {
+      "learning": "Manual validation caught errors autonomous monitor missed",
+      "detail": "Claude vision analysis (me) caught vol'ability error that automated system would have missed",
+      "category": "quality_assurance"
+    }
+  ],
+
+  "nextSteps": [
+    "Investigate why backend doesn't call enhanceForGemini() even with valid API key",
+    "Add /api/validate endpoint to backend for post-generation quality checks",
+    "Integrate autonomous-quality-monitor.js with backend generation flow",
+    "Re-enable auto-enhance with template-aware color overrides",
+    "Create spelling auto-fix dictionary for common Gemini errors",
+    "Test full 3-iteration auto-fix loop with working Claude validation"
+  ],
+
+  "metadata": {
+    "testDuration": "~7 minutes",
+    "backendRestarts": 1,
+    "apiKeyIssuesResolved": true,
+    "orchestratorValidated": true,
+    "memoryUpdated": false
+  }
+}

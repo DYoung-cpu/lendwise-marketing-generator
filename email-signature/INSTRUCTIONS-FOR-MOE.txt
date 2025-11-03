@@ -1,0 +1,33 @@
+MOE HASSAN - EMAIL SIGNATURE INSTALLATION INSTRUCTIONS
+
+Step 1: Download the signature file
+- Save the file "moe-signature.html" to your computer (it should be attached to this email)
+
+Step 2: Open the file
+- Double-click "moe-signature.html" to open it in your web browser
+
+Step 3: Copy the signature
+- Click the green "Copy Signature" button on the page
+
+Step 4: Install in Gmail
+- Open Gmail
+- Click Settings (⚙️ gear icon, top right) → "See all settings"
+- Scroll to "Signature" section
+- Click "+ Create new" and name it "LendWise"
+- Click in the signature box
+- Press Ctrl+V (or Cmd+V on Mac) to paste
+- Scroll down and click "Save Changes"
+
+Step 5: Test it
+- Compose a new email to yourself
+- Your signature should appear automatically
+- Click all the links to make sure they work
+
+Done! Your signature is now installed.
+
+All clickable links:
+✓ Your cell: 818.741.6969
+✓ Your email: MOE@LendWiseMTG.com
+✓ Office phone: (818) 723-7376
+✓ Website: LendWisemtg.com
+✓ Office address: Opens Google Maps

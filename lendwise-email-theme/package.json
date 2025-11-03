@@ -1,0 +1,12 @@
+{
+  "name": "lendwise-email-theme",
+  "displayName": "LendWise Email Theme",
+  "theme": "ui-light",
+  "version": "1.0.0",
+  "title": "LendWise Email",
+  "description": "Custom theme with company logos for email accounts",
+  "license": "MIT",
+  "engines": {
+    "mailspring": "*"
+  }
+}

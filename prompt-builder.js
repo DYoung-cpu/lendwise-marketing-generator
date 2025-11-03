@@ -79,7 +79,7 @@ export function parseMarketCommentary(commentaryText) {
 // Build Daily Rate Update prompt
 export function buildDailyRateUpdatePrompt(MarketData, uploadedPhoto = false) {
     // Use simpler quote for Daily Rate Update to ensure perfect text rendering
-    const commentary = "RATES STABLE NEAR RECENT LOWS";
+    const commentary = 'RATES STABLE NEAR RECENT LOWS';
     const change30yr = formatRateChangeWithArrow(MarketData.changes['30yr']);
 
     const economicFactors = MarketData.economicFactors || [];
@@ -132,7 +132,7 @@ Modern Forbes/Bloomberg magazine style. Portrait 1080x1350.`;
 // Build Market Report prompt
 export function buildMarketUpdatePrompt(MarketData, uploadedPhoto = false) {
     // Use simpler quote for Market Report to ensure perfect text rendering
-    const commentary = "RATES STABLE NEAR RECENT LOWS";
+    const commentary = 'RATES STABLE NEAR RECENT LOWS';
     const change30yr = formatRateChangeWithArrow(MarketData.changes['30yr']);
     const change15yr = formatRateChangeWithArrow(MarketData.changes['15yr']);
     const changeJumbo = formatRateChangeWithArrow(MarketData.changes['jumbo']);
@@ -174,7 +174,7 @@ Modern Forbes/Bloomberg magazine style. Portrait 1080x1350.`;
 // Build Rate Trends prompt
 export function buildRateTrendsPrompt(MarketData, uploadedPhoto = false) {
     // Use simpler quote for Rate Trends to ensure perfect text rendering
-    const commentary = "RATES STABLE NEAR RECENT LOWS";
+    const commentary = 'RATES STABLE NEAR RECENT LOWS';
 
     const current30yr = parseFloat(MarketData.rates['30yr']);
     const weekHigh = 7.26;
@@ -225,7 +225,7 @@ Modern Forbes/Bloomberg magazine style. Portrait 1080x1350.`;
 // Build Economic Outlook prompt
 export function buildEconomicOutlookPrompt(MarketData, uploadedPhoto = false) {
     // Use simpler quote for Economic Outlook to ensure perfect text rendering
-    const commentary = "FAVORABLE CONDITIONS FOR BORROWERS";
+    const commentary = 'FAVORABLE CONDITIONS FOR BORROWERS';
 
     const economicFactors = MarketData.economicFactors || [];
     const topFactors = economicFactors.slice(0, 3);

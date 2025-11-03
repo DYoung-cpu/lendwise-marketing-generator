@@ -1,0 +1,74 @@
+{
+  "title": "HOME | 90210lovecare",
+  "bodyText": "Skip to Main Content\n\nHOME\n\nTHE 90210 TOUCH\n\nHOME CARE SERVICES\n\nCAREGIVERS\n\nCONTACT US\n\nBLOG\n\n90210 HOME CARE\nABOUT US\n\n90210 Love & Care, Inc. is owned and operated within the prestigious “Golden Triangle” of Beverly Hills, California and caters to the greater Los Angeles metropolitan area. Please let us know how we may be of service to you. We would be delighted to meet you!\n\nsee more\n\n90210 Love & Care employs handpicked competent, compassionate, and well-trained individuals of the highest caliber who are responsive to the needs of our clients, their families, and the communities we serve.\n\nsee more\nCONTACT US\n\n (310) 278 - 8682\n\n​\n\n info@90210LoveCare.com\n\n​\n9454 Wilshire Blvd., Ste 320\n\nBeverly Hills, CA 90212\n\nEnhancing Lives,\n\nExcelling in Care!\n\n© 90210 Love & Care, Inc.\n\nHCO 194700228",
+  "allHeadings": [
+    {
+      "tag": "H6",
+      "text": "90210 HOME CARE"
+    },
+    {
+      "tag": "H6",
+      "text": "ABOUT US"
+    },
+    {
+      "tag": "H6",
+      "text": "CONTACT US"
+    },
+    {
+      "tag": "H6",
+      "text": "HCO 194700228"
+    }
+  ],
+  "allLinks": [
+    {
+      "text": "HOME",
+      "href": "https://www.90210lovecare.com/"
+    },
+    {
+      "text": "THE 90210 TOUCH",
+      "href": "https://www.90210lovecare.com/90210-touch"
+    },
+    {
+      "text": "HOME CARE SERVICES",
+      "href": "https://www.90210lovecare.com/home-care-services"
+    },
+    {
+      "text": "CAREGIVERS",
+      "href": "https://www.90210lovecare.com/caregivers"
+    },
+    {
+      "text": "CONTACT US",
+      "href": "https://www.90210lovecare.com/contact-us"
+    },
+    {
+      "text": "BLOG",
+      "href": "https://www.90210lovecare.com/blog"
+    },
+    {
+      "text": "",
+      "href": "https://www.90210lovecare.com/"
+    },
+    {
+      "text": "see more",
+      "href": "https://www.90210lovecare.com/90210-touch"
+    },
+    {
+      "text": "see more",
+      "href": "https://www.90210lovecare.com/caregivers"
+    },
+    {
+      "text": "info@90210LoveCare.com",
+      "href": "mailto:info@90210LoveCare.com"
+    }
+  ],
+  "allImages": [
+    {
+      "src": "https://static.wixstatic.com/media/a58e88_9852623471e64f4e98abd62565e0577e.png/v1/fill/w_142,h_153,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/a58e88_9852623471e64f4e98abd62565e0577e.png",
+      "alt": ""
+    },
+    {
+      "src": "https://static.wixstatic.com/media/a58e88_62fa0c5069be4a24a054eef7ace60360.jpg/v1/fill/w_356,h_370,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a58e88_62fa0c5069be4a24a054eef7ace60360.jpg",
+      "alt": ""
+    }
+  ]
+}

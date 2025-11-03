@@ -1,0 +1,39 @@
+{
+  "problematic_words": {
+    "OUTLOOK": {
+      "failure_rate": 100,
+      "corruption_pattern": "OUTLOOK → OUTLOK or OUTLUK",
+      "safe_alternative": "FORECAST",
+      "alternative_2": "WHAT'S NEXT",
+      "location": "Rate Trends template, line 2852",
+      "last_tested": "2025-10-15",
+      "status": "documented_needs_fix"
+    },
+    "MARKET": {
+      "failure_rate": 50,
+      "corruption_pattern": "MARKET → MAPKATE",
+      "safe_alternative": "N/A - context dependent",
+      "last_tested": "unknown"
+    },
+    "LOAN": {
+      "failure_rate": 50,
+      "corruption_pattern": "LOAN → LOL",
+      "safe_alternative": "FINANCING",
+      "last_tested": "unknown"
+    },
+    "UPDATE": {
+      "failure_rate": 30,
+      "corruption_pattern": "UPDATE → UPBATE",
+      "safe_alternative": "REPORT",
+      "last_tested": "unknown"
+    }
+  },
+  "fixes_applied": [
+    {
+      "timestamp": "2025-10-15T13:46:45.060Z",
+      "template": "Daily Rate Update",
+      "fix": "MARKET → undefined",
+      "reason": "MARKET has 50% failure rate"
+    }
+  ]
+}

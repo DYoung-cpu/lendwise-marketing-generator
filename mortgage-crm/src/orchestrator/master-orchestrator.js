@@ -5,6 +5,7 @@ import MarketIntelligenceAgent from '../agents/market-intelligence-agent.js';
 import VisualAgent from '../agents/visual-agent.js';
 import PersonalizationAgent from '../agents/personalization-agent.js';
 import QualityAgent from '../agents/quality-agent.js';
+import DreamboothTrainingAgent from '../agents/dreambooth-training-agent.js';
 import ReplicateCatalog from '../models/replicate-catalog.js';
 import LearningSystem from '../memory/learning-system.js';
 import BrandLearningSystem from '../memory/brand-learning.js';
@@ -36,6 +37,7 @@ class MasterOrchestrator {
     this.visualAgent = new VisualAgent(this.replicate, this.catalog);
     this.personalizationAgent = new PersonalizationAgent();
     this.qualityAgent = new QualityAgent(this.supabase);
+    this.dreamboothAgent = new DreamboothTrainingAgent(this.supabase);
     this.learningSystem = new LearningSystem(this.supabase);
     this.brandLearning = new BrandLearningSystem(this.supabase);
     this.playwrightLearning = new PlaywrightLearningSystem(this.supabase);

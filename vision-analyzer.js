@@ -83,13 +83,13 @@ class VisionAnalyzer {
             const analysisText = response.content[0].text;
             const result = this.parseAnalysisResponse(analysisText);
 
-            console.log(`\n📊 Analysis Results:`);
+            console.log('\n📊 Analysis Results:');
             console.log(`   Success: ${result.success ? '✅' : '❌'}`);
             console.log(`   Score: ${result.score}%`);
             console.log(`   Errors found: ${result.errors.length}`);
 
             if (result.errors.length > 0) {
-                console.log(`\n⚠️ Issues Detected:`);
+                console.log('\n⚠️ Issues Detected:');
                 result.errors.forEach((error, index) => {
                     console.log(`   ${index + 1}. [${error.type}] ${error.issue}`);
                 });
@@ -137,11 +137,17 @@ Verify these words LETTER-BY-LETTER (one letter at a time):
 If you see "OUTLOK" instead of "OUTLOOK", this is a SPELLING ERROR - report it immediately!
 If ANY letter is missing or wrong, this is an AUTOMATIC FAIL!
 
-**DATA COMPLETENESS:**
+**DATA COMPLETENESS & TEXT TRUNCATION:**
+CRITICAL: Check EVERY piece of text for completeness. Look for missing words, partial words, or truncated labels.
+
 - Are all rates displayed correctly with proper decimals (e.g., 6.27%)?
-- Are all percent signs (%) visible?
-- Is the date displayed?
-- Is contact info present: "David Young NMLS 62043 Phone 310-954-7771"?
+- Are all percent signs (%) visible and NOT missing?
+- Is the date displayed FULLY (not truncated like "October 21" missing year)?
+- Is contact info COMPLETE: "David Young NMLS 62043 Phone 310-954-7771"?
+- Check for truncated labels: "30-" is WRONG (should be "30-Year"), "10-" is WRONG (should be "10-Year")
+- Treasury Yields: Must say "10-Year [value] and 30-Year [value]" - verify BOTH "Year" labels are present
+- Rate labels: Must show "30-Year Fixed" (NOT "30-Fixed" or "30-Year Fi")
+- Look for incomplete words: "continu" instead of "continued", "optimi" instead of "optimism"
 
 **VISUAL ELEMENTS:**
 - Is the LendWise logo visible (gold owl)?
@@ -153,40 +159,60 @@ If ANY letter is missing or wrong, this is an AUTOMATIC FAIL!
         const templateSpecific = {
             'Daily Rate Update': `
 **Template-Specific Checks:**
-- Header: "Daily Rate Update [Date]"
-- Large 30-Year rate display (6.38%) with change indicator (+/-/—)
-- 3 economic factor bullets visible (with or without indicators)
-- Lock strategy text present
-- Expert insight quote with both opening and closing quotation marks
+- Header: "Daily Rate Update [Date]" - verify COMPLETE date (month, day, year)
+- Large 30-Year rate display: Must show "30-Year Fixed" FULLY (not "30-Year Fi" or "30-Fixed")
+- Rate value: 6.38% with change indicator (+/-/—) - verify % sign present
+- 3 economic factor bullets: Check each bullet for complete sentences (no truncated words)
+- Lock strategy text: FULL sentence (not cut off mid-word)
+- Expert insight quote: BOTH opening " and closing " quotation marks present
+- Contact: "David Young NMLS 62043 Phone 310-954-7771" - verify ALL parts present (NMLS number, full phone)
 `,
             'Market Report': `
 **Template-Specific Checks:**
-- Header: "Mortgage Rate Update" or "MORTGAGE MARKET UPDATE"
-- 30-Year Fixed: 6.38% with change indicator
-- 15-Year Fixed: 5.88% with change indicator
-- Jumbo rate: 6.29% with change
-- Treasury yields section visible
-- Market insight text
-- Expert note quote with opening and closing quotation marks
+- Header: "Mortgage Rate Update" or "MORTGAGE MARKET UPDATE" - verify complete words
+- 30-Year Fixed: Must show COMPLETE label "30-Year Fixed" (not "30-Fixed" or "30-Year Fi")
+- Rate: 6.38% with change indicator - verify % sign visible
+- 15-Year Fixed: Must show COMPLETE label "15-Year Fixed" (not "15-Fixed" or "15-Year Fi")
+- Rate: 5.88% with change indicator - verify % sign visible
+- Jumbo rate: Must show COMPLETE label "Jumbo Rate" or "Jumbo" - verify 6.29% with % sign
+- Treasury yields: CRITICAL - Must say "10-Year [value] and 30-Year [value]"
+  → Verify "10-Year" is complete (NOT "10-" or "10-Yea")
+  → Verify "30-Year" is complete (NOT "30-" or "30-721" without "Year")
+  → Example WRONG: "10-Year 4.132 and 30-721" ❌
+  → Example CORRECT: "10-Year 4.132 and 30-Year 4.721" ✅
+- Market insight text: COMPLETE sentences (no truncation)
+- Expert note quote: BOTH opening " and closing " marks present
+- Contact: "David Young NMLS 62043 Phone 310-954-7771" - ALL components present
 `,
             'Rate Trends': `
 **Template-Specific Checks:**
-- Header: "MORTGAGE RATE TRENDS" or "Rate Trend Analysis"
-- Large current rate display: 6.38%
-- 4-Week Range visible
-- 52-Week Range visible
-- Trend status (Stable/Volatile)
-- Forward View or Forecast section (NOT "OUTLOK" typo)
-- Commentary quote
+- Header: "MORTGAGE RATE TRENDS" or "Rate Trend Analysis" - verify complete words
+- Large current rate display: Must show "30-Year Fixed" FULLY (not truncated)
+- Rate value: 6.38% - verify % sign present
+- 4-Week Range: COMPLETE labels and values (e.g., "6.31 to 6.39")
+- 52-Week Range: COMPLETE labels and values (e.g., "6.13 to 7.26")
+- Trend status: COMPLETE word (Stable/Volatile - not "Stab" or "Vol")
+- Forward View: COMPLETE text (NOT "OUTLOK" typo - must be "OUTLOOK")
+- Commentary quote: BOTH opening " and closing " marks, COMPLETE sentence
+- Contact: "David Young NMLS 62043 Phone 310-954-7771" - verify all components
 `,
             'Economic Outlook': `
 **Template-Specific Checks:**
-- Header: "ECONOMIC OUTLOOK" (check spelling - NOT "OUTLOK" or "ECONOMIK")
-- Subheadline: "How Current Conditions Impact Mortgage Rates" or "How Conditions Impact Mortgage Rates"
-- Large current 30-year rate: 6.27%
-- 3 Key Economic Factors with status labels (Improving/Concern/etc)
-- Treasury Yield section: 10-Year value displayed (e.g., 4.021 or 4.132)
-- Market insight quote with BOTH opening " and closing " quotation marks
+- Header: "ECONOMIC OUTLOOK" - verify COMPLETE spelling (NOT "OUTLOK" or "ECONOMIK")
+- Subheadline: Must be COMPLETE - "How Current Conditions Impact Mortgage Rates"
+- Large current rate: Must show "30-Year Fixed" FULLY (not "30-Fixed" or truncated)
+- Rate value: 6.38% - verify % sign present
+- 3 Key Economic Factors: Each bullet must have COMPLETE sentences (no truncated words)
+- Status labels: COMPLETE words (Improving/Concern/etc - not "Improv" or "Concer")
+- Treasury Yields section: CRITICAL TEXT COMPLETENESS CHECK
+  → Must say "10-Year [value] and 30-Year [value]"
+  → Verify "10-Year" is COMPLETE (NOT "10-" or "10-Yea")
+  → Verify "30-Year" is COMPLETE (NOT "30-" or truncated)
+  → Example WRONG: "10-Year 4.132 and 30-4.721" ❌
+  → Example CORRECT: "10-Year 4.132 and 30-Year 4.721" ✅
+- Market insight quote: BOTH opening " and closing " quotation marks present
+- Quote text: COMPLETE sentence (no truncation mid-word)
+- Contact: "David Young NMLS 62043 Phone 310-954-7771" - ALL components present
 - All numerical data must be EXACT (no extra digits added or removed)
 `
         };

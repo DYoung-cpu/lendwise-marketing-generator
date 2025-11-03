@@ -176,7 +176,7 @@ class LearningLayer {
         console.log(`\n📊 LEARNING STATS - ${templateName}:`);
         console.log(`   Success Rate: ${template.successRate.toFixed(1)}% (${template.perfectGenerations}/${template.totalGenerations})`);
         console.log(`   Global Success Rate: ${this.learningData.globalStats.currentSuccessRate.toFixed(1)}%`);
-        console.log(`   Target: 90%`);
+        console.log('   Target: 90%');
     }
 
     /**
@@ -193,10 +193,10 @@ class LearningLayer {
         // Find errors that occurred 2+ times and need fixing
         for (const [errorKey, pattern] of Object.entries(template.errorPatterns)) {
             if (pattern.count >= 2 && !pattern.fixAttempted) {
-                console.log(`\n🔍 PATTERN DETECTED:`);
+                console.log('\n🔍 PATTERN DETECTED:');
                 console.log(`   Error: [${pattern.errorType}] ${pattern.errorIssue}`);
                 console.log(`   Occurrences: ${pattern.count}`);
-                console.log(`   🔧 TRIGGERING AUTOMATIC FIX...`);
+                console.log('   🔧 TRIGGERING AUTOMATIC FIX...');
 
                 // Mark as fix attempted
                 pattern.fixAttempted = true;
@@ -305,7 +305,7 @@ class LearningLayer {
             pattern.fixConfirmedAt = new Date().toISOString();
             console.log(`\n✅ FIX CONFIRMED for ${templateName}:`);
             console.log(`   Error: [${pattern.errorType}] ${pattern.errorIssue}`);
-            console.log(`   Fix tested successfully 2 times`);
+            console.log('   Fix tested successfully 2 times');
         }
 
         await this.save();

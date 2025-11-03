@@ -1,0 +1,19 @@
+// Red Dot Test Styling
+// Creates a red dot in the center of the screen
+
+.red-dot-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999999;
+  pointer-events: none; // So it doesn't block clicks
+}
+
+.red-dot {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+}

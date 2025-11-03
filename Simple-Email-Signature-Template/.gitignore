@@ -1,0 +1,26 @@
+# Generated files
+email-signature.html
+signature-preview.png
+photo-optimized.png
+logo-optimized.png
+*.html
+!template.html
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

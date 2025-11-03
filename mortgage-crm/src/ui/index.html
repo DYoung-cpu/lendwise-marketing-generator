@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage CRM - LendWise Marketing Platform</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #2d5f3f 0%, #1a3d2e 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    header {
+      background: white;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h1 {
+      color: #2d5f3f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .owl-emoji { font-size: 40px; }
+    .subtitle { color: #666; font-size: 14px; margin-top: 5px; }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #2d5f3f;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 16px;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: #d4af37;
+    }
+
+    .templates {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .template-btn {
+      padding: 15px;
+      background: white;
+      border: 2px solid #2d5f3f;
+      color: #2d5f3f;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .template-btn:hover {
+      background: #2d5f3f;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .template-btn.active {
+      background: #2d5f3f;
+      color: white;
+    }
+
+    button.generate-btn {
+      background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+      color: white;
+      border: none;
+      padding: 18px 50px;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      width: 100%;
+    }
+
+    button.generate-btn:hover { transform: translateY(-2px); }
+    button.generate-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .checkbox-group {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      width: auto;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 40px;
+      display: none;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #d4af37;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    #result {
+      margin-top: 30px;
+    }
+
+    .result-card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .result-card img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+
+    .result-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .info-item {
+      padding: 10px;
+      background: #f5f5f5;
+      border-radius: 6px;
+    }
+
+    .info-label {
+      font-size: 12px;
+      color: #666;
+      text-transform: uppercase;
+    }
+
+    .info-value {
+      font-size: 18px;
+      font-weight: 600;
+      color: #2d5f3f;
+      margin-top: 5px;
+    }
+
+    .quality-excellent { color: #4caf50; }
+    .quality-good { color: #8bc34a; }
+    .quality-fair { color: #ff9800; }
+
+    .error {
+      background: #ffebee;
+      color: #c62828;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #c62828;
+    }
+
+    .cache-badge {
+      display: inline-block;
+      padding: 5px 15px;
+      background: #2196f3;
+      color: white;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>
+      <span class="owl-emoji">🦉</span>
+      LendWise Marketing Platform
+    </h1>
+    <div class="subtitle">Powered by 329 AI Models | Intelligent Content Generation</div>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2 style="margin-bottom: 20px;">Select Template</h2>
+
+      <div class="templates">
+        <div class="template-btn" onclick="useTemplate('rate-update')">
+          📊 Rate Update
+        </div>
+        <div class="template-btn" onclick="useTemplate('open-house')">
+          🏠 Open House
+        </div>
+        <div class="template-btn" onclick="useTemplate('testimonial')">
+          ⭐ Testimonial
+        </div>
+        <div class="template-btn" onclick="useTemplate('market-update')">
+          📈 Market Update
+        </div>
+        <div class="template-btn" onclick="useTemplate('just-closed')">
+          🎉 Just Closed
+        </div>
+        <div class="template-btn" onclick="useTemplate('tip')">
+          💡 Quick Tip
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Message *</label>
+        <textarea id="message" placeholder="Enter your message (e.g., Great news! 30-year rates dropped to 6.25%)"></textarea>
+      </div>
+
+      <h3 style="margin: 30px 0 15px;">Loan Officer Information</h3>
+
+      <div class="form-group">
+        <label>Name *</label>
+        <input type="text" id="loName" placeholder="Your Name" value="David Young">
+      </div>
+
+      <div class="form-group">
+        <label>NMLS Number *</label>
+        <input type="text" id="loNMLS" placeholder="123456" value="123456">
+      </div>
+
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="text" id="loPhone" placeholder="(555) 123-4567" value="(555) 123-4567">
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="loEmail" placeholder="you@lendwise.com" value="david@lendwise.com">
+      </div>
+
+      <div class="form-group">
+        <label>Your Photo (Optional)</label>
+        <input type="file" id="loPhoto" accept="image/jpeg,image/png,image/jpg" onchange="handlePhotoUpload(event)">
+        <div id="photoPreview" style="margin-top: 10px; display: none;">
+          <img id="photoPreviewImg" style="max-width: 200px; border-radius: 8px; border: 2px solid #2d5f3f;" alt="Photo preview">
+          <button type="button" onclick="clearPhoto()" style="display: block; margin-top: 10px; padding: 5px 15px; background: #dc2626; color: white; border: none; border-radius: 6px; cursor: pointer;">Remove Photo</button>
+        </div>
+      </div>
+
+      <h3 style="margin: 30px 0 15px;">Options</h3>
+
+      <div class="checkbox-group">
+        <div class="checkbox-item">
+          <input type="checkbox" id="fastMode" checked>
+          <label for="fastMode" style="margin: 0;">Fast Mode (30-45s)</label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="skipCache">
+          <label for="skipCache" style="margin: 0;">Skip Cache (Force New)</label>
+        </div>
+      </div>
+
+      <button class="generate-btn" onclick="generate()">
+        Generate Marketing Content
+      </button>
+    </div>
+
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p style="color: white; font-size: 18px;">Creating your content...</p>
+      <p style="color: rgba(255,255,255,0.7); margin-top: 10px;">This may take 30-120 seconds</p>
+    </div>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    let currentType = 'rate-update';
+    let uploadedPhotoBase64 = null;
+
+    const templates = {
+      'rate-update': 'Great news! 30-year fixed rates dropped to 6.25%',
+      'open-house': 'Open House This Saturday! Beautiful 4BR/3BA in Sunset Hills. 123 Maple Drive, 1-4 PM',
+      'testimonial': 'Sarah made our dream home a reality! Her expertise and patience were amazing. - The Johnson Family',
+      'market-update': 'November Market Report: Inventory up 15%, rates stabilizing. Great time for buyers!',
+      'just-closed': 'Congratulations to the Martinez family on their new home! Welcome to the neighborhood!',
+      'tip': 'Tip of the Day: Boost your credit score by paying down credit cards to below 30% utilization!'
+    };
+
+    function handlePhotoUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      // Validate file size (max 5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        alert('Photo must be less than 5MB');
+        event.target.value = '';
+        return;
+      }
+
+      // Validate file type
+      if (!file.type.match('image/(jpeg|jpg|png)')) {
+        alert('Please upload a JPEG or PNG image');
+        event.target.value = '';
+        return;
+      }
+
+      // Read and preview
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        uploadedPhotoBase64 = e.target.result;
+        document.getElementById('photoPreviewImg').src = e.target.result;
+        document.getElementById('photoPreview').style.display = 'block';
+        console.log('✅ Photo uploaded successfully');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function clearPhoto() {
+      uploadedPhotoBase64 = null;
+      document.getElementById('loPhoto').value = '';
+      document.getElementById('photoPreview').style.display = 'none';
+      console.log('🗑️ Photo removed');
+    }
+
+    function useTemplate(type) {
+      currentType = type;
+      document.getElementById('message').value = templates[type];
+
+      // Update active state
+      document.querySelectorAll('.template-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+    }
+
+    async function generate() {
+      const message = document.getElementById('message').value.trim();
+      const loName = document.getElementById('loName').value.trim();
+      const loNMLS = document.getElementById('loNMLS').value.trim();
+
+      if (!message) {
+        alert('Please enter a message');
+        return;
+      }
+
+      if (!loName || !loNMLS) {
+        alert('Please enter loan officer name and NMLS number');
+        return;
+      }
+
+      const loading = document.getElementById('loading');
+      const resultDiv = document.getElementById('result');
+      const btn = event.target;
+
+      btn.disabled = true;
+      loading.style.display = 'block';
+      resultDiv.innerHTML = '';
+
+      const requestBody = {
+        type: currentType,
+        message: message,
+        loanOfficer: {
+          name: loName,
+          nmls: loNMLS,
+          phone: document.getElementById('loPhone').value.trim(),
+          email: document.getElementById('loEmail').value.trim(),
+          photo: uploadedPhotoBase64  // Include uploaded photo as base64
+        },
+        preferences: {
+          fastMode: document.getElementById('fastMode').checked,
+          skipCache: document.getElementById('skipCache').checked
+        }
+      };
+
+      try {
+        const response = await fetch('/api/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(requestBody)
+        });
+
+        const result = await response.json();
+
+        // Log to console for debugging
+        console.log('🎨 Generation Result:', result);
+        console.log('📊 Validation Details:', result.validation);
+
+        if (result.success) {
+          const quality = result.validation?.overall || 0;
+          const qualityPercent = (quality * 100).toFixed(0);
+          let qualityClass = 'quality-fair';
+          if (quality >= 0.85) qualityClass = 'quality-excellent';
+          else if (quality >= 0.7) qualityClass = 'quality-good';
+
+          // Build validation issues HTML
+          let validationHTML = '';
+          const allIssues = [
+            ...(result.validation?.ocr?.issues || []),
+            ...(result.validation?.spelling?.issues || []),
+            ...(result.validation?.compliance?.issues || [])
+          ];
+
+          if (allIssues.length > 0) {
+            validationHTML = `
+              <div style="margin-top: 20px; padding: 15px; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 6px;">
+                <h4 style="color: #856404; margin-bottom: 10px;">⚠️ Quality Issues Detected:</h4>
+                <ul style="margin: 0; padding-left: 20px; color: #856404;">
+                  ${allIssues.map(issue => `<li>${issue}</li>`).join('')}
+                </ul>
+              </div>
+            `;
+          }
+
+          resultDiv.innerHTML = `
+            <div class="result-card">
+              <h2 style="color: #2d5f3f; margin-bottom: 20px;">✅ Content Generated!</h2>
+
+              <img src="${result.output}" alt="Generated content">
+
+              ${result.cached ? '<div class="cache-badge">💾 Cached Result (Instant)</div>' : ''}
+
+              <div class="result-info">
+                <div class="info-item">
+                  <div class="info-label">Quality Score</div>
+                  <div class="info-value ${qualityClass}">${qualityPercent}%</div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-label">Model Used</div>
+                  <div class="info-value">${result.model || 'N/A'}</div>
+                </div>
+
+                ${result.cached ? `
+                  <div class="info-item">
+                    <div class="info-label">Hit Count</div>
+                    <div class="info-value">${result.hitCount || 1}</div>
+                  </div>
+                ` : ''}
+              </div>
+
+              <div style="margin-top: 20px;">
+                <a href="${result.output}" target="_blank"
+                   style="color: #2d5f3f; text-decoration: none; font-weight: 600;">
+                  🔗 Open Full Size
+                </a>
+              </div>
+
+              ${validationHTML}
+            </div>
+          `;
+        } else {
+          resultDiv.innerHTML = `
+            <div class="card error">
+              <h3>❌ Generation Failed</h3>
+              <p style="margin-top: 10px;">${result.error || 'Unknown error occurred'}</p>
+            </div>
+          `;
+        }
+
+      } catch (error) {
+        resultDiv.innerHTML = `
+          <div class="card error">
+            <h3>❌ Network Error</h3>
+            <p style="margin-top: 10px;">${error.message}</p>
+            <p style="margin-top: 10px;">Make sure the server is running on port 3001</p>
+          </div>
+        `;
+      } finally {
+        btn.disabled = false;
+        loading.style.display = 'none';
+      }
+    }
+
+    // Initialize with default template
+    window.onload = () => {
+      document.querySelectorAll('.template-btn')[0].click();
+    };
+  </script>
+</body>
+</html>

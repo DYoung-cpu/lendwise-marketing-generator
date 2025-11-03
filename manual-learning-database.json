@@ -1,0 +1,2803 @@
+{
+  "templates": {
+    "Daily Rate Update": {
+      "errorPatterns": {
+        "spelling:YEERT instead of YEAR in '30-YEERT FIXED'": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:23:17.716Z",
+          "lastSeen": "2025-10-16T21:23:17.717Z",
+          "errorType": "spelling",
+          "errorIssue": "YEERT instead of YEAR in '30-YEERT FIXED'",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "quotation:Quote marks are present and matching in 'RATES STABLE NEAR RECENT LOWS' but not properly formatted (straight quotes used instead of curly quotes)": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:23:17.723Z",
+          "lastSeen": "2025-10-16T21:23:17.723Z",
+          "errorType": "quotation",
+          "errorIssue": "Quote marks are present and matching in 'RATES STABLE NEAR RECENT LOWS' but not properly formatted (straight quotes used instead of curly quotes)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "design_elements:Missing required LendWise logo, forest green gradient, and gold accents": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:24:29.922Z",
+          "lastSeen": "2025-10-16T21:24:29.922Z",
+          "errorType": "design_elements",
+          "errorIssue": "Missing required LendWise logo, forest green gradient, and gold accents",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "content:Missing required header, date, rates, economic factors, and contact information": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:24:29.937Z",
+          "lastSeen": "2025-10-16T21:24:29.937Z",
+          "errorType": "content",
+          "errorIssue": "Missing required header, date, rates, economic factors, and contact information",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "format:Plain blue background instead of required forest green gradient": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:24:29.986Z",
+          "lastSeen": "2025-10-16T21:24:29.986Z",
+          "errorType": "format",
+          "errorIssue": "Plain blue background instead of required forest green gradient",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "template:Image appears to be a different template entirely - shows person holding 'RATES ARE DOWN' sign": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:24:30.008Z",
+          "lastSeen": "2025-10-16T21:24:30.008Z",
+          "errorType": "template",
+          "errorIssue": "Image appears to be a different template entirely - shows person holding 'RATES ARE DOWN' sign",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "completeness:Missing all required template elements including rate display, bullets, and expert insight": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:24:30.021Z",
+          "lastSeen": "2025-10-16T21:24:30.021Z",
+          "errorType": "completeness",
+          "errorIssue": "Missing all required template elements including rate display, bullets, and expert insight",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "design:White boxes present instead of dark green gradient boxes": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:24:47.890Z",
+          "lastSeen": "2025-10-16T21:24:47.890Z",
+          "errorType": "design",
+          "errorIssue": "White boxes present instead of dark green gradient boxes",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "content:Missing specific date for the rate update": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:24:47.895Z",
+          "lastSeen": "2025-10-16T21:24:47.895Z",
+          "errorType": "content",
+          "errorIssue": "Missing specific date for the rate update",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "template:Missing lock strategy text": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:24:47.922Z",
+          "lastSeen": "2025-10-16T21:24:47.922Z",
+          "errorType": "template",
+          "errorIssue": "Missing lock strategy text",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "template:Missing expert insight quote with quotation marks": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:24:47.937Z",
+          "lastSeen": "2025-10-16T21:24:47.937Z",
+          "errorType": "template",
+          "errorIssue": "Missing expert insight quote with quotation marks",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "branding:Blue background instead of specified forest green gradient": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:24:47.953Z",
+          "lastSeen": "2025-10-16T21:24:47.953Z",
+          "errorType": "branding",
+          "errorIssue": "Blue background instead of specified forest green gradient",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:Misspelling in quote: 'opotoune' instead of 'opportune'": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:25:05.796Z",
+          "lastSeen": "2025-10-16T21:25:05.796Z",
+          "errorType": "typo",
+          "errorIssue": "Misspelling in quote: 'opotoune' instead of 'opportune'",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:Misspelling in quote: 'oo buy' instead of 'to buy'": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:25:05.800Z",
+          "lastSeen": "2025-10-16T21:25:05.800Z",
+          "errorType": "typo",
+          "errorIssue": "Misspelling in quote: 'oo buy' instead of 'to buy'",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:Misspelling: 'refince' instead of 'refinance'": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:25:05.823Z",
+          "lastSeen": "2025-10-16T21:25:05.823Z",
+          "errorType": "typo",
+          "errorIssue": "Misspelling: 'refince' instead of 'refinance'",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "design:White box present for 'Rates Are Down!' message - should be dark green gradient": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:25:05.845Z",
+          "lastSeen": "2025-10-16T21:25:05.845Z",
+          "errorType": "design",
+          "errorIssue": "White box present for 'Rates Are Down!' message - should be dark green gradient",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "content:Missing required economic factors and bullet points": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:25:05.865Z",
+          "lastSeen": "2025-10-16T21:25:05.865Z",
+          "errorType": "content",
+          "errorIssue": "Missing required economic factors and bullet points",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "content:Missing specific rate percentages with proper decimals": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:25:05.876Z",
+          "lastSeen": "2025-10-16T21:25:05.876Z",
+          "errorType": "content",
+          "errorIssue": "Missing specific rate percentages with proper decimals",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "content:Missing required contact information": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:25:05.933Z",
+          "lastSeen": "2025-10-16T21:25:05.934Z",
+          "errorType": "content",
+          "errorIssue": "Missing required contact information",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:\"opportunte\" is misspelled (should be \"opportune\")": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:25:21.386Z",
+          "lastSeen": "2025-10-16T21:25:21.386Z",
+          "errorType": "spelling",
+          "errorIssue": "\"opportunte\" is misspelled (should be \"opportune\")",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "template_mismatch:Missing required template elements: Daily Rate Update header, lock strategy text, expert insight quote": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:25:21.398Z",
+          "lastSeen": "2025-10-16T21:25:21.398Z",
+          "errorType": "template_mismatch",
+          "errorIssue": "Missing required template elements: Daily Rate Update header, lock strategy text, expert insight quote",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "data_completeness:Missing date display and NMLS information": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:25:21.420Z",
+          "lastSeen": "2025-10-16T21:25:21.420Z",
+          "errorType": "data_completeness",
+          "errorIssue": "Missing date display and NMLS information",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "visual_format:Green background isn't using proper gradient effect": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:25:21.457Z",
+          "lastSeen": "2025-10-16T21:25:21.457Z",
+          "errorType": "visual_format",
+          "errorIssue": "Green background isn't using proper gradient effect",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "content_structure:Different format than specified template - shows only basic rate information rather than full daily update format": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:25:21.482Z",
+          "lastSeen": "2025-10-16T21:25:21.482Z",
+          "errorType": "content_structure",
+          "errorIssue": "Different format than specified template - shows only basic rate information rather than full daily update format",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "quotation_marks:Only one set of quotes present in 'Expert Insight' - missing matching closing quote": {
+          "count": 2,
+          "firstSeen": "2025-10-16T21:25:41.188Z",
+          "lastSeen": "2025-10-16T21:25:41.259Z",
+          "errorType": "quotation_marks",
+          "errorIssue": "Only one set of quotes present in 'Expert Insight' - missing matching closing quote",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-17T05:02:10.887Z",
+          "consecutiveSuccesses": 1
+        },
+        "design_element:White box present with 'RATES ARE DOWN' text - should be dark green with transparency": {
+          "count": 2,
+          "firstSeen": "2025-10-16T21:25:41.196Z",
+          "lastSeen": "2025-10-16T21:25:41.259Z",
+          "errorType": "design_element",
+          "errorIssue": "White box present with 'RATES ARE DOWN' text - should be dark green with transparency",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-18T05:09:49.282Z",
+          "consecutiveSuccesses": 1
+        },
+        "data_completeness:Missing contact information (no phone number or NMLS details for loan officer)": {
+          "count": 2,
+          "firstSeen": "2025-10-16T21:25:41.228Z",
+          "lastSeen": "2025-10-16T21:25:41.259Z",
+          "errorType": "data_completeness",
+          "errorIssue": "Missing contact information (no phone number or NMLS details for loan officer)",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-19T14:27:27.644Z",
+          "consecutiveSuccesses": 1
+        },
+        "content:Missing economic factor bullets that are typically part of the template": {
+          "count": 2,
+          "firstSeen": "2025-10-16T21:25:41.246Z",
+          "lastSeen": "2025-10-16T21:25:41.259Z",
+          "errorType": "content",
+          "errorIssue": "Missing economic factor bullets that are typically part of the template",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-20T04:10:17.234Z",
+          "consecutiveSuccesses": 1
+        },
+        "quotes:Inconsistent quote marks in 'EXPERT INSIGHT - RATES STABLE NEAR RECENT LOWS' - has opening quotes but closing quotes aren't matched properly": {
+          "count": 1,
+          "firstSeen": "2025-10-17T05:02:31.284Z",
+          "lastSeen": "2025-10-17T05:02:31.284Z",
+          "errorType": "quotes",
+          "errorIssue": "Inconsistent quote marks in 'EXPERT INSIGHT - RATES STABLE NEAR RECENT LOWS' - has opening quotes but closing quotes aren't matched properly",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "data:NMLS number discrepancy - shows 62043 instead of standard 620043 (missing a zero)": {
+          "count": 1,
+          "firstSeen": "2025-10-17T05:02:31.293Z",
+          "lastSeen": "2025-10-17T05:02:31.293Z",
+          "errorType": "data",
+          "errorIssue": "NMLS number discrepancy - shows 62043 instead of standard 620043 (missing a zero)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:Found 'Commentarye' instead of 'Commentary'": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:10:05.911Z",
+          "lastSeen": "2025-10-18T05:10:05.911Z",
+          "errorType": "spelling",
+          "errorIssue": "Found 'Commentarye' instead of 'Commentary'",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "parse_error:Could not parse analysis response": {
+          "count": 1,
+          "firstSeen": "2025-10-20T14:16:33.998Z",
+          "lastSeen": "2025-10-20T14:16:33.998Z",
+          "errorType": "parse_error",
+          "errorIssue": "Could not parse analysis response",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJnmAzkN8y3E4Fciegsf\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-20T16:46:33.525Z",
+          "lastSeen": "2025-10-20T16:46:33.525Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJnmAzkN8y3E4Fciegsf\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJnnAMLJMRxogYd7ZK2h\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-20T16:46:46.999Z",
+          "lastSeen": "2025-10-20T16:46:47.000Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJnnAMLJMRxogYd7ZK2h\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJno99BMJVWnhNVPMBaw\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-20T16:47:00.227Z",
+          "lastSeen": "2025-10-20T16:47:00.227Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJno99BMJVWnhNVPMBaw\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJnpA71513fue8fmR9uF\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-20T16:47:14.114Z",
+          "lastSeen": "2025-10-20T16:47:14.114Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJnpA71513fue8fmR9uF\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJnqJwqu7xcAdWUCySvv\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-20T16:47:29.652Z",
+          "lastSeen": "2025-10-20T16:47:29.652Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJnqJwqu7xcAdWUCySvv\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJogNjfYdjxUFtvyrtrL\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-20T16:58:35.487Z",
+          "lastSeen": "2025-10-20T16:58:35.487Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJogNjfYdjxUFtvyrtrL\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJoh8AbRNEsRsJmKBXZX\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-20T16:58:45.419Z",
+          "lastSeen": "2025-10-20T16:58:45.419Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJoh8AbRNEsRsJmKBXZX\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJohwpmZ7B6WWLzXVTWj\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-20T16:58:56.565Z",
+          "lastSeen": "2025-10-20T16:58:56.565Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJohwpmZ7B6WWLzXVTWj\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJoidKZfEqzCiAT3bkQB\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-20T16:59:05.824Z",
+          "lastSeen": "2025-10-20T16:59:05.824Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJoidKZfEqzCiAT3bkQB\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJojLJ9d9cq6r6g6qYCJ\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-20T16:59:15.385Z",
+          "lastSeen": "2025-10-20T16:59:15.385Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJojLJ9d9cq6r6g6qYCJ\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJvBYMrtLwd5Ly9iNyWy\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-20T18:23:51.796Z",
+          "lastSeen": "2025-10-20T18:23:51.796Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJvBYMrtLwd5Ly9iNyWy\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJvCQAGomoJqV1UevtqC\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-20T18:24:03.612Z",
+          "lastSeen": "2025-10-20T18:24:03.612Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJvCQAGomoJqV1UevtqC\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJvDKp7Mv423hJAaR8qy\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-20T18:24:15.998Z",
+          "lastSeen": "2025-10-20T18:24:15.998Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJvDKp7Mv423hJAaR8qy\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJvECzcrHFwZCX1h4hpe\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-20T18:24:27.987Z",
+          "lastSeen": "2025-10-20T18:24:27.987Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJvECzcrHFwZCX1h4hpe\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJvF47McsiTdipk21Ait\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-20T18:24:39.527Z",
+          "lastSeen": "2025-10-20T18:24:39.527Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUJvF47McsiTdipk21Ait\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUKjBxzAsxNGYTj67pvro\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-21T04:40:18.144Z",
+          "lastSeen": "2025-10-21T04:40:18.144Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUKjBxzAsxNGYTj67pvro\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUKjCrJrqwtHb5bET6Hcm\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-21T04:40:29.919Z",
+          "lastSeen": "2025-10-21T04:40:29.919Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUKjCrJrqwtHb5bET6Hcm\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUKjDiYKT56hvzqZ2PGq5\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-21T04:40:42.053Z",
+          "lastSeen": "2025-10-21T04:40:42.053Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUKjDiYKT56hvzqZ2PGq5\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUKjEbxi5VJBQtZgG6mCy\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-21T04:40:53.745Z",
+          "lastSeen": "2025-10-21T04:40:53.745Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUKjEbxi5VJBQtZgG6mCy\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUKjFVBhjM6KGFFy3wA3L\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-21T04:41:05.584Z",
+          "lastSeen": "2025-10-21T04:41:05.584Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUKjFVBhjM6KGFFy3wA3L\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "content:Market Drivers Today section appears to be empty/incomplete": {
+          "count": 1,
+          "firstSeen": "2025-10-21T13:15:31.191Z",
+          "lastSeen": "2025-10-21T13:15:31.191Z",
+          "errorType": "content",
+          "errorIssue": "Market Drivers Today section appears to be empty/incomplete",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "format:Only shows two bullet points (dots) but no actual market drivers content": {
+          "count": 1,
+          "firstSeen": "2025-10-21T13:15:31.201Z",
+          "lastSeen": "2025-10-21T13:15:31.201Z",
+          "errorType": "format",
+          "errorIssue": "Only shows two bullet points (dots) but no actual market drivers content",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "quotation:Quote 'ANOTHER BORING DAY WITH MORTGAGE RATES NEAR 3-YEAR LOWS' has matching quotes": {
+          "count": 1,
+          "firstSeen": "2025-10-21T13:15:31.230Z",
+          "lastSeen": "2025-10-21T13:15:31.230Z",
+          "errorType": "quotation",
+          "errorIssue": "Quote 'ANOTHER BORING DAY WITH MORTGAGE RATES NEAR 3-YEAR LOWS' has matching quotes",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:Found 'cauting' instead of 'causing' in market driver bullet point": {
+          "count": 2,
+          "firstSeen": "2025-10-21T13:25:01.164Z",
+          "lastSeen": "2025-10-21T13:25:01.211Z",
+          "errorType": "typo",
+          "errorIssue": "Found 'cauting' instead of 'causing' in market driver bullet point",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-21T13:25:03.265Z",
+          "consecutiveSuccesses": 0
+        },
+        "quotation:The expert insight quote only has straight quotes instead of curly quotes for 'RATES STABLE NEAR RECENT LOWS'": {
+          "count": 2,
+          "firstSeen": "2025-10-21T13:25:01.182Z",
+          "lastSeen": "2025-10-21T13:25:01.211Z",
+          "errorType": "quotation",
+          "errorIssue": "The expert insight quote only has straight quotes instead of curly quotes for 'RATES STABLE NEAR RECENT LOWS'",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-21T20:07:03.693Z",
+          "consecutiveSuccesses": 1
+        },
+        "spelling:Found 'contfiued' instead of 'continued' in first market driver bullet": {
+          "count": 2,
+          "firstSeen": "2025-10-21T13:25:01.193Z",
+          "lastSeen": "2025-10-21T13:25:01.211Z",
+          "errorType": "spelling",
+          "errorIssue": "Found 'contfiued' instead of 'continued' in first market driver bullet",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-21T20:07:34.167Z",
+          "consecutiveSuccesses": 1
+        },
+        "typo:CONIITUED instead of CONTINUED in first bullet point": {
+          "count": 2,
+          "firstSeen": "2025-10-21T13:25:16.419Z",
+          "lastSeen": "2025-10-21T13:25:16.455Z",
+          "errorType": "typo",
+          "errorIssue": "CONIITUED instead of CONTINUED in first bullet point",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-21T20:07:51.631Z",
+          "consecutiveSuccesses": 0
+        },
+        "typo:CAUTIOU instead of CAUTIOUS in third bullet point": {
+          "count": 2,
+          "firstSeen": "2025-10-21T13:25:16.425Z",
+          "lastSeen": "2025-10-21T13:25:16.455Z",
+          "errorType": "typo",
+          "errorIssue": "CAUTIOU instead of CAUTIOUS in third bullet point",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-21T20:09:04.471Z",
+          "consecutiveSuccesses": 1
+        },
+        "typo:PERSONLIZED misspelled in lock strategy text": {
+          "count": 2,
+          "firstSeen": "2025-10-21T13:25:16.440Z",
+          "lastSeen": "2025-10-21T13:25:16.455Z",
+          "errorType": "typo",
+          "errorIssue": "PERSONLIZED misspelled in lock strategy text",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-21T20:09:35.477Z",
+          "consecutiveSuccesses": 0
+        },
+        "quotation marks:Only one set of quotes in 'EXPERT INSIGHT - \"RATES STABLE NEAR RECENT LOWS\"' (missing opening or closing quote)": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:07:18.822Z",
+          "lastSeen": "2025-10-21T20:07:18.822Z",
+          "errorType": "quotation marks",
+          "errorIssue": "Only one set of quotes in 'EXPERT INSIGHT - \"RATES STABLE NEAR RECENT LOWS\"' (missing opening or closing quote)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "content:Only 2 economic bullet points shown instead of standard 3": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:07:18.836Z",
+          "lastSeen": "2025-10-21T20:07:18.836Z",
+          "errorType": "content",
+          "errorIssue": "Only 2 economic bullet points shown instead of standard 3",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "formatting:The dash in expert insight quote uses a standard hyphen instead of an em-dash": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:07:18.869Z",
+          "lastSeen": "2025-10-21T20:07:18.869Z",
+          "errorType": "formatting",
+          "errorIssue": "The dash in expert insight quote uses a standard hyphen instead of an em-dash",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:PERSONANIZED appears instead of PERSONALIZED in the lock rate message": {
+          "count": 2,
+          "firstSeen": "2025-10-21T20:08:06.216Z",
+          "lastSeen": "2025-10-21T20:09:03.404Z",
+          "errorType": "spelling",
+          "errorIssue": "PERSONANIZED appears instead of PERSONALIZED in the lock rate message",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-21T20:42:40.880Z",
+          "consecutiveSuccesses": 1
+        },
+        "visual:LendWise logo appears as text/wordmark only, gold owl not visible": {
+          "count": 2,
+          "firstSeen": "2025-10-21T20:08:06.229Z",
+          "lastSeen": "2025-10-21T20:09:03.404Z",
+          "errorType": "visual",
+          "errorIssue": "LendWise logo appears as text/wordmark only, gold owl not visible",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-22T22:18:24.561Z",
+          "consecutiveSuccesses": 1
+        },
+        "typo:Typo in 'CAUUTIOU' (double U) in market drivers section": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:08:20.404Z",
+          "lastSeen": "2025-10-21T20:08:20.404Z",
+          "errorType": "typo",
+          "errorIssue": "Typo in 'CAUUTIOU' (double U) in market drivers section",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:Typo in 'EXPECTINS' instead of 'EXPECTING' in market drivers": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:08:20.413Z",
+          "lastSeen": "2025-10-21T20:08:20.413Z",
+          "errorType": "typo",
+          "errorIssue": "Typo in 'EXPECTINS' instead of 'EXPECTING' in market drivers",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:Typo in 'PERSONASIZED' instead of 'PERSONALIZED'": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:08:20.426Z",
+          "lastSeen": "2025-10-21T20:08:20.426Z",
+          "errorType": "typo",
+          "errorIssue": "Typo in 'PERSONASIZED' instead of 'PERSONALIZED'",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "formatting:Only 2 market drivers shown instead of standard 3": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:08:20.437Z",
+          "lastSeen": "2025-10-21T20:08:20.437Z",
+          "errorType": "formatting",
+          "errorIssue": "Only 2 market drivers shown instead of standard 3",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:PERSONANIZED appears instead of PERSONALIZED in lock recommendation text": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:08:34.808Z",
+          "lastSeen": "2025-10-21T20:08:34.808Z",
+          "errorType": "spelling",
+          "errorIssue": "PERSONANIZED appears instead of PERSONALIZED in lock recommendation text",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "formatting:Repeated word 'CAUTIOUS' in third market driver bullet ('MARKETS HOWERING NEAR MULTI-WEEK LOWS SHOWING CAUTIOUS CAUTIOUS OPTIMISM')": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:08:34.814Z",
+          "lastSeen": "2025-10-21T20:08:34.814Z",
+          "errorType": "formatting",
+          "errorIssue": "Repeated word 'CAUTIOUS' in third market driver bullet ('MARKETS HOWERING NEAR MULTI-WEEK LOWS SHOWING CAUTIOUS CAUTIOUS OPTIMISM')",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:HOWERING appears instead of HOVERING in market drivers": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:08:34.833Z",
+          "lastSeen": "2025-10-21T20:08:34.834Z",
+          "errorType": "spelling",
+          "errorIssue": "HOWERING appears instead of HOVERING in market drivers",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:PERSONANIZED appears instead of PERSONALIZED in the lock rate text": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:08:49.435Z",
+          "lastSeen": "2025-10-21T20:08:49.435Z",
+          "errorType": "spelling",
+          "errorIssue": "PERSONANIZED appears instead of PERSONALIZED in the lock rate text",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "branding:LendWise logo appears as text only, no gold owl visible": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:08:49.439Z",
+          "lastSeen": "2025-10-21T20:08:49.439Z",
+          "errorType": "branding",
+          "errorIssue": "LendWise logo appears as text only, no gold owl visible",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:PERSONSNIZED appears instead of PERSONALIZED in the lock rate message": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:09:03.365Z",
+          "lastSeen": "2025-10-21T20:09:03.365Z",
+          "errorType": "typo",
+          "errorIssue": "PERSONSNIZED appears instead of PERSONALIZED in the lock rate message",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "formatting:The expert insight quote uses all caps, which may reduce readability": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:09:03.379Z",
+          "lastSeen": "2025-10-21T20:09:03.379Z",
+          "errorType": "formatting",
+          "errorIssue": "The expert insight quote uses all caps, which may reduce readability",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:SHWING appears instead of 'SHOWING' in 'MARKETS HOVERING NEAR MULTI-WEEK LOWS SHWING CAUTIO'": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:09:19.475Z",
+          "lastSeen": "2025-10-21T20:09:19.475Z",
+          "errorType": "typo",
+          "errorIssue": "SHWING appears instead of 'SHOWING' in 'MARKETS HOVERING NEAR MULTI-WEEK LOWS SHWING CAUTIO'",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:CAUTIO appears to be truncated from 'CAUTION' in same line": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:09:19.480Z",
+          "lastSeen": "2025-10-21T20:09:19.480Z",
+          "errorType": "typo",
+          "errorIssue": "CAUTIO appears to be truncated from 'CAUTION' in same line",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:PERSONISIZED misspelled (should be PERSONALIZED) in rate quote call-to-action": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:09:19.494Z",
+          "lastSeen": "2025-10-21T20:09:19.494Z",
+          "errorType": "typo",
+          "errorIssue": "PERSONISIZED misspelled (should be PERSONALIZED) in rate quote call-to-action",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "redundancy:Inflation expectations line appears twice, once in green and once in red": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:09:19.509Z",
+          "lastSeen": "2025-10-21T20:09:19.509Z",
+          "errorType": "redundancy",
+          "errorIssue": "Inflation expectations line appears twice, once in green and once in red",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:OPTIMISUM is misspelled (should be OPTIMISM)": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:09:51.270Z",
+          "lastSeen": "2025-10-21T20:09:51.270Z",
+          "errorType": "typo",
+          "errorIssue": "OPTIMISUM is misspelled (should be OPTIMISM)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:Redundant 'PER PER' in 'PER PER FED DATA'": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:09:51.288Z",
+          "lastSeen": "2025-10-21T20:09:51.289Z",
+          "errorType": "typo",
+          "errorIssue": "Redundant 'PER PER' in 'PER PER FED DATA'",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "formatting:Inconsistent capitalization in 'favoraBLE' in lock recommendation": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:09:51.340Z",
+          "lastSeen": "2025-10-21T20:09:51.340Z",
+          "errorType": "formatting",
+          "errorIssue": "Inconsistent capitalization in 'favoraBLE' in lock recommendation",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:Misspelling in 'PERSONNIZED' (should be 'PERSONALIZED')": {
+          "count": 2,
+          "firstSeen": "2025-10-21T20:10:05.099Z",
+          "lastSeen": "2025-10-21T20:10:49.398Z",
+          "errorType": "typo",
+          "errorIssue": "Misspelling in 'PERSONNIZED' (should be 'PERSONALIZED')",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-22T22:19:36.134Z",
+          "consecutiveSuccesses": 1
+        },
+        "typo:Typo in 'CAUTIOU' (appears truncated, should be 'CAUTIOUS')": {
+          "count": 2,
+          "firstSeen": "2025-10-21T20:10:05.113Z",
+          "lastSeen": "2025-10-21T20:10:49.398Z",
+          "errorType": "typo",
+          "errorIssue": "Typo in 'CAUTIOU' (appears truncated, should be 'CAUTIOUS')",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 0,
+          "fixStarted": "2025-10-27T12:45:39.685Z"
+        },
+        "spelling:PERSONLIRIZED misspelled in call-to-action banner (should be PERSONALIZED)": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:10:19.676Z",
+          "lastSeen": "2025-10-21T20:10:19.676Z",
+          "errorType": "spelling",
+          "errorIssue": "PERSONLIRIZED misspelled in call-to-action banner (should be PERSONALIZED)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:CONTNUED misspelled in market drivers (should be CONTINUED)": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:10:19.685Z",
+          "lastSeen": "2025-10-21T20:10:19.685Z",
+          "errorType": "spelling",
+          "errorIssue": "CONTNUED misspelled in market drivers (should be CONTINUED)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:PERSONANIZED misspelled as 'PERSONANIZED' in call-to-action banner": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:10:34.691Z",
+          "lastSeen": "2025-10-21T20:10:34.691Z",
+          "errorType": "typo",
+          "errorIssue": "PERSONANIZED misspelled as 'PERSONANIZED' in call-to-action banner",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "quotation:Inconsistent quote mark usage in 'EXPERT INSIGHT - RATES STABLE NEAR RECENT LOWS' - has both single and double quotes": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:10:34.697Z",
+          "lastSeen": "2025-10-21T20:10:34.697Z",
+          "errorType": "quotation",
+          "errorIssue": "Inconsistent quote mark usage in 'EXPERT INSIGHT - RATES STABLE NEAR RECENT LOWS' - has both single and double quotes",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:HOVERING is misspelled as 'HOVOERING' in Market Drivers section": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:10:49.355Z",
+          "lastSeen": "2025-10-21T20:10:49.355Z",
+          "errorType": "spelling",
+          "errorIssue": "HOVERING is misspelled as 'HOVOERING' in Market Drivers section",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:OPTIMISM is misspelled as 'OPTISIMISM' in Market Drivers section": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:10:49.359Z",
+          "lastSeen": "2025-10-21T20:10:49.359Z",
+          "errorType": "spelling",
+          "errorIssue": "OPTIMISM is misspelled as 'OPTISIMISM' in Market Drivers section",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "formatting:Only two market driver bullets shown instead of standard three": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:10:49.379Z",
+          "lastSeen": "2025-10-21T20:10:49.379Z",
+          "errorType": "formatting",
+          "errorIssue": "Only two market driver bullets shown instead of standard three",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:PERSONNIZED in 'PERSONNIZED STRATEGY' appears to be misspelled (should be PERSONALIZED)": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:43:00.099Z",
+          "lastSeen": "2025-10-21T20:43:00.099Z",
+          "errorType": "spelling",
+          "errorIssue": "PERSONNIZED in 'PERSONNIZED STRATEGY' appears to be misspelled (should be PERSONALIZED)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "data:The date shown (October 21, 2025) is a future date, which may be incorrect for a daily rate update": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:43:00.111Z",
+          "lastSeen": "2025-10-21T20:43:00.111Z",
+          "errorType": "data",
+          "errorIssue": "The date shown (October 21, 2025) is a future date, which may be incorrect for a daily rate update",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "website_url:Domain inconsistency - shows both 'LENDWISE!NDWISE.COM' and '1455565.COM' which seems unusual": {
+          "count": 1,
+          "firstSeen": "2025-10-22T22:19:55.353Z",
+          "lastSeen": "2025-10-22T22:19:55.353Z",
+          "errorType": "website_url",
+          "errorIssue": "Domain inconsistency - shows both 'LENDWISE!NDWISE.COM' and '1455565.COM' which seems unusual",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "formatting:Unusual use of 'PALL' in phone number formatting": {
+          "count": 1,
+          "firstSeen": "2025-10-22T22:19:55.360Z",
+          "lastSeen": "2025-10-22T22:19:55.360Z",
+          "errorType": "formatting",
+          "errorIssue": "Unusual use of 'PALL' in phone number formatting",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXj4yUYGTggKeso8A41i\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T12:45:51.084Z",
+          "lastSeen": "2025-10-27T12:45:51.084Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXj4yUYGTggKeso8A41i\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXj5vRGHqDamyJ1BopNx\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T12:46:03.884Z",
+          "lastSeen": "2025-10-27T12:46:03.884Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXj5vRGHqDamyJ1BopNx\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXj6qdJvfAdW9H69U3SX\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T12:46:16.227Z",
+          "lastSeen": "2025-10-27T12:46:16.227Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXj6qdJvfAdW9H69U3SX\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXj7d4YAwoaJ9rjTTJEE\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T12:46:27.062Z",
+          "lastSeen": "2025-10-27T12:46:27.062Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXj7d4YAwoaJ9rjTTJEE\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXj8eyQznHNhwSb9gKLy\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T12:46:41.029Z",
+          "lastSeen": "2025-10-27T12:46:41.029Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXj8eyQznHNhwSb9gKLy\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXjfFHzfe7FKBJy6jbc9\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T12:53:36.062Z",
+          "lastSeen": "2025-10-27T12:53:36.062Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXjfFHzfe7FKBJy6jbc9\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXjg3qT9Qx2fV6LkGktq\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T12:53:46.861Z",
+          "lastSeen": "2025-10-27T12:53:46.861Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXjg3qT9Qx2fV6LkGktq\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXjh6zELyi8km4K3gsQu\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T12:54:01.258Z",
+          "lastSeen": "2025-10-27T12:54:01.258Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXjh6zELyi8km4K3gsQu\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXjhuhMzi1Q8tWgPScTe\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T12:54:12.137Z",
+          "lastSeen": "2025-10-27T12:54:12.138Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXjhuhMzi1Q8tWgPScTe\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXjiqjGYpajhAT5b34Kv\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T12:54:24.806Z",
+          "lastSeen": "2025-10-27T12:54:24.806Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXjiqjGYpajhAT5b34Kv\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXkXS9jxqiqBBET17kM7\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T13:04:56.848Z",
+          "lastSeen": "2025-10-27T13:04:56.848Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXkXS9jxqiqBBET17kM7\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXkYRkxKs9BRCsEq2P3b\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T13:05:10.351Z",
+          "lastSeen": "2025-10-27T13:05:10.351Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXkYRkxKs9BRCsEq2P3b\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXkZSFFgpn7WawTnQ9nn\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T13:05:24.008Z",
+          "lastSeen": "2025-10-27T13:05:24.008Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXkZSFFgpn7WawTnQ9nn\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXkaFtw5tusGh4F57uEM\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T13:05:35.067Z",
+          "lastSeen": "2025-10-27T13:05:35.067Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXkaFtw5tusGh4F57uEM\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXkbLotTA8KW43vBYXYE\"}": {
+          "count": 2,
+          "firstSeen": "2025-10-27T13:05:49.890Z",
+          "lastSeen": "2025-10-27T13:05:49.910Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXkbLotTA8KW43vBYXYE\"}",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-27T13:50:50.755Z",
+          "consecutiveSuccesses": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXp3rrEBk3WBmDLGhQih\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T13:51:09.997Z",
+          "lastSeen": "2025-10-27T13:51:09.997Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXp3rrEBk3WBmDLGhQih\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXp4veTdD3ZqXWHAopxc\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T13:51:24.522Z",
+          "lastSeen": "2025-10-27T13:51:24.522Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXp4veTdD3ZqXWHAopxc\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXp6MbvDMSSsUFqRZvb4\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T13:51:43.874Z",
+          "lastSeen": "2025-10-27T13:51:43.874Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXp6MbvDMSSsUFqRZvb4\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXp7ay7kgVP6igAFkvQi\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T13:52:00.636Z",
+          "lastSeen": "2025-10-27T13:52:00.636Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXp7ay7kgVP6igAFkvQi\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXp8nwDytuvDbVcz7zVf\"}": {
+          "count": 2,
+          "firstSeen": "2025-10-27T13:52:16.913Z",
+          "lastSeen": "2025-10-27T13:52:16.919Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXp8nwDytuvDbVcz7zVf\"}",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-27T13:56:34.443Z",
+          "consecutiveSuccesses": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXpV7LKX1ygX3Et3h4c1\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T13:56:52.611Z",
+          "lastSeen": "2025-10-27T13:56:52.611Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXpV7LKX1ygX3Et3h4c1\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXpWCZsKCv7zrc65w9oq\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T13:57:07.302Z",
+          "lastSeen": "2025-10-27T13:57:07.302Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXpWCZsKCv7zrc65w9oq\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXpXEcvKjfxAgSVuL2Dq\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T13:57:21.462Z",
+          "lastSeen": "2025-10-27T13:57:21.462Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXpXEcvKjfxAgSVuL2Dq\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXpYZJ6z3DFx7mr9ncre\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T13:57:39.435Z",
+          "lastSeen": "2025-10-27T13:57:39.435Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXpYZJ6z3DFx7mr9ncre\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXpZbjUTYQBHPRRwbpqA\"}": {
+          "count": 2,
+          "firstSeen": "2025-10-27T13:57:53.520Z",
+          "lastSeen": "2025-10-27T13:57:53.528Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXpZbjUTYQBHPRRwbpqA\"}",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-27T14:13:50.607Z",
+          "consecutiveSuccesses": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXqoGFTmSSQZi2ZAC5z9\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T14:14:05.714Z",
+          "lastSeen": "2025-10-27T14:14:05.714Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXqoGFTmSSQZi2ZAC5z9\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXqpEFgbPj94F54QLVHb\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T14:14:18.730Z",
+          "lastSeen": "2025-10-27T14:14:18.730Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXqpEFgbPj94F54QLVHb\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXqr7EoyzGwS1uoh7WbW\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T14:14:44.265Z",
+          "lastSeen": "2025-10-27T14:14:44.265Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXqr7EoyzGwS1uoh7WbW\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXqsWwNAXk5h5yqkPEWU\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T14:15:03.381Z",
+          "lastSeen": "2025-10-27T14:15:03.381Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXqsWwNAXk5h5yqkPEWU\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXqtgTtMVGRYY6eYUFot\"}": {
+          "count": 2,
+          "firstSeen": "2025-10-27T14:15:19.187Z",
+          "lastSeen": "2025-10-27T14:15:19.195Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXqtgTtMVGRYY6eYUFot\"}",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-27T14:50:03.061Z",
+          "consecutiveSuccesses": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXtZhpZS171HW2jdywEZ\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T14:50:22.287Z",
+          "lastSeen": "2025-10-27T14:50:22.287Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXtZhpZS171HW2jdywEZ\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXtawbZRji3JYdK5wnST\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T14:50:39.141Z",
+          "lastSeen": "2025-10-27T14:50:39.141Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXtawbZRji3JYdK5wnST\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXtbv2q23QtLjP2NbL42\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T14:50:52.200Z",
+          "lastSeen": "2025-10-27T14:50:52.200Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXtbv2q23QtLjP2NbL42\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXtd2oeiYjQS1RwSr6Bv\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T14:51:07.422Z",
+          "lastSeen": "2025-10-27T14:51:07.422Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXtd2oeiYjQS1RwSr6Bv\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXtdzz3GNxte7bapP2JA\"}": {
+          "count": 2,
+          "firstSeen": "2025-10-27T14:51:20.438Z",
+          "lastSeen": "2025-10-27T14:51:20.446Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXtdzz3GNxte7bapP2JA\"}",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-27T15:49:02.555Z",
+          "consecutiveSuccesses": 1
+        },
+        "spelling:PERSONAIIZED in 'PERSONAIIZED STRATEGY' appears to have an 'I' instead of 'L'": {
+          "count": 1,
+          "firstSeen": "2025-10-27T16:03:59.569Z",
+          "lastSeen": "2025-10-27T16:03:59.569Z",
+          "errorType": "spelling",
+          "errorIssue": "PERSONAIIZED in 'PERSONAIIZED STRATEGY' appears to have an 'I' instead of 'L'",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "quotation:Only one quote phrase found: 'RATES STABLE NEAR RECENT LOWS' - appears correctly enclosed with opening and closing quotes": {
+          "count": 1,
+          "firstSeen": "2025-10-27T16:03:59.574Z",
+          "lastSeen": "2025-10-27T16:03:59.574Z",
+          "errorType": "quotation",
+          "errorIssue": "Only one quote phrase found: 'RATES STABLE NEAR RECENT LOWS' - appears correctly enclosed with opening and closing quotes",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUY26FANNHHpYaJGCMBqz\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T16:29:04.216Z",
+          "lastSeen": "2025-10-27T16:29:04.216Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUY26FANNHHpYaJGCMBqz\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUY28SzZx6NgpYLMTHNeU\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T16:29:34.160Z",
+          "lastSeen": "2025-10-27T16:29:34.160Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUY28SzZx6NgpYLMTHNeU\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUY2B8Bogxvq1T1CBPpVV\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T16:30:10.400Z",
+          "lastSeen": "2025-10-27T16:30:10.401Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUY2B8Bogxvq1T1CBPpVV\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUY2D5gYoW5NeCG7sLXc6\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T16:30:37.044Z",
+          "lastSeen": "2025-10-27T16:30:37.044Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUY2D5gYoW5NeCG7sLXc6\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUY2FfTMqUHN3xd1krnx8\"}": {
+          "count": 2,
+          "firstSeen": "2025-10-27T16:31:12.066Z",
+          "lastSeen": "2025-10-27T16:31:12.071Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUY2FfTMqUHN3xd1krnx8\"}",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 0,
+          "fixStarted": "2025-10-27T20:18:02.451Z"
+        }
+      },
+      "promptModifications": {},
+      "successRate": 71.05263157894737,
+      "totalGenerations": 38,
+      "perfectGenerations": 27
+    },
+    "Market Report": {
+      "errorPatterns": {
+        "data_missing:15-Year Fixed rate is not shown": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:16:26.778Z",
+          "lastSeen": "2025-10-18T05:16:26.778Z",
+          "errorType": "data_missing",
+          "errorIssue": "15-Year Fixed rate is not shown",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "data_missing:Jumbo rate is not shown": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:16:26.781Z",
+          "lastSeen": "2025-10-18T05:16:26.781Z",
+          "errorType": "data_missing",
+          "errorIssue": "Jumbo rate is not shown",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "format:Treasury yield shown differently than template specification (4.0097% vs standard format)": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:16:26.794Z",
+          "lastSeen": "2025-10-18T05:16:26.794Z",
+          "errorType": "format",
+          "errorIssue": "Treasury yield shown differently than template specification (4.0097% vs standard format)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "quotation:Missing closing quotation mark on 'RATES STABLE NEAR RECENT LOWS' headline": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:16:42.523Z",
+          "lastSeen": "2025-10-18T05:16:42.524Z",
+          "errorType": "quotation",
+          "errorIssue": "Missing closing quotation mark on 'RATES STABLE NEAR RECENT LOWS' headline",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "data:Rate values don't match template specs (shows 6.23% instead of specified 6.38%)": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:16:42.532Z",
+          "lastSeen": "2025-10-18T05:16:42.532Z",
+          "errorType": "data",
+          "errorIssue": "Rate values don't match template specs (shows 6.23% instead of specified 6.38%)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "completeness:Missing Jumbo rate that was specified in template requirements": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:16:42.547Z",
+          "lastSeen": "2025-10-18T05:16:42.547Z",
+          "errorType": "completeness",
+          "errorIssue": "Missing Jumbo rate that was specified in template requirements",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "data_inconsistency:15-Year Fixed rate shows duplicate value in middle column (5.81% shown twice)": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:16:59.145Z",
+          "lastSeen": "2025-10-18T05:16:59.145Z",
+          "errorType": "data_inconsistency",
+          "errorIssue": "15-Year Fixed rate shows duplicate value in middle column (5.81% shown twice)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "data_incompleteness:Jumbo 30-Year rate missing actual percentage value": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:16:59.152Z",
+          "lastSeen": "2025-10-18T05:16:59.152Z",
+          "errorType": "data_incompleteness",
+          "errorIssue": "Jumbo 30-Year rate missing actual percentage value",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "formatting:10 Treasury spacing inconsistent (gap between '10' and 'Treasury')": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:16:59.167Z",
+          "lastSeen": "2025-10-18T05:16:59.167Z",
+          "errorType": "formatting",
+          "errorIssue": "10 Treasury spacing inconsistent (gap between '10' and 'Treasury')",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "data_missing:Missing 15-year fixed rate": {
+          "count": 1,
+          "firstSeen": "2025-10-21T04:57:48.100Z",
+          "lastSeen": "2025-10-21T04:57:48.100Z",
+          "errorType": "data_missing",
+          "errorIssue": "Missing 15-year fixed rate",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "data_missing:Missing Jumbo rate": {
+          "count": 1,
+          "firstSeen": "2025-10-21T04:57:48.113Z",
+          "lastSeen": "2025-10-21T04:57:48.113Z",
+          "errorType": "data_missing",
+          "errorIssue": "Missing Jumbo rate",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "formatting:Quote appears to be using straight quotes instead of curly/smart quotes": {
+          "count": 1,
+          "firstSeen": "2025-10-21T04:57:48.135Z",
+          "lastSeen": "2025-10-21T04:57:48.135Z",
+          "errorType": "formatting",
+          "errorIssue": "Quote appears to be using straight quotes instead of curly/smart quotes",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "parse_error:Could not parse analysis response": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:11:34.512Z",
+          "lastSeen": "2025-10-21T20:11:34.512Z",
+          "errorType": "parse_error",
+          "errorIssue": "Could not parse analysis response",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:Treasury misspelled as 'Trasury' in heading": {
+          "count": 2,
+          "firstSeen": "2025-10-21T20:11:47.691Z",
+          "lastSeen": "2025-10-21T20:12:32.737Z",
+          "errorType": "spelling",
+          "errorIssue": "Treasury misspelled as 'Trasury' in heading",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-21T20:12:33.786Z",
+          "consecutiveSuccesses": 1
+        },
+        "visual:LendWise logo appears as text only - no gold owl visible": {
+          "count": 2,
+          "firstSeen": "2025-10-21T20:11:47.699Z",
+          "lastSeen": "2025-10-21T20:12:32.737Z",
+          "errorType": "visual",
+          "errorIssue": "LendWise logo appears as text only - no gold owl visible",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-21T20:12:50.022Z",
+          "consecutiveSuccesses": 1
+        },
+        "typo:Misspelling of 'TREASURY' as 'TRESURY' in the Treasury Yields section": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:12:02.929Z",
+          "lastSeen": "2025-10-21T20:12:02.929Z",
+          "errorType": "typo",
+          "errorIssue": "Misspelling of 'TREASURY' as 'TRESURY' in the Treasury Yields section",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:Typo in 'from' spelled as 'crom' in 15-Year Fixed rate change": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:12:02.933Z",
+          "lastSeen": "2025-10-21T20:12:02.933Z",
+          "errorType": "typo",
+          "errorIssue": "Typo in 'from' spelled as 'crom' in 15-Year Fixed rate change",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "formatting:Inconsistent formatting in Jumbo Rate section where 'from yesterday' appears to be cut off/corrupted": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:12:02.953Z",
+          "lastSeen": "2025-10-21T20:12:02.953Z",
+          "errorType": "formatting",
+          "errorIssue": "Inconsistent formatting in Jumbo Rate section where 'from yesterday' appears to be cut off/corrupted",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:Typo in 'chante' instead of 'change' in 15-Year Fixed rate line": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:12:17.159Z",
+          "lastSeen": "2025-10-21T20:12:17.159Z",
+          "errorType": "typo",
+          "errorIssue": "Typo in 'chante' instead of 'change' in 15-Year Fixed rate line",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:Typo in 'fron' instead of 'from' in Jumbo rate line": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:12:17.167Z",
+          "lastSeen": "2025-10-21T20:12:17.167Z",
+          "errorType": "typo",
+          "errorIssue": "Typo in 'fron' instead of 'from' in Jumbo rate line",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "quotation_marks:Only one set of quotes found around 'RATES STABLE NEAR RECENT LOWS' - missing balanced quotation marks": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:12:32.660Z",
+          "lastSeen": "2025-10-21T20:12:32.660Z",
+          "errorType": "quotation_marks",
+          "errorIssue": "Only one set of quotes found around 'RATES STABLE NEAR RECENT LOWS' - missing balanced quotation marks",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "rate_discrepancy:Jumbo Fixed rate shown as 5.88% differs from specified check value of 6.29%": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:12:32.674Z",
+          "lastSeen": "2025-10-21T20:12:32.674Z",
+          "errorType": "rate_discrepancy",
+          "errorIssue": "Jumbo Fixed rate shown as 5.88% differs from specified check value of 6.29%",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "missing_element:15-Year Fixed rate not shown (template shows Jumbo Fixed instead)": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:12:32.700Z",
+          "lastSeen": "2025-10-21T20:12:32.700Z",
+          "errorType": "missing_element",
+          "errorIssue": "15-Year Fixed rate not shown (template shows Jumbo Fixed instead)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "visual:LendWise logo shown as text/symbol, not gold owl as specified": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:12:32.719Z",
+          "lastSeen": "2025-10-21T20:12:32.719Z",
+          "errorType": "visual",
+          "errorIssue": "LendWise logo shown as text/symbol, not gold owl as specified",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:The word 'MONIMAL' is repeated in 'MINIMAL MONIMAL MOVEMENT' - appears to be a typographical error": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:13:05.006Z",
+          "lastSeen": "2025-10-21T20:13:05.007Z",
+          "errorType": "typo",
+          "errorIssue": "The word 'MONIMAL' is repeated in 'MINIMAL MONIMAL MOVEMENT' - appears to be a typographical error",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "quotation:One set of quotes present around 'RATES STABLE NEAR RECENT LOWS' - quotes properly matched": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:13:05.014Z",
+          "lastSeen": "2025-10-21T20:13:05.014Z",
+          "errorType": "quotation",
+          "errorIssue": "One set of quotes present around 'RATES STABLE NEAR RECENT LOWS' - quotes properly matched",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "quotation_marks:The quote 'MORTGAGE RATES STEADY AT LONG TERM LOWS' has opening quotes but no closing quotes": {
+          "count": 1,
+          "firstSeen": "2025-10-22T22:22:18.138Z",
+          "lastSeen": "2025-10-22T22:22:18.138Z",
+          "errorType": "quotation_marks",
+          "errorIssue": "The quote 'MORTGAGE RATES STEADY AT LONG TERM LOWS' has opening quotes but no closing quotes",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "data_completeness:Missing standard '30-Year Fixed' rate that should be shown alongside 15-Year rate": {
+          "count": 1,
+          "firstSeen": "2025-10-22T22:22:18.141Z",
+          "lastSeen": "2025-10-22T22:22:18.141Z",
+          "errorType": "data_completeness",
+          "errorIssue": "Missing standard '30-Year Fixed' rate that should be shown alongside 15-Year rate",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "format:Treasury yield shown as '10-Year Treasury' instead of standard '10-Year [value] and 30-Year [value]' format": {
+          "count": 1,
+          "firstSeen": "2025-10-22T22:22:18.153Z",
+          "lastSeen": "2025-10-22T22:22:18.153Z",
+          "errorType": "format",
+          "errorIssue": "Treasury yield shown as '10-Year Treasury' instead of standard '10-Year [value] and 30-Year [value]' format",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUWUQSnP8UkW41ZKS9agn\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-26T20:52:57.617Z",
+          "lastSeen": "2025-10-26T20:52:57.617Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUWUQSnP8UkW41ZKS9agn\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUWUR8ushFX5Bbm4FeMCQ\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-26T20:53:06.815Z",
+          "lastSeen": "2025-10-26T20:53:06.815Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUWUR8ushFX5Bbm4FeMCQ\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUWURznWLy53gYD3Uv95n\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-26T20:53:18.476Z",
+          "lastSeen": "2025-10-26T20:53:18.476Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUWURznWLy53gYD3Uv95n\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUWUSbz5bXMXsQknDSYL4\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-26T20:53:26.707Z",
+          "lastSeen": "2025-10-26T20:53:26.707Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUWUSbz5bXMXsQknDSYL4\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXu6vc7rSUZEScgkeWfM\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T14:57:25.747Z",
+          "lastSeen": "2025-10-27T14:57:25.747Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXu6vc7rSUZEScgkeWfM\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXu8CqTdtuWwqCvvz2bF\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T14:57:43.017Z",
+          "lastSeen": "2025-10-27T14:57:43.017Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXu8CqTdtuWwqCvvz2bF\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXu9LQ9qKaes8qbFSGyL\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T14:57:58.447Z",
+          "lastSeen": "2025-10-27T14:57:58.447Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXu9LQ9qKaes8qbFSGyL\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXuAj3TZSJRGQqzFBYNH\"}": {
+          "count": 1,
+          "firstSeen": "2025-10-27T14:58:17.190Z",
+          "lastSeen": "2025-10-27T14:58:17.190Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXuAj3TZSJRGQqzFBYNH\"}",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "analysis_error:401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXuC47TDf7UYHKKHzvxD\"}": {
+          "count": 2,
+          "firstSeen": "2025-10-27T14:58:35.329Z",
+          "lastSeen": "2025-10-27T14:58:35.338Z",
+          "errorType": "analysis_error",
+          "errorIssue": "401 {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011CUXuC47TDf7UYHKKHzvxD\"}",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-27T15:32:48.150Z",
+          "consecutiveSuccesses": 1
+        }
+      },
+      "promptModifications": {},
+      "successRate": 89.47368421052632,
+      "totalGenerations": 19,
+      "perfectGenerations": 17
+    },
+    "Rate Trends": {
+      "errorPatterns": {
+        "parse_error:Could not parse analysis response": {
+          "count": 3,
+          "firstSeen": "2025-10-21T13:26:11.326Z",
+          "lastSeen": "2025-10-21T20:14:40.643Z",
+          "errorType": "parse_error",
+          "errorIssue": "Could not parse analysis response",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-21T20:15:01.701Z",
+          "consecutiveSuccesses": 1
+        },
+        "spelling:FAVORARILE is misspelled (should be FAVORABLE)": {
+          "count": 2,
+          "firstSeen": "2025-10-21T13:26:27.558Z",
+          "lastSeen": "2025-10-21T13:26:27.588Z",
+          "errorType": "spelling",
+          "errorIssue": "FAVORARILE is misspelled (should be FAVORABLE)",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-21T20:13:20.273Z",
+          "consecutiveSuccesses": 1
+        },
+        "quotes:Only one quote observed ('RATES STABLE NEAR RECENT LOWS') with matching pairs, but text appears marketing-like without proper attribution": {
+          "count": 2,
+          "firstSeen": "2025-10-21T13:26:27.567Z",
+          "lastSeen": "2025-10-21T13:26:27.588Z",
+          "errorType": "quotes",
+          "errorIssue": "Only one quote observed ('RATES STABLE NEAR RECENT LOWS') with matching pairs, but text appears marketing-like without proper attribution",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-21T20:13:37.987Z",
+          "consecutiveSuccesses": 1
+        }
+      },
+      "promptModifications": {},
+      "successRate": 83.33333333333334,
+      "totalGenerations": 6,
+      "perfectGenerations": 5
+    },
+    "Economic Outlook": {
+      "errorPatterns": {
+        "data_accuracy:Current 30-year rate shown as 6.23% instead of template-specified 6.27%": {
+          "count": 1,
+          "firstSeen": "2025-10-16T20:18:48.361Z",
+          "lastSeen": "2025-10-16T20:18:48.361Z",
+          "errorType": "data_accuracy",
+          "errorIssue": "Current 30-year rate shown as 6.23% instead of template-specified 6.27%",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "data_accuracy:NMLS number appears as 62043 instead of template-specified 62043": {
+          "count": 1,
+          "firstSeen": "2025-10-16T20:18:48.371Z",
+          "lastSeen": "2025-10-16T20:18:48.371Z",
+          "errorType": "data_accuracy",
+          "errorIssue": "NMLS number appears as 62043 instead of template-specified 62043",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "content:Date shown is in future (October 16, 2025)": {
+          "count": 1,
+          "firstSeen": "2025-10-16T20:18:48.398Z",
+          "lastSeen": "2025-10-16T20:18:48.398Z",
+          "errorType": "content",
+          "errorIssue": "Date shown is in future (October 16, 2025)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "text_discrepancy:The rate shown (6.23%) differs from the expected rate in template spec (6.27%)": {
+          "count": 1,
+          "firstSeen": "2025-10-16T20:19:08.125Z",
+          "lastSeen": "2025-10-16T20:19:08.125Z",
+          "errorType": "text_discrepancy",
+          "errorIssue": "The rate shown (6.23%) differs from the expected rate in template spec (6.27%)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "format:The 10-Year Treasury Yield uses an unconventional 4-decimal format (3.9707)": {
+          "count": 1,
+          "firstSeen": "2025-10-16T20:19:08.135Z",
+          "lastSeen": "2025-10-16T20:19:08.135Z",
+          "errorType": "format",
+          "errorIssue": "The 10-Year Treasury Yield uses an unconventional 4-decimal format (3.9707)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "data_accuracy:30-year rate shown as 6.23% instead of specified 6.27% in template requirements": {
+          "count": 1,
+          "firstSeen": "2025-10-16T20:19:25.836Z",
+          "lastSeen": "2025-10-16T20:19:25.836Z",
+          "errorType": "data_accuracy",
+          "errorIssue": "30-year rate shown as 6.23% instead of specified 6.27% in template requirements",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "truncation:Key Economic Factors list appears to be cut off/partially obscured": {
+          "count": 1,
+          "firstSeen": "2025-10-16T20:36:51.013Z",
+          "lastSeen": "2025-10-16T20:36:51.013Z",
+          "errorType": "truncation",
+          "errorIssue": "Key Economic Factors list appears to be cut off/partially obscured",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "consistency:The displayed 30-year rate (6.23%) differs from the example rate mentioned in requirements (6.27%)": {
+          "count": 1,
+          "firstSeen": "2025-10-16T20:36:51.021Z",
+          "lastSeen": "2025-10-16T20:36:51.021Z",
+          "errorType": "consistency",
+          "errorIssue": "The displayed 30-year rate (6.23%) differs from the example rate mentioned in requirements (6.27%)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "quotation:Quote 'RATES STABLE NEAR RECENT LOWS' lacks closing quotation mark": {
+          "count": 1,
+          "firstSeen": "2025-10-16T20:36:51.079Z",
+          "lastSeen": "2025-10-16T20:36:51.079Z",
+          "errorType": "quotation",
+          "errorIssue": "Quote 'RATES STABLE NEAR RECENT LOWS' lacks closing quotation mark",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:ECONOMIC OUTLOOK appears as 'ECONOMIC OUTLLOK' with double L": {
+          "count": 1,
+          "firstSeen": "2025-10-16T20:37:11.231Z",
+          "lastSeen": "2025-10-16T20:37:11.231Z",
+          "errorType": "spelling",
+          "errorIssue": "ECONOMIC OUTLOOK appears as 'ECONOMIC OUTLLOK' with double L",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "data:Mortgage rate shows as 6.23% rather than standard 6.27%": {
+          "count": 1,
+          "firstSeen": "2025-10-16T20:37:11.250Z",
+          "lastSeen": "2025-10-16T20:37:11.250Z",
+          "errorType": "data",
+          "errorIssue": "Mortgage rate shows as 6.23% rather than standard 6.27%",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "grammar:Quote says 'RATES STABLE NEAR RECENT LOWS' without apostrophe in 'LOWS'": {
+          "count": 1,
+          "firstSeen": "2025-10-16T20:37:11.269Z",
+          "lastSeen": "2025-10-16T20:37:11.270Z",
+          "errorType": "grammar",
+          "errorIssue": "Quote says 'RATES STABLE NEAR RECENT LOWS' without apostrophe in 'LOWS'",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "parse_error:Could not parse analysis response": {
+          "count": 2,
+          "firstSeen": "2025-10-16T21:26:30.047Z",
+          "lastSeen": "2025-10-21T13:27:00.688Z",
+          "errorType": "parse_error",
+          "errorIssue": "Could not parse analysis response",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-21T20:15:17.355Z",
+          "consecutiveSuccesses": 1
+        },
+        "missing_content:No economic outlook content, rates, or data points visible": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:29:34.936Z",
+          "lastSeen": "2025-10-16T21:29:34.936Z",
+          "errorType": "missing_content",
+          "errorIssue": "No economic outlook content, rates, or data points visible",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "template_mismatch:This appears to be a surfing/lifestyle image rather than the economic template specified": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:29:34.943Z",
+          "lastSeen": "2025-10-16T21:29:34.943Z",
+          "errorType": "template_mismatch",
+          "errorIssue": "This appears to be a surfing/lifestyle image rather than the economic template specified",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "incomplete_branding:Only logo and company name visible, missing required mortgage rate information": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:29:34.992Z",
+          "lastSeen": "2025-10-16T21:29:34.992Z",
+          "errorType": "incomplete_branding",
+          "errorIssue": "Only logo and company name visible, missing required mortgage rate information",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "data_missing:Contact information (David Young NMLS...) not present": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:29:59.220Z",
+          "lastSeen": "2025-10-16T21:29:59.220Z",
+          "errorType": "data_missing",
+          "errorIssue": "Contact information (David Young NMLS...) not present",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "template_mismatch:Different template format than specified - shows 'Surfing Economic Outlook' with different data structure": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:29:59.257Z",
+          "lastSeen": "2025-10-16T21:29:59.257Z",
+          "errorType": "template_mismatch",
+          "errorIssue": "Different template format than specified - shows 'Surfing Economic Outlook' with different data structure",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "data_structure:Missing Treasury Yield section and Key Economic Factors with status labels": {
+          "count": 1,
+          "firstSeen": "2025-10-16T21:29:59.288Z",
+          "lastSeen": "2025-10-16T21:29:59.288Z",
+          "errorType": "data_structure",
+          "errorIssue": "Missing Treasury Yield section and Key Economic Factors with status labels",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "content:Lorem ipsum-like gibberish text in main content areas": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:20:00.938Z",
+          "lastSeen": "2025-10-18T05:20:00.938Z",
+          "errorType": "content",
+          "errorIssue": "Lorem ipsum-like gibberish text in main content areas",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "consistency:Current 30-Year Rate shows 6.23% instead of 6.27% as specified in requirements": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:20:00.949Z",
+          "lastSeen": "2025-10-18T05:20:00.949Z",
+          "errorType": "consistency",
+          "errorIssue": "Current 30-Year Rate shows 6.23% instead of 6.27% as specified in requirements",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "missing:No Key Economic Factors with status labels (Improving/Concern/etc)": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:20:00.979Z",
+          "lastSeen": "2025-10-18T05:20:00.979Z",
+          "errorType": "missing",
+          "errorIssue": "No Key Economic Factors with status labels (Improving/Concern/etc)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "quotation:Only one quote section 'RATES STABLE NEAR RECENT LOWS' instead of expected market insight quote": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:20:00.995Z",
+          "lastSeen": "2025-10-18T05:20:00.995Z",
+          "errorType": "quotation",
+          "errorIssue": "Only one quote section 'RATES STABLE NEAR RECENT LOWS' instead of expected market insight quote",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:Serious typo in text block: 'Gepolabhical' instead of 'Geopolitical'": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:20:18.092Z",
+          "lastSeen": "2025-10-18T05:20:18.092Z",
+          "errorType": "spelling",
+          "errorIssue": "Serious typo in text block: 'Gepolabhical' instead of 'Geopolitical'",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "formatting:Large gibberish text block at bottom appears to be placeholder Lorem Ipsum but is not properly formatted": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:20:18.097Z",
+          "lastSeen": "2025-10-18T05:20:18.097Z",
+          "errorType": "formatting",
+          "errorIssue": "Large gibberish text block at bottom appears to be placeholder Lorem Ipsum but is not properly formatted",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "rate:Rate shown as 6.23% instead of stated 6.27% in check criteria": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:20:18.107Z",
+          "lastSeen": "2025-10-18T05:20:18.107Z",
+          "errorType": "rate",
+          "errorIssue": "Rate shown as 6.23% instead of stated 6.27% in check criteria",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "content:Missing Treasury Yield section mentioned in criteria": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:20:18.117Z",
+          "lastSeen": "2025-10-18T05:20:18.117Z",
+          "errorType": "content",
+          "errorIssue": "Missing Treasury Yield section mentioned in criteria",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "text:The footer text contains gibberish/corrupted text: 'The inctane iti the the thetis yoirito cngira.lips of the...'": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:20:36.212Z",
+          "lastSeen": "2025-10-18T05:20:36.212Z",
+          "errorType": "text",
+          "errorIssue": "The footer text contains gibberish/corrupted text: 'The inctane iti the the thetis yoirito cngira.lips of the...'",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:Misspelled word 'Geopothhical' instead of 'Geopolitical' in Key Economic Factors": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:20:36.214Z",
+          "lastSeen": "2025-10-18T05:20:36.214Z",
+          "errorType": "typo",
+          "errorIssue": "Misspelled word 'Geopothhical' instead of 'Geopolitical' in Key Economic Factors",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "data:Current 30-Year Rate shows 6.23% in image vs 6.27% in template requirements": {
+          "count": 1,
+          "firstSeen": "2025-10-18T05:20:36.223Z",
+          "lastSeen": "2025-10-18T05:20:36.223Z",
+          "errorType": "data",
+          "errorIssue": "Current 30-Year Rate shows 6.23% in image vs 6.27% in template requirements",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "missing_content:No economic outlook text or data visible": {
+          "count": 2,
+          "firstSeen": "2025-10-20T19:34:41.803Z",
+          "lastSeen": "2025-10-20T19:35:55.720Z",
+          "errorType": "missing_content",
+          "errorIssue": "No economic outlook text or data visible",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-20T19:44:22.135Z",
+          "consecutiveSuccesses": 0
+        },
+        "missing_content:No interest rates or percentages displayed": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:34:41.822Z",
+          "lastSeen": "2025-10-20T19:34:41.822Z",
+          "errorType": "missing_content",
+          "errorIssue": "No interest rates or percentages displayed",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "missing_content:No treasury yield information": {
+          "count": 2,
+          "firstSeen": "2025-10-20T19:34:41.850Z",
+          "lastSeen": "2025-10-20T19:35:55.757Z",
+          "errorType": "missing_content",
+          "errorIssue": "No treasury yield information",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-21T13:26:29.643Z",
+          "consecutiveSuccesses": 1
+        },
+        "missing_content:No economic factors or status labels": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:34:41.872Z",
+          "lastSeen": "2025-10-20T19:34:41.872Z",
+          "errorType": "missing_content",
+          "errorIssue": "No economic factors or status labels",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "missing_content:No contact information displayed": {
+          "count": 3,
+          "firstSeen": "2025-10-20T19:34:41.889Z",
+          "lastSeen": "2025-10-20T19:44:39.548Z",
+          "errorType": "missing_content",
+          "errorIssue": "No contact information displayed",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 0,
+          "fixStarted": "2025-10-21T13:26:48.024Z"
+        },
+        "visual_elements:Background is blue instead of forest green gradient": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:34:41.920Z",
+          "lastSeen": "2025-10-20T19:34:41.920Z",
+          "errorType": "visual_elements",
+          "errorIssue": "Background is blue instead of forest green gradient",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "contact_info:Missing required NMLS number and specific contact person information": {
+          "count": 2,
+          "firstSeen": "2025-10-20T19:34:59.140Z",
+          "lastSeen": "2025-10-20T19:35:55.822Z",
+          "errorType": "contact_info",
+          "errorIssue": "Missing required NMLS number and specific contact person information",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-21T20:15:47.670Z",
+          "consecutiveSuccesses": 1
+        },
+        "content:Missing subheadline about conditions impacting mortgage rates": {
+          "count": 2,
+          "firstSeen": "2025-10-20T19:34:59.154Z",
+          "lastSeen": "2025-10-20T19:35:55.822Z",
+          "errorType": "content",
+          "errorIssue": "Missing subheadline about conditions impacting mortgage rates",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-21T20:16:03.038Z",
+          "consecutiveSuccesses": 1
+        },
+        "data:Interest rate format differs from template (7.25% APR vs expected 6.27%)": {
+          "count": 2,
+          "firstSeen": "2025-10-20T19:34:59.205Z",
+          "lastSeen": "2025-10-20T19:35:55.822Z",
+          "errorType": "data",
+          "errorIssue": "Interest rate format differs from template (7.25% APR vs expected 6.27%)",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-21T20:17:21.842Z",
+          "consecutiveSuccesses": 1
+        },
+        "visual:Background is blue instead of specified forest green gradient": {
+          "count": 4,
+          "firstSeen": "2025-10-20T19:34:59.232Z",
+          "lastSeen": "2025-10-20T19:45:55.907Z",
+          "errorType": "visual",
+          "errorIssue": "Background is blue instead of specified forest green gradient",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 1,
+          "fixStarted": "2025-10-21T20:17:36.300Z",
+          "consecutiveSuccesses": 1
+        },
+        "content_mismatch:Template content differs significantly from specified template requirements - shows 'GLOBAL CONDITIONS IMPACTING MORTGAGE RATES' instead of expected 'ECONOMIC OUTLOOK'": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:35:19.351Z",
+          "lastSeen": "2025-10-20T19:35:19.351Z",
+          "errorType": "content_mismatch",
+          "errorIssue": "Template content differs significantly from specified template requirements - shows 'GLOBAL CONDITIONS IMPACTING MORTGAGE RATES' instead of expected 'ECONOMIC OUTLOOK'",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "missing_data:Missing 3 Key Economic Factors and Treasury Yield section": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:35:19.368Z",
+          "lastSeen": "2025-10-20T19:35:19.368Z",
+          "errorType": "missing_data",
+          "errorIssue": "Missing 3 Key Economic Factors and Treasury Yield section",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "contact_info:Contact info shows different name/NMLS/phone than specified template": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:35:19.407Z",
+          "lastSeen": "2025-10-20T19:35:19.407Z",
+          "errorType": "contact_info",
+          "errorIssue": "Contact info shows different name/NMLS/phone than specified template",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "visual:Background is blue instead of forest green gradient": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:35:19.435Z",
+          "lastSeen": "2025-10-20T19:35:19.435Z",
+          "errorType": "visual",
+          "errorIssue": "Background is blue instead of forest green gradient",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:GEPOPOETICAL misspelled (should be GEOPOLITICAL)": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:35:39.339Z",
+          "lastSeen": "2025-10-20T19:35:39.339Z",
+          "errorType": "spelling",
+          "errorIssue": "GEPOPOETICAL misspelled (should be GEOPOLITICAL)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "data:Graph lacks proper axis labels and scale markers": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:35:39.352Z",
+          "lastSeen": "2025-10-20T19:35:39.352Z",
+          "errorType": "data",
+          "errorIssue": "Graph lacks proper axis labels and scale markers",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "design:Background is blue instead of specified forest green gradient": {
+          "count": 2,
+          "firstSeen": "2025-10-20T19:35:39.375Z",
+          "lastSeen": "2025-10-20T19:45:37.287Z",
+          "errorType": "design",
+          "errorIssue": "Background is blue instead of specified forest green gradient",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 0,
+          "fixStarted": "2025-10-28T20:59:25.964Z"
+        },
+        "content:Missing standard disclaimer text": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:35:39.397Z",
+          "lastSeen": "2025-10-20T19:35:39.397Z",
+          "errorType": "content",
+          "errorIssue": "Missing standard disclaimer text",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "missing_content:No mortgage rates displayed": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:35:55.726Z",
+          "lastSeen": "2025-10-20T19:35:55.726Z",
+          "errorType": "missing_content",
+          "errorIssue": "No mortgage rates displayed",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "missing_content:No key economic factors shown": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:35:55.742Z",
+          "lastSeen": "2025-10-20T19:35:55.742Z",
+          "errorType": "missing_content",
+          "errorIssue": "No key economic factors shown",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "design:Background is solid blue instead of forest green gradient": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:35:55.799Z",
+          "lastSeen": "2025-10-20T19:35:55.799Z",
+          "errorType": "design",
+          "errorIssue": "Background is solid blue instead of forest green gradient",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "missing_content:No economic factors, rates, or data points visible": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:44:39.524Z",
+          "lastSeen": "2025-10-20T19:44:39.524Z",
+          "errorType": "missing_content",
+          "errorIssue": "No economic factors, rates, or data points visible",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "missing_content:No header text or subheadline present": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:44:39.529Z",
+          "lastSeen": "2025-10-20T19:44:39.529Z",
+          "errorType": "missing_content",
+          "errorIssue": "No header text or subheadline present",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "missing_content:No treasury yield or market insight quotes present": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:44:39.570Z",
+          "lastSeen": "2025-10-20T19:44:39.570Z",
+          "errorType": "missing_content",
+          "errorIssue": "No treasury yield or market insight quotes present",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "visual:Background is navy blue instead of forest green gradient": {
+          "count": 2,
+          "firstSeen": "2025-10-20T19:44:39.584Z",
+          "lastSeen": "2025-10-20T19:45:17.864Z",
+          "errorType": "visual",
+          "errorIssue": "Background is navy blue instead of forest green gradient",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 0,
+          "fixStarted": "2025-10-29T13:09:36.635Z"
+        },
+        "data_missing:Missing NMLS number and personal contact details": {
+          "count": 2,
+          "firstSeen": "2025-10-20T19:44:58.573Z",
+          "lastSeen": "2025-10-20T19:45:55.907Z",
+          "errorType": "data_missing",
+          "errorIssue": "Missing NMLS number and personal contact details",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 0,
+          "fixStarted": "2025-10-29T13:10:10.480Z"
+        },
+        "content:Missing '3 Key Economic Factors' section": {
+          "count": 2,
+          "firstSeen": "2025-10-20T19:44:58.610Z",
+          "lastSeen": "2025-10-20T19:45:55.907Z",
+          "errorType": "content",
+          "errorIssue": "Missing '3 Key Economic Factors' section",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 0,
+          "fixStarted": "2025-10-29T13:10:27.053Z"
+        },
+        "content:Missing Treasury Yield specific value": {
+          "count": 2,
+          "firstSeen": "2025-10-20T19:44:58.627Z",
+          "lastSeen": "2025-10-20T19:45:55.907Z",
+          "errorType": "content",
+          "errorIssue": "Missing Treasury Yield specific value",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 0,
+          "fixStarted": "2025-10-29T13:10:31.862Z"
+        },
+        "formatting:Different template structure than specified - shows simplified market insight format": {
+          "count": 2,
+          "firstSeen": "2025-10-20T19:44:58.640Z",
+          "lastSeen": "2025-10-20T19:45:55.907Z",
+          "errorType": "formatting",
+          "errorIssue": "Different template structure than specified - shows simplified market insight format",
+          "fixAttempted": true,
+          "fixConfirmed": false,
+          "fixTestCount": 0,
+          "fixStarted": "2025-10-29T13:10:55.509Z"
+        },
+        "missing_data:No market insight quote or quotation marks present": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:45:17.810Z",
+          "lastSeen": "2025-10-20T19:45:17.810Z",
+          "errorType": "missing_data",
+          "errorIssue": "No market insight quote or quotation marks present",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "template_mismatch:Template headline shows 'TODAY'S MORTGAGE MARKET' instead of expected 'ECONOMIC OUTLOOK'": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:45:17.819Z",
+          "lastSeen": "2025-10-20T19:45:17.819Z",
+          "errorType": "template_mismatch",
+          "errorIssue": "Template headline shows 'TODAY'S MORTGAGE MARKET' instead of expected 'ECONOMIC OUTLOOK'",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "contact_info:Contact information differs from specified template (shows generic JOHN.DOE@LENDWISE.COM instead of required David Young details)": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:45:17.845Z",
+          "lastSeen": "2025-10-20T19:45:17.845Z",
+          "errorType": "contact_info",
+          "errorIssue": "Contact information differs from specified template (shows generic JOHN.DOE@LENDWISE.COM instead of required David Young details)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "content:Missing several standard template sections (Treasury Yield, Key Economic Factors, Market Insight quote)": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:45:37.274Z",
+          "lastSeen": "2025-10-20T19:45:37.274Z",
+          "errorType": "content",
+          "errorIssue": "Missing several standard template sections (Treasury Yield, Key Economic Factors, Market Insight quote)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "data:Contact information format doesn't match required template (missing NMLS number)": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:45:37.321Z",
+          "lastSeen": "2025-10-20T19:45:37.321Z",
+          "errorType": "data",
+          "errorIssue": "Contact information format doesn't match required template (missing NMLS number)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "data:Different rate structure shown (5/1 ARM included, different rate values)": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:45:37.339Z",
+          "lastSeen": "2025-10-20T19:45:37.339Z",
+          "errorType": "data",
+          "errorIssue": "Different rate structure shown (5/1 ARM included, different rate values)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "content:Different subheadline than specified ('Innovation Drives Growth')": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:45:37.360Z",
+          "lastSeen": "2025-10-20T19:45:37.360Z",
+          "errorType": "content",
+          "errorIssue": "Different subheadline than specified ('Innovation Drives Growth')",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "quote_marks:The word 'COMPLEX' is repeated in the quote 'WE ARE COMMITTED TO GUIDING YOU THROUGH COMPLEX COMPLEX MARKET CHANGES.'": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:45:55.791Z",
+          "lastSeen": "2025-10-20T19:45:55.791Z",
+          "errorType": "quote_marks",
+          "errorIssue": "The word 'COMPLEX' is repeated in the quote 'WE ARE COMMITTED TO GUIDING YOU THROUGH COMPLEX COMPLEX MARKET CHANGES.'",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "contact_info:Contact information doesn't match template requirements - shows generic info instead of specified David Young details": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:45:55.804Z",
+          "lastSeen": "2025-10-20T19:45:55.804Z",
+          "errorType": "contact_info",
+          "errorIssue": "Contact information doesn't match template requirements - shows generic info instead of specified David Young details",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "visual_design:Background is navy blue instead of specified forest green gradient": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:45:55.853Z",
+          "lastSeen": "2025-10-20T19:45:55.854Z",
+          "errorType": "visual_design",
+          "errorIssue": "Background is navy blue instead of specified forest green gradient",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "content:Template subheadline 'Innovation Drives Growth' differs from specified options": {
+          "count": 1,
+          "firstSeen": "2025-10-20T19:45:55.881Z",
+          "lastSeen": "2025-10-20T19:45:55.881Z",
+          "errorType": "content",
+          "errorIssue": "Template subheadline 'Innovation Drives Growth' differs from specified options",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:OUTLLOK instead of OUTLOOK in header": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:15:31.444Z",
+          "lastSeen": "2025-10-21T20:15:31.444Z",
+          "errorType": "spelling",
+          "errorIssue": "OUTLLOK instead of OUTLOOK in header",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "grammar:CAUTIO instead of CAUTIOUS in market status line": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:15:31.457Z",
+          "lastSeen": "2025-10-21T20:15:31.457Z",
+          "errorType": "grammar",
+          "errorIssue": "CAUTIO instead of CAUTIOUS in market status line",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "syntax:THROUGH misspelled as THROGH in Fed statement": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:15:31.483Z",
+          "lastSeen": "2025-10-21T20:15:31.483Z",
+          "errorType": "syntax",
+          "errorIssue": "THROUGH misspelled as THROGH in Fed statement",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "quotation:Missing closing quotation mark in the phrase 'FAVORABLE CONDITIONS FOR BORROWERS'": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:16:17.454Z",
+          "lastSeen": "2025-10-21T20:16:17.454Z",
+          "errorType": "quotation",
+          "errorIssue": "Missing closing quotation mark in the phrase 'FAVORABLE CONDITIONS FOR BORROWERS'",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "formatting:Unusual hyphen in 'MILT-WEEK' appears to be a typo": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:16:17.460Z",
+          "lastSeen": "2025-10-21T20:16:17.460Z",
+          "errorType": "formatting",
+          "errorIssue": "Unusual hyphen in 'MILT-WEEK' appears to be a typo",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:Typo in 'POTENTIUED CHRIG' in FED Chair Powell statement - should be 'CONTINUED THROUGH'": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:16:36.785Z",
+          "lastSeen": "2025-10-21T20:16:36.785Z",
+          "errorType": "typo",
+          "errorIssue": "Typo in 'POTENTIUED CHRIG' in FED Chair Powell statement - should be 'CONTINUED THROUGH'",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "formatting:Single quotation mark missing - 'FAVORABLE CONDITIONS FOR BORROWERS' has only opening quotes": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:16:36.794Z",
+          "lastSeen": "2025-10-21T20:16:36.794Z",
+          "errorType": "formatting",
+          "errorIssue": "Single quotation mark missing - 'FAVORABLE CONDITIONS FOR BORROWERS' has only opening quotes",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:CONINUED missing 'T' (should be CONTINUED)": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:16:52.668Z",
+          "lastSeen": "2025-10-21T20:16:52.669Z",
+          "errorType": "spelling",
+          "errorIssue": "CONINUED missing 'T' (should be CONTINUED)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "quotes:Quote mark mismatch in 'FAVORABLE CONDITIONS FOR BORROWERS' - has left quote but missing right quote": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:16:52.681Z",
+          "lastSeen": "2025-10-21T20:16:52.681Z",
+          "errorType": "quotes",
+          "errorIssue": "Quote mark mismatch in 'FAVORABLE CONDITIONS FOR BORROWERS' - has left quote but missing right quote",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "typo:Treasury Yield values inconsistent format (30.721 vs 4.132)": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:16:52.706Z",
+          "lastSeen": "2025-10-21T20:16:52.706Z",
+          "errorType": "typo",
+          "errorIssue": "Treasury Yield values inconsistent format (30.721 vs 4.132)",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:CONITUED appears to be misspelled in 'Fed Chair Powell suggetts potential CONITUED cuts' - should be 'CONTINUED'": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:17:06.609Z",
+          "lastSeen": "2025-10-21T20:17:06.610Z",
+          "errorType": "spelling",
+          "errorIssue": "CONITUED appears to be misspelled in 'Fed Chair Powell suggetts potential CONITUED cuts' - should be 'CONTINUED'",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:suggetts appears to be misspelled - should be 'suggests'": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:17:06.619Z",
+          "lastSeen": "2025-10-21T20:17:06.619Z",
+          "errorType": "spelling",
+          "errorIssue": "suggetts appears to be misspelled - should be 'suggests'",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "quotation:Inconsistent quote marks around 'FAVORABLE CONDITIONS FOR BORROWERS' - only opening quote present, missing closing quote": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:17:06.636Z",
+          "lastSeen": "2025-10-21T20:17:06.636Z",
+          "errorType": "quotation",
+          "errorIssue": "Inconsistent quote marks around 'FAVORABLE CONDITIONS FOR BORROWERS' - only opening quote present, missing closing quote",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:CONINTUED instead of CONTINUED in Fed Chair Powell statement": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:17:51.129Z",
+          "lastSeen": "2025-10-21T20:17:51.129Z",
+          "errorType": "spelling",
+          "errorIssue": "CONINTUED instead of CONTINUED in Fed Chair Powell statement",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "quotation:Single quote mark for 'FAVORABLE CONDITIONS FOR BORROWERS' - missing paired quotation mark": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:17:51.144Z",
+          "lastSeen": "2025-10-21T20:17:51.144Z",
+          "errorType": "quotation",
+          "errorIssue": "Single quote mark for 'FAVORABLE CONDITIONS FOR BORROWERS' - missing paired quotation mark",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:BORROWERS is misspelled as 'BORRIWERS' in the bottom quote": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:18:04.862Z",
+          "lastSeen": "2025-10-21T20:18:04.862Z",
+          "errorType": "spelling",
+          "errorIssue": "BORROWERS is misspelled as 'BORRIWERS' in the bottom quote",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "date:Date shown (October 21, 2025) is in the future, which may be incorrect": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:18:04.882Z",
+          "lastSeen": "2025-10-21T20:18:04.882Z",
+          "errorType": "date",
+          "errorIssue": "Date shown (October 21, 2025) is in the future, which may be incorrect",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "spelling:Typo in 'contiued' (should be 'continued') in Fed Chair Powell statement": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:18:19.078Z",
+          "lastSeen": "2025-10-21T20:18:19.078Z",
+          "errorType": "spelling",
+          "errorIssue": "Typo in 'contiued' (should be 'continued') in Fed Chair Powell statement",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        },
+        "formatting:Only one set of quotation marks found ('FAVORABLE CONDITIONS FOR BORROWERS') - inconsistent quote mark usage": {
+          "count": 1,
+          "firstSeen": "2025-10-21T20:18:19.091Z",
+          "lastSeen": "2025-10-21T20:18:19.091Z",
+          "errorType": "formatting",
+          "errorIssue": "Only one set of quotation marks found ('FAVORABLE CONDITIONS FOR BORROWERS') - inconsistent quote mark usage",
+          "fixAttempted": false,
+          "fixConfirmed": false,
+          "fixTestCount": 0
+        }
+      },
+      "promptModifications": {},
+      "successRate": 85.71428571428571,
+      "totalGenerations": 14,
+      "perfectGenerations": 12
+    }
+  },
+  "globalStats": {
+    "totalGenerations": 77,
+    "perfectGenerations": 61,
+    "currentSuccessRate": 79.22077922077922
+  },
+  "lastUpdated": "2025-10-29T13:10:55.509Z"
+}

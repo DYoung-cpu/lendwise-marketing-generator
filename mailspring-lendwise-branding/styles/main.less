@@ -1,0 +1,126 @@
+// LendWise Branding Styles
+// Adds company logos next to email accounts and Outlook-style layout
+
+// Multiple selector fallbacks for account items
+.account-sidebar-item,
+.account-switcher-item,
+.accounts-account-item,
+[data-account-id] {
+  position: relative;
+
+  // Only add padding if we successfully match an account
+  &[data-lendwise-branded="true"] {
+    padding-left: 40px !important;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 4px;
+    // Hidden by default, only show when we have a background-image
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+}
+
+// LendWise account logo
+.account-sidebar-item[title*="lendwisemtg"]::before,
+.account-switcher-item[title*="lendwisemtg"]::before,
+[data-account-id*="lendwisemtg"]::before {
+  background-image: url('mailspring://mailspring-lendwise-branding/assets/logos/lendwise-owl.png');
+  opacity: 1;
+}
+
+// Priority Financial
+.account-sidebar-item[title*="priorityfi"]::before,
+.account-switcher-item[title*="priorityfi"]::before,
+[data-account-id*="priorityfi"]::before {
+  background-image: url('mailspring://mailspring-lendwise-branding/assets/logos/priority-financial.jpg');
+  opacity: 1;
+}
+
+// One Nation Home Loans
+.account-sidebar-item[title*="onenationho"]::before,
+.account-switcher-item[title*="onenationho"]::before,
+[data-account-id*="onenationho"]::before {
+  background-image: url('mailspring://mailspring-lendwise-branding/assets/logos/one-nation.png');
+  opacity: 1;
+}
+
+// iTravel Vacation
+.account-sidebar-item[title*="itravelvacation"]::before,
+.account-switcher-item[title*="itravelvacation"]::before,
+[data-account-id*="itravelvacation"]::before {
+  background-image: url('mailspring://mailspring-lendwise-branding/assets/logos/itravel.png');
+  opacity: 1;
+}
+
+// Express Mortgage Capital
+.account-sidebar-item[title*="expressmtgcapi"]::before,
+.account-switcher-item[title*="expressmtgcapi"]::before,
+[data-account-id*="expressmtgcapi"]::before {
+  background-image: url('mailspring://mailspring-lendwise-branding/assets/logos/express-mortgage.jpg');
+  opacity: 1;
+}
+
+// Young Group Inc - placeholder emoji
+.account-sidebar-item[title*="younggroupinc"]::before,
+.account-switcher-item[title*="younggroupinc"]::before,
+[data-account-id*="younggroupinc"]::before {
+  content: '🏢';
+  font-size: 18px;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+// Gmail account
+.account-sidebar-item[title*="gmail.com"]::before,
+.account-switcher-item[title*="gmail.com"]::before,
+[data-account-id*="gmail"]::before {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PHBhdGggZmlsbD0iI2VhNDMzNSIgZD0iTTI0IDkuNWMzLjU0IDAgNi43MSAxLjIyIDkuMjEgMy42bDYuODUtNi44NUMzNS45IDIuMzggMzAuMjcgMCAyNCAwIDIxLjg3IDAgMTkuODQgMC41IDE3Ljk5IDEuNDFsMC4wMSAwLjAxQzEwLjc5IDMuMTUgNS4yNCA5LjkgNS4yNCAxNy43N2gtMC4wN2MwIDEuMzEgMC4xNSAyLjU5IDAuNDQgMy44MWw3Ljk1LTcuOTVjMS42LTQuNzggNi4wMi04LjI5IDExLjE5LTguMjl6Ii8+PHBhdGggZmlsbD0iIzQyODVmNCIgZD0iTTQ2Ljk4IDE4Ljk5bC0yMi43NSAyMi43NWMtMS44NCAwLjY1LTMuODYgMS4wMS01Ljk3IDEuMDEtOS45IDAtMTcuOTktOC4wOS0xNy45OS0xNy45OWgwLjA3Yy04LjIyLTE3Ljk5IDcuOTUtNy45NSA3Ljk1LTcuOTVjMS43MyAyLjAxIDQuMjggMy4yOSA3LjEgMy4yOSAyLjY5IDAgNS4wNi0xLjEgNi43OC0yLjg2bDcuODYtNy44NmMxLjMxLTEuMzEgMi4xLTMuMTEgMi4xLTUuMSAwLTQuMDEtMy4yNi03LjI3LTcuMjctNy4yNy0yLjY5IDAtNS4wNiAxLjQ2LTYuMzQgMy42M2wtNy41MSA3LjUxYy0wLjY1LTEuNTctMS4wMS0zLjI4LTEuMDEtNS4wOSAwLTcuMTggNS44Mi0xMyAxMy0xM2gxLjAyYzYuMzYgMCAxMS42OSA0LjU4IDEyLjc5IDEwLjYzaDguNjl6Ii8+PHBhdGggZmlsbD0iI2ZiYmMwNSIgZD0iTTI0IDQ4YzYuNDggMCAxMi4zLTIuNTcgMTYuNjQtNi43NGwtNy42OC03LjY4Yy0yLjMzIDEuNTEtNS4xMyAyLjQyLTguMTggMi40Mi01LjE3IDAtOS41OS0zLjUxLTExLjE5LTguMjlsLTcuOTUgNy45NWMzLjg0IDYuMzggMTAuODEgMTAuNjUgMTguODggMTAuNjUgMC41IDAgMC45OS0wLjAyIDEuNDgtMC4wNnoiLz48cGF0aCBmaWxsPSIjMzRhODUzIiBkPSJNNy4xOSAyOC43N2wwLjAxIDAuMDFDNC41NCAyNS4zOCAzIDIxLjYxIDMgMTcuNzdoMi4yNGMwIDcuODcgNS41NSAxNC42MiAxMi43NiAxNi4zNWwtMC4wMS0wLjAxTDcuMTkgMjguNzd6Ii8+PC9zdmc+');
+  background-size: 20px 20px;
+  opacity: 1;
+}
+
+// Outlook-style layout improvements (safe, won't break existing layout)
+.column-MessageList {
+  .message-item-wrap {
+    border-bottom: 1px solid #e1e1e1;
+
+    &:hover {
+      background-color: #f3f3f3;
+    }
+  }
+}
+
+// Reading pane adjustments
+.column-MessageListSidebar {
+  border-left: 1px solid #d4d4d4;
+}
+
+// Make the sidebar more compact
+.account-sidebar {
+  font-size: 13px;
+
+  .item {
+    padding: 6px 8px;
+  }
+}
+
+// Folder list styling
+.outline-view {
+  .item {
+    padding-left: 28px;
+  }
+}

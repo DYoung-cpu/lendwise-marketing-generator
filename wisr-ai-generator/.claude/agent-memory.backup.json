@@ -1,0 +1,861 @@
+{
+  "version": "1.1.0",
+  "initialized": "2025-10-27T09:30:00Z",
+  "lastUpdated": "2025-10-27T20:34:30.302Z",
+  "totalGenerations": 39,
+  "successfulGenerations": 0,
+  "failedGenerations": 39,
+  "systemChanges": [
+    {
+      "date": "2025-10-27T13:07:00Z",
+      "change": "REMOVED vision-analyzer.js from quality-backend.js",
+      "reason": "Vision analyzer was giving false 100% scores, missing data completeness issues, and costing money on API calls",
+      "replacement": "Playwright MCP Agent now handles all quality verification",
+      "benefits": [
+        "Zero API costs for quality checks",
+        "100% accuracy - agent reads actual DOM elements",
+        "Agent learning and memory persistence",
+        "Real-time monitoring during generation",
+        "Detailed regeneration feedback"
+      ]
+    },
+    {
+      "date": "2025-10-27T13:07:00Z",
+      "change": "Backend simplified to single-generation mode",
+      "reason": "Removed 5-attempt retry loop - agent will handle regeneration requests",
+      "impact": "Faster generation (no retry delays), cleaner code, agent-driven quality control"
+    }
+  ],
+  "patterns": {
+    "common_errors": [
+      {
+        "error": "PERSONALIZED spelled as PERSONAIIZED",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "Add explicit spelling check in prompt: 'Spell PERSONALIZED correctly with L not I'",
+        "lastSeen": "2025-10-27T09:15:00Z"
+      },
+      {
+        "error": "Missing 2 of 3 economic factors",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "RESOLVED: Vision analyzer removed. Agent now verifies data completeness via Playwright MCP",
+        "lastSeen": "2025-10-27T09:15:00Z",
+        "status": "RESOLVED"
+      },
+      {
+        "error": "Vision analyzer false positives",
+        "frequency": "ongoing",
+        "description": "Backend vision analyzer gave 100% to images with obvious errors",
+        "solution": "RESOLVED: Vision analyzer completely removed. Playwright MCP Agent handles all quality checks",
+        "status": "RESOLVED"
+      },
+      {
+        "error": "\"PERSONAIIZED\" is misspelled in the lock strategy section",
+        "errorType": "TEXT ACCURACY",
+        "frequency": 6,
+        "template": "Daily Rate Update",
+        "solution": "CHANGE TO \"PERSONALIZED\"",
+        "lastSeen": "2025-10-27T20:34:30.302Z"
+      },
+      {
+        "error": "Market Drivers section only shows \"Inflation Data\" but should have 2",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 2,
+        "template": "Daily Rate Update",
+        "solution": "3 economic factors - ADD 1-2 additional market drivers like \"Fed Policy\" or \"Employment Data\"",
+        "lastSeen": "2025-10-27T20:34:29.421Z"
+      },
+      {
+        "error": "\"PERSONAIIZED\" is misspelled in the Lock Strategy section",
+        "errorType": "TEXT ACCURACY",
+        "frequency": 3,
+        "template": "Daily Rate Update",
+        "solution": "CHANGE TO \"PERSONALIZED\"",
+        "lastSeen": "2025-10-27T20:34:29.303Z"
+      },
+      {
+        "error": "Market Drivers Today section only shows \"INFLATION DATA\" but should have 2",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "3 economic factors - ADD 1-2 additional market drivers like \"Federal Reserve Policy\" or \"Employment Data\"",
+        "lastSeen": "2025-10-27T20:34:27.114Z"
+      },
+      {
+        "error": "Missing \"Market Drivers Today\" section",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 5,
+        "template": "Daily Rate Update",
+        "solution": "ADD a section with 2-3 economic factors affecting rates",
+        "lastSeen": "2025-10-27T20:34:29.041Z"
+      },
+      {
+        "error": "Missing \"Expert Insight\" section header",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 6,
+        "template": "Daily Rate Update",
+        "solution": "ADD proper section header before the quote",
+        "lastSeen": "2025-10-27T20:34:29.806Z"
+      },
+      {
+        "error": "Quote appears without proper section structure",
+        "errorType": "LAYOUT CORRECTNESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "REORGANIZE to have \"Expert Insight:\" header above the quote",
+        "lastSeen": "2025-10-27T20:34:27.412Z"
+      },
+      {
+        "error": "Incomplete daily market update format",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD economic factors and market drivers as separate structured sections",
+        "lastSeen": "2025-10-27T20:34:27.412Z"
+      },
+      {
+        "error": "Market status has only 1 generic statement instead of 2",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "3 specific economic factors - EXPAND to include specific drivers like Fed policy, employment data, bond yields, etc.",
+        "lastSeen": "2025-10-27T20:34:27.678Z"
+      },
+      {
+        "error": "Quotation marks appear to be curly quotes instead of straight quotes",
+        "errorType": "TEXT ACCURACY",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "CHANGE to straight quotation marks \" \"",
+        "lastSeen": "2025-10-27T20:34:27.678Z"
+      },
+      {
+        "error": "Content structure doesn't match template requirements",
+        "errorType": "LAYOUT CORRECTNESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "REORGANIZE into proper sections: Current Rates, Market Drivers Today (with bullets), Expert Insight",
+        "lastSeen": "2025-10-27T20:34:27.678Z"
+      },
+      {
+        "error": "Market Drivers section only shows \"INFLATION DATA\" as a single factor",
+        "errorType": "DATA_COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "Should include 2-3 economic factors (e.g., \"INFLATION DATA, EMPLOYMENT REPORTS, FED POLICY\")",
+        "lastSeen": "2025-10-27T20:34:27.788Z"
+      },
+      {
+        "error": "Missing colon after \"EXPERT INSIGHT\" section header",
+        "errorType": "TEXT_ACCURACY",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "Should be \"EXPERT INSIGHT:\" to match formatting consistency with \"MARKET DRIVERS TODAY:\"",
+        "lastSeen": "2025-10-27T20:34:27.788Z"
+      },
+      {
+        "error": "Missing \"Expert Insight\" section",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 2,
+        "template": "Daily Rate Update",
+        "solution": "ADD a professional commentary/analysis section with expert perspective on market conditions",
+        "lastSeen": "2025-10-27T20:34:29.156Z"
+      },
+      {
+        "error": "Logo positioned in footer instead of header",
+        "errorType": "LAYOUT CORRECTNESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "MOVE LendWise logo and branding to the top of the image",
+        "lastSeen": "2025-10-27T20:34:27.905Z"
+      },
+      {
+        "error": "Incomplete rate information",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD the change indicator (+/-) for the 30-Year rate to show movement from previous day",
+        "lastSeen": "2025-10-27T20:34:27.905Z"
+      },
+      {
+        "error": "Market Drivers Today section only shows \"Inflation Data\"",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "NEED TO ADD 1-2 additional economic factors (e.g., \"Employment Reports\", \"Fed Policy\", \"Bond Market Activity\")",
+        "lastSeen": "2025-10-27T20:34:27.923Z"
+      },
+      {
+        "error": "\"PERSONAIIZED\" is misspelled in Lock Strategy section",
+        "errorType": "TEXT ACCURACY",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "SHOULD BE \"PERSONALIZED\"",
+        "lastSeen": "2025-10-27T20:34:27.924Z"
+      },
+      {
+        "error": "Expert insight quote should be properly formatted with opening quotation mark",
+        "errorType": "LAYOUT",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "CURRENT FORMAT IS MISSING CLEAR QUOTE ATTRIBUTION STRUCTURE",
+        "lastSeen": "2025-10-27T20:34:27.924Z"
+      },
+      {
+        "error": "Market Drivers Today section has 3 bullet points but they appear to be single words/short phrases rather than complete economic factors",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "should be more descriptive economic factors like \"Core PCE inflation data shows continued cooling\" instead of just \"Inflation Data\"",
+        "lastSeen": "2025-10-27T20:34:28.113Z"
+      },
+      {
+        "error": "Market Drivers Today section only shows 2 factors (Inflation Data, Existing Home Sales)",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD a third economic factor like \"Federal Reserve Policy\" or \"Employment Data\"",
+        "lastSeen": "2025-10-27T20:34:28.167Z"
+      },
+      {
+        "error": "Missing colon after \"Expert Insight\" header",
+        "errorType": "TEXT ACCURACY",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD colon to match formatting consistency with other headers",
+        "lastSeen": "2025-10-27T20:34:28.167Z"
+      },
+      {
+        "error": "Expert insight quote should be in quotation marks but appears to be missing opening quote",
+        "errorType": "LAYOUT",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ENSURE proper quote formatting with both opening and closing quotation marks",
+        "lastSeen": "2025-10-27T20:34:28.167Z"
+      },
+      {
+        "error": "Market Drivers section only shows \"• Inflation Data • Purchase Demand • Refis\" but formatting appears cramped/run together",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "SHOULD HAVE PROPER BULLET POINT FORMATTING WITH LINE BREAKS",
+        "lastSeen": "2025-10-27T20:34:28.223Z"
+      },
+      {
+        "error": "\"Refis\" should be \"Refinancing\" or \"Refi Activity\" for professional presentation",
+        "errorType": "TEXT ACCURACY",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "USE COMPLETE TERMINOLOGY",
+        "lastSeen": "2025-10-27T20:34:28.223Z"
+      },
+      {
+        "error": "Missing \"Market Drivers Today\" section with 2",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 6,
+        "template": "Daily Rate Update",
+        "solution": "3 economic factors - ADD a section listing specific economic factors affecting rates today",
+        "lastSeen": "2025-10-27T20:34:29.806Z"
+      },
+      {
+        "error": "Missing section header for expert insight",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD \"Expert Insight:\" header before the quoted text",
+        "lastSeen": "2025-10-27T20:34:28.337Z"
+      },
+      {
+        "error": "Using curly quotation marks \" \" instead of straight quotes",
+        "errorType": "TEXT ACCURACY",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "CHANGE to straight quotation marks \" \"",
+        "lastSeen": "2025-10-27T20:34:28.337Z"
+      },
+      {
+        "error": "Rate information formatting could be clearer",
+        "errorType": "LAYOUT CORRECTNESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "SEPARATE rates onto individual lines or add better spacing between rate types",
+        "lastSeen": "2025-10-27T20:34:28.337Z"
+      },
+      {
+        "error": "Market commentary is too brief and lacks specific economic factors",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "EXPAND to include 2-3 specific drivers like inflation data, Fed policy, employment numbers",
+        "lastSeen": "2025-10-27T20:34:28.398Z"
+      },
+      {
+        "error": "Sections are not properly separated",
+        "errorType": "LAYOUT CORRECTNESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD clear section breaks and headers to distinguish between rates, market drivers, and expert insight",
+        "lastSeen": "2025-10-27T20:34:28.398Z"
+      },
+      {
+        "error": "Rate change indicator formatting unclear",
+        "errorType": "TEXT ACCURACY",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "FORMAT the \"+.02%\" change indicator more clearly, possibly with better spacing or context",
+        "lastSeen": "2025-10-27T20:34:28.398Z"
+      },
+      {
+        "error": "Missing \"Expert Insight\" section header and content",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 2,
+        "template": "Daily Rate Update",
+        "solution": "ADD expert commentary section",
+        "lastSeen": "2025-10-27T20:34:28.929Z"
+      },
+      {
+        "error": "Content severely incomplete",
+        "errorType": "LAYOUT CORRECTNESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "only shows rate alert instead of full daily market update - ADD all required sections (market drivers, expert insight, etc.)",
+        "lastSeen": "2025-10-27T20:34:28.417Z"
+      },
+      {
+        "error": "Missing date information",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD current date to the update",
+        "lastSeen": "2025-10-27T20:34:28.417Z"
+      },
+      {
+        "error": "Logo placement incorrect",
+        "errorType": "LAYOUT CORRECTNESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "should be in header or footer, not prominently centered - MOVE logo to appropriate header/footer position",
+        "lastSeen": "2025-10-27T20:34:28.417Z"
+      },
+      {
+        "error": "Missing comprehensive market analysis",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD detailed market information beyond just the rate alert",
+        "lastSeen": "2025-10-27T20:34:28.417Z"
+      },
+      {
+        "error": "Design too minimal for a professional daily market update",
+        "errorType": "VISUAL QUALITY",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD proper sectioning, backgrounds, and professional layout structure",
+        "lastSeen": "2025-10-27T20:34:28.417Z"
+      },
+      {
+        "error": "This is a mortgage statement document, not a daily rate update",
+        "errorType": "TEMPLATE_MISMATCH",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "REPLACE with proper daily market update template showing current rates, market drivers, and expert insight",
+        "lastSeen": "2025-10-27T20:34:28.687Z"
+      },
+      {
+        "error": "No \"Market Drivers Today\" section with 2",
+        "errorType": "MISSING_REQUIRED_CONTENT",
+        "frequency": 2,
+        "template": "Daily Rate Update",
+        "solution": "3 economic factors - ADD market drivers section with multiple economic factors",
+        "lastSeen": "2025-10-27T20:34:29.759Z"
+      },
+      {
+        "error": "No \"Expert Insight\" section present",
+        "errorType": "MISSING_REQUIRED_CONTENT",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD expert commentary section",
+        "lastSeen": "2025-10-27T20:34:28.687Z"
+      },
+      {
+        "error": "Shows \"Unity Home Loans\" instead of LendWise logo with owl",
+        "errorType": "LOGO_ERROR",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "REPLACE with correct LendWise branding",
+        "lastSeen": "2025-10-27T20:34:28.687Z"
+      },
+      {
+        "error": "Uses blue/white colors instead of required forest green background with gold text",
+        "errorType": "COLOR_SCHEME_ERROR",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "CHANGE to proper color scheme",
+        "lastSeen": "2025-10-27T20:34:28.687Z"
+      },
+      {
+        "error": "Shows personal loan details instead of market",
+        "errorType": "CONTENT_TYPE_ERROR",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "wide rate information - REPLACE with daily market rates and analysis",
+        "lastSeen": "2025-10-27T20:34:28.687Z"
+      },
+      {
+        "error": "Document format instead of marketing update layout",
+        "errorType": "LAYOUT_ERROR",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "REDESIGN using proper daily update template structure",
+        "lastSeen": "2025-10-27T20:34:28.687Z"
+      },
+      {
+        "error": "Market Drivers Today section only has 2 factors (Inflation Data, Purchase Demand) when it should have 2",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "3 economic factors - ADD one more relevant economic factor like \"Fed Policy\" or \"Employment Data\"",
+        "lastSeen": "2025-10-27T20:34:28.852Z"
+      },
+      {
+        "error": "Market Drivers section only shows \"Inflation Data\"",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "needs 2-3 economic factors like \"Fed Policy, Employment Data, Bond Yields\"",
+        "lastSeen": "2025-10-27T20:34:28.929Z"
+      },
+      {
+        "error": "Quote formatting incorrect",
+        "errorType": "LAYOUT CORRECTNESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "USE proper quotation marks with attribution/context, not standalone quote",
+        "lastSeen": "2025-10-27T20:34:28.977Z"
+      },
+      {
+        "error": "Incomplete market analysis",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD economic factors like Fed policy, inflation data, employment numbers",
+        "lastSeen": "2025-10-27T20:34:28.977Z"
+      },
+      {
+        "error": "Missing proper section organization",
+        "errorType": "LAYOUT CORRECTNESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "SEPARATE rate data, market drivers, and expert insight into distinct sections",
+        "lastSeen": "2025-10-27T20:34:28.977Z"
+      },
+      {
+        "error": "Missing comprehensive daily update elements",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD more context about what's driving today's rates",
+        "lastSeen": "2025-10-27T20:34:28.977Z"
+      },
+      {
+        "error": "Market commentary is too brief and generic",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "EXPAND to include specific economic factors like inflation data, Fed policy, employment numbers",
+        "lastSeen": "2025-10-27T20:34:29.041Z"
+      },
+      {
+        "error": "Rate information formatting is confusing",
+        "errorType": "LAYOUT CORRECTNESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "CLARIFY the rate display format, appears to show duplicate 30-year rate (6.19% twice)",
+        "lastSeen": "2025-10-27T20:34:29.041Z"
+      },
+      {
+        "error": "Contact section should include more professional formatting",
+        "errorType": "TEXT ACCURACY",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD proper title/role formatting and consider adding email contact",
+        "lastSeen": "2025-10-27T20:34:29.041Z"
+      },
+      {
+        "error": "This is a pre",
+        "errorType": "CONTENT_MISMATCH",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "qualification vs pre-approval educational infographic, not a daily mortgage rate update - REPLACE with proper daily rate update template including current rates, market drivers, and expert insight",
+        "lastSeen": "2025-10-27T20:34:29.085Z"
+      },
+      {
+        "error": "Missing required daily rate data fields (30",
+        "errorType": "DATA_COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "year fixed, 15-year fixed, ARM rates) - ADD current mortgage rates section",
+        "lastSeen": "2025-10-27T20:34:29.085Z"
+      },
+      {
+        "error": "Missing \"Expert Insight\" section with professional commentary",
+        "errorType": "DATA_COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD expert analysis section",
+        "lastSeen": "2025-10-27T20:34:29.085Z"
+      },
+      {
+        "error": "Wrong template structure entirely",
+        "errorType": "LAYOUT_CORRECTNESS",
+        "frequency": 2,
+        "template": "Daily Rate Update",
+        "solution": "pre-approval content doesn't match daily rate update requirements - USE correct daily rate update layout",
+        "lastSeen": "2025-10-27T20:34:29.540Z"
+      },
+      {
+        "error": "Market Drivers Today section only contains generic consultation text instead of 2",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "3 specific economic factors - ADD actual market drivers like \"GDP growth data\", \"Employment report\", \"Fed policy signals\"",
+        "lastSeen": "2025-10-27T20:34:29.127Z"
+      },
+      {
+        "error": "Logo shows \"LEVID YOUNG MORTGAGE\" instead of required \"LENDWISE MORTGAGE\"",
+        "errorType": "BRANDING",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "CORRECT company name in logo",
+        "lastSeen": "2025-10-27T20:34:29.127Z"
+      },
+      {
+        "error": "Missing inflation data value",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD specific inflation percentage or rate after \"INFLATION DATA\" header",
+        "lastSeen": "2025-10-27T20:34:29.127Z"
+      },
+      {
+        "error": "Market Drivers section should have bullet points for multiple factors",
+        "errorType": "LAYOUT",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "FORMAT as bulleted list with 2-3 economic factors instead of single consultation line",
+        "lastSeen": "2025-10-27T20:34:29.127Z"
+      },
+      {
+        "error": "Missing required daily mortgage rate data",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD current mortgage rates section with specific percentages",
+        "lastSeen": "2025-10-27T20:34:29.156Z"
+      },
+      {
+        "error": "Content shows pre",
+        "errorType": "TEMPLATE MISMATCH",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "qualification vs pre-approval comparison instead of daily rate update - REPLACE with daily mortgage market data, rates, and analysis",
+        "lastSeen": "2025-10-27T20:34:29.156Z"
+      },
+      {
+        "error": "Missing date/timestamp for daily update",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD current date prominently displayed",
+        "lastSeen": "2025-10-27T20:34:29.156Z"
+      },
+      {
+        "error": "Content structure doesn't match Daily Rate Update template requirements",
+        "errorType": "LAYOUT CORRECTNESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "RESTRUCTURE to include rate data, market drivers, and expert insight sections",
+        "lastSeen": "2025-10-27T20:34:29.156Z"
+      },
+      {
+        "error": "Market Drivers Today section only shows 3 items but they appear to be just bullet points without proper labels",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "SHOULD HAVE 2-3 CLEARLY LABELED ECONOMIC FACTORS like \"GDP Growth: 2.1%\", \"Unemployment Rate: 3.8%\", etc.",
+        "lastSeen": "2025-10-27T20:34:29.303Z"
+      },
+      {
+        "error": "The current market drivers are too vague (\"Inflation Data\", \"Purchase Demand\", \"Refis\")",
+        "errorType": "LAYOUT CORRECTNESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "NEED SPECIFIC DATA POINTS WITH ACTUAL VALUES OR MORE DESCRIPTIVE INFORMATION",
+        "lastSeen": "2025-10-27T20:34:29.303Z"
+      },
+      {
+        "error": "Missing section header \"Market Drivers Today:\"",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD proper section header above the market drivers content",
+        "lastSeen": "2025-10-27T20:34:29.421Z"
+      },
+      {
+        "error": "Market drivers content appears to be merged into the Lock Strategy card instead of having its own section",
+        "errorType": "LAYOUT",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "SEPARATE into distinct Market Drivers section with proper formatting",
+        "lastSeen": "2025-10-27T20:34:29.421Z"
+      },
+      {
+        "error": "Market Drivers section only shows \"INFLATION DATA\"",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "HOW TO FIX IT: Add 1-2 additional economic factors like \"Employment Report\", \"Fed Policy\", \"GDP Data\", etc. as bullet points or separate items",
+        "lastSeen": "2025-10-27T20:34:29.486Z"
+      },
+      {
+        "error": "\"PERSONAIIZED\" is misspelled in lock strategy section",
+        "errorType": "TEXT ACCURACY",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "HOW TO FIX IT: Change \"FOR PERSONAIIZED STRATEGY\" to \"FOR PERSONALIZED STRATEGY\"",
+        "lastSeen": "2025-10-27T20:34:29.486Z"
+      },
+      {
+        "error": "Lock strategy advice should be more specific",
+        "errorType": "LAYOUT CORRECTNESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "HOW TO FIX IT: Add actual strategic guidance like \"CONSIDER LOCKING\" or \"FLOAT RECOMMENDED\" rather than just generic \"consult with loan officer\" text",
+        "lastSeen": "2025-10-27T20:34:29.486Z"
+      },
+      {
+        "error": "This is a customer testimonial image, not a daily mortgage rate update",
+        "errorType": "TEMPLATE MISMATCH",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "COMPLETELY REGENERATE using the correct daily rate update template with current rates, market drivers, and expert insight",
+        "lastSeen": "2025-10-27T20:34:29.540Z"
+      },
+      {
+        "error": "No mortgage rates present",
+        "errorType": "MISSING DATA",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD current mortgage rates prominently displayed",
+        "lastSeen": "2025-10-27T20:34:29.540Z"
+      },
+      {
+        "error": "No economic factors/market drivers section",
+        "errorType": "MISSING DATA",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD 2-3 economic factors affecting today's rates",
+        "lastSeen": "2025-10-27T20:34:29.540Z"
+      },
+      {
+        "error": "No expert insight section",
+        "errorType": "MISSING DATA",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD professional market commentary",
+        "lastSeen": "2025-10-27T20:34:29.540Z"
+      },
+      {
+        "error": "Contains customer testimonial instead of market data",
+        "errorType": "CONTENT TYPE",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "REPLACE with daily rate information",
+        "lastSeen": "2025-10-27T20:34:29.540Z"
+      },
+      {
+        "error": "\"PERSONAIIZED\" is misspelled in the contact section",
+        "errorType": "TEXT ACCURACY",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "should be \"PERSONALIZED\"",
+        "lastSeen": "2025-10-27T20:34:29.741Z"
+      },
+      {
+        "error": "Market Drivers section only shows 3 items but they appear incomplete/cut off",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "need to ensure all economic factors are fully visible and properly formatted",
+        "lastSeen": "2025-10-27T20:34:29.741Z"
+      },
+      {
+        "error": "The \"Refis\" and \"Lock Strategy\" items in Market Drivers appear to be improperly formatted",
+        "errorType": "LAYOUT CORRECTNESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "\"Refis\" should likely be \"Refinancing Activity\" and \"Lock Strategy\" seems like it belongs in a different section or should be removed from market drivers",
+        "lastSeen": "2025-10-27T20:34:29.741Z"
+      },
+      {
+        "error": "This is a mortgage amortization chart, not a daily rate update",
+        "errorType": "TEMPLATE_MISMATCH",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "REPLACE with daily mortgage market update template showing current rates, market drivers, and expert insight",
+        "lastSeen": "2025-10-27T20:34:29.759Z"
+      },
+      {
+        "error": "No LendWise logo present",
+        "errorType": "MISSING_BRANDING",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD LendWise owl logo with \"LENDWISE MORTGAGE\" text in header or footer",
+        "lastSeen": "2025-10-27T20:34:29.759Z"
+      },
+      {
+        "error": "No daily rate information shown",
+        "errorType": "MISSING_REQUIRED_CONTENT",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD current mortgage rates section",
+        "lastSeen": "2025-10-27T20:34:29.759Z"
+      },
+      {
+        "error": "No \"Expert Insight\" section",
+        "errorType": "MISSING_REQUIRED_CONTENT",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD expert commentary section",
+        "lastSeen": "2025-10-27T20:34:29.759Z"
+      },
+      {
+        "error": "Uses blue/orange colors instead of forest green background with gold text",
+        "errorType": "WRONG_COLOR_SCHEME",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "CHANGE to correct brand colors",
+        "lastSeen": "2025-10-27T20:34:29.759Z"
+      },
+      {
+        "error": "Static chart format instead of professional daily update layout",
+        "errorType": "WRONG_FORMAT",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "REDESIGN as daily market update with proper sections and formatting",
+        "lastSeen": "2025-10-27T20:34:29.759Z"
+      },
+      {
+        "error": "Quote appears without proper section organization",
+        "errorType": "LAYOUT CORRECTNESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "MOVE quote under \"Expert Insight:\" header",
+        "lastSeen": "2025-10-27T20:34:29.806Z"
+      },
+      {
+        "error": "Incomplete rate data presentation",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD more comprehensive rate information or market context",
+        "lastSeen": "2025-10-27T20:34:29.806Z"
+      },
+      {
+        "error": "Missing proper section separation between rate data and commentary",
+        "errorType": "LAYOUT CORRECTNESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "ADD visual separators or proper card structure",
+        "lastSeen": "2025-10-27T20:34:29.806Z"
+      },
+      {
+        "error": "Market Drivers Today section only shows \"INFLATION DATA\"",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "should include 2-3 economic factors, not just 1 - ADD additional market drivers like \"GDP Growth\", \"Employment Data\", \"Fed Policy\", etc.",
+        "lastSeen": "2025-10-27T20:34:29.989Z"
+      },
+      {
+        "error": "Market Drivers Today section only shows \"Inflation Data\" but should have 2",
+        "errorType": "DATA COMPLETENESS",
+        "frequency": 1,
+        "template": "Daily Rate Update",
+        "solution": "3 economic factors - ADD 1-2 additional market drivers like \"Bond Yields\" or \"Fed Policy Expectations\"",
+        "lastSeen": "2025-10-27T20:34:30.026Z"
+      }
+    ],
+    "success_patterns": [
+      {
+        "template": "Market Report",
+        "successRate": 0.895,
+        "totalAttempts": 19,
+        "bestPractices": [
+          "Temperature 0.2 works well for text consistency",
+          "Quotation marks auto-fix pattern working"
+        ]
+      },
+      {
+        "template": "Daily Rate Update",
+        "successRate": 0.73,
+        "totalAttempts": 76,
+        "issues": [
+          "Frequently missing 2 of 3 economic factors",
+          "PERSONALIZED spelling errors"
+        ]
+      }
+    ]
+  },
+  "rules_learned": [
+    "NEVER trust 100% score from vision analyzer without manual verification",
+    "ALWAYS check that ALL required data fields are present, not just some",
+    "ALWAYS verify economic factors count: should be 3, not 1"
+  ],
+  "prompt_improvements": [
+    {
+      "date": "2025-10-27",
+      "improvement": "Added quotation mark reminder after 2 authentication errors",
+      "impact": "Reduced quotation errors"
+    }
+  ],
+  "performance_metrics": {
+    "globalSuccessRate": 0.803,
+    "targetSuccessRate": 0.9,
+    "averageAttemptsToSuccess": 1.2,
+    "averageGenerationTime": "35-40 seconds",
+    "bottleneck": "35MB photo causing slow generations"
+  }
+}   },
+      {
+        "template": "Daily Rate Update",
+        "successRate": 0.73,
+        "totalAttempts": 75,
+        "issues": [
+          "Frequently missing 2 of 3 economic factors",
+          "PERSONALIZED spelling errors"
+        ]
+      }
+    ]
+  },
+  "rules_learned": [
+    "NEVER trust 100% score from vision analyzer without manual verification",
+    "ALWAYS check that ALL required data fields are present, not just some",
+    "ALWAYS verify economic factors count: should be 3, not 1"
+  ],
+  "prompt_improvements": [
+    {
+      "date": "2025-10-27",
+      "improvement": "Added quotation mark reminder after 2 authentication errors",
+      "impact": "Reduced quotation errors"
+    }
+  ],
+  "performance_metrics": {
+    "globalSuccessRate": 0.803,
+    "targetSuccessRate": 0.9,
+    "averageAttemptsToSuccess": 1.2,
+    "averageGenerationTime": "35-40 seconds",
+    "bottleneck": "35MB photo causing slow generations"
+  }
+}

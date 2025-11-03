@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Signature - Moe Hassan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .preview-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2d5a3d;
+            margin-bottom: 20px;
+        }
+        .instructions {
+            background: #e8f4f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2d5a3d;
+        }
+        .signature-wrapper {
+            background: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            position: relative;
+        }
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #2d5a3d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            z-index: 100;
+        }
+        .copy-button:hover {
+            background: #1a3d2b;
+        }
+        .copy-button:active {
+            background: #c9a961;
+        }
+        .copy-success {
+            background: #4CAF50 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-container">
+        <h1>LendWise Mortgage - Email Signature</h1>
+
+        <div class="instructions">
+            <strong>Instructions:</strong>
+            <ol>
+                <li>Select the signature below (click and drag to select all)</li>
+                <li>Copy it (Ctrl+C or Cmd+C)</li>
+                <li>Paste into your email client's signature settings</li>
+                <li>Test the clickable links: Cell phone, Office phone, and Website</li>
+            </ol>
+        </div>
+
+        <div class="signature-wrapper">
+            <button class="copy-button" onclick="copySignature()">Copy Signature</button>
+
+            <!-- EMAIL SIGNATURE START -->
+            <div id="email-signature" style="position: relative; width: 600px; max-width: 100%; font-family: Arial, sans-serif;">
+                <!-- Background Image -->
+                <img src="https://raw.githubusercontent.com/DYoung-cpu/lendwise-marketing-generator/main/email-signature/signature-background.png" alt="LendWise Mortgage - Moe Hassan" style="width: 100%; height: auto; display: block;" />
+
+                <!-- Clickable Hotspots Overlay -->
+                <!-- Moe's Cell Phone Number -->
+                <a href="tel:8187416969" style="position: absolute; top: 31%; left: 44%; width: 20%; height: 10%; display: block; z-index: 10;" title="Call Moe: 818.741.6969"></a>
+
+                <!-- Moe's Email Address -->
+                <a href="mailto:MOE@LendWiseMTG.com" style="position: absolute; top: 42%; left: 44%; width: 26%; height: 10%; display: block; z-index: 10;" title="Email: MOE@LendWiseMTG.com"></a>
+
+                <!-- Company Phone Number -->
+                <a href="tel:8187237376" style="position: absolute; top: 81%; left: 6%; width: 16%; height: 12%; display: block; z-index: 10;" title="Call Office: (818) 723-7376"></a>
+
+                <!-- Website Address -->
+                <a href="https://lendwisemtg.com" target="_blank" style="position: absolute; top: 81%; left: 35%; width: 17%; height: 12%; display: block; z-index: 10;" title="Visit LendWisemtg.com"></a>
+
+                <!-- Office Location/Address -->
+                <a href="https://www.google.com/maps/search/?api=1&query=21800+Oxnard+Street+220+Woodland+Hills+CA+91367" target="_blank" style="position: absolute; top: 81%; left: 64%; width: 28%; height: 12%; display: block; z-index: 10;" title="Get Directions: 21800 Oxnard Street #220, Woodland Hills, CA 91367"></a>
+            </div>
+            <!-- EMAIL SIGNATURE END -->
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background: #fff8e1; border-radius: 5px; border-left: 4px solid #c9a961;">
+            <strong>🎯 Clickable Areas:</strong>
+            <ul>
+                <li><strong>Moe's Cell Phone:</strong> 818.741.6969 - Click to call</li>
+                <li><strong>Moe's Email:</strong> MOE@LendWiseMTG.com - Click to email</li>
+                <li><strong>Company Phone:</strong> (818) 723-7376 - Click to call</li>
+                <li><strong>Website:</strong> LendWisemtg.com - Click to visit</li>
+                <li><strong>Office Location:</strong> 21800 Oxnard Street #220, Woodland Hills, CA 91367 - Click for Google Maps directions</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        async function copySignature() {
+            const signature = document.getElementById('email-signature');
+            const button = document.querySelector('.copy-button');
+
+            try {
+                // Get the HTML content
+                const htmlContent = signature.outerHTML;
+
+                // Use modern clipboard API with both HTML and plain text
+                const blob = new Blob([htmlContent], { type: 'text/html' });
+                const blobPlain = new Blob([htmlContent], { type: 'text/plain' });
+
+                await navigator.clipboard.write([
+                    new ClipboardItem({
+                        'text/html': blob,
+                        'text/plain': blobPlain
+                    })
+                ]);
+
+                // Visual feedback
+                button.textContent = 'Copied! Paste in email settings';
+                button.classList.add('copy-success');
+
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    button.textContent = 'Copy Signature';
+                    button.classList.remove('copy-success');
+                }, 3000);
+            } catch (err) {
+                // Fallback method
+                const signature = document.getElementById('email-signature');
+                const range = document.createRange();
+                range.selectNode(signature);
+                const selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+
+                document.execCommand('copy');
+                selection.removeAllRanges();
+
+                button.textContent = 'Copied! Paste as HTML';
+                button.classList.add('copy-success');
+
+                setTimeout(() => {
+                    button.textContent = 'Copy Signature';
+                    button.classList.remove('copy-success');
+                }, 3000);
+            }
+        }
+    </script>
+</body>
+</html>
